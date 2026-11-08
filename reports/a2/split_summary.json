@@ -1,0 +1,55 @@
+{
+  "train": {
+    "n_transactions": 300015,
+    "n_illicit": 1953,
+    "illicit_rate_pct": 0.651,
+    "from": "2022-09-01 00:00:00",
+    "to": "2022-09-05 20:23:00"
+  },
+  "val": {
+    "n_transactions": 99988,
+    "n_illicit": 1184,
+    "illicit_rate_pct": 1.1841,
+    "from": "2022-09-05 20:24:00",
+    "to": "2022-09-08 07:05:00"
+  },
+  "test": {
+    "n_transactions": 99997,
+    "n_illicit": 2040,
+    "illicit_rate_pct": 2.0401,
+    "from": "2022-09-08 07:06:00",
+    "to": "2022-09-18 16:18:00"
+  },
+  "n_nodes": 102643,
+  "n_edges": 500000,
+  "edge_features": [
+    "log_amount_paid",
+    "log_amount_received",
+    "same_currency",
+    "cross_bank",
+    "hour_sin",
+    "hour_cos",
+    "payment_format_ACH",
+    "payment_format_Bitcoin",
+    "payment_format_Cash",
+    "payment_format_Cheque",
+    "payment_format_Credit Card",
+    "payment_format_Reinvestment",
+    "payment_format_Wire",
+    "payment_currency_Australian Dollar",
+    "payment_currency_Bitcoin",
+    "payment_currency_Brazil Real",
+    "payment_currency_Canadian Dollar",
+    "payment_currency_Euro",
+    "payment_currency_Mexican Peso",
+    "payment_currency_Ruble",
+    "payment_currency_Rupee",
+    "payment_currency_Saudi Riyal",
+    "payment_currency_Shekel",
+    "payment_currency_Swiss Franc",
+    "payment_currency_UK Pound",
+    "payment_currency_US Dollar",
+    "payment_currency_Yen",
+    "payment_currency_Yuan"
+  ]
+}

@@ -10,14 +10,15 @@ le score est calibré et expliqué (SHAP), puis un agent (LLM + LoRA + RAG) réd
 ## Équipe et rôles
 | Personne | Rôle | Dossiers |
 |---|---|---|
-| A - [nom] | Détection : GNN, fédéré, VAE | `src/data`, `src/detection` |
-| B - [nom] | Confiance et audit : calibration/XAI, LoRA, RAG, agent | `src/audit` |
+| A - Rmiki Abdelhafid| Détection : GNN, fédéré, VAE | `src/data`, `src/detection` |
+| B - Soufiane Tadlaoui | Confiance et audit : calibration/XAI, LoRA, RAG, agent | `src/audit` |
 | Commun | Contrat d'alerte, métriques, seeds | `src/common` |
 
 ## Installation
 ```bash
 python -m venv .venv
-source .venv/bin/activate        # Windows : .venv\Scripts\activate
+.\.venv\Scripts\Activate.ps1
+
 pip install -r requirements.txt
 pytest                           # doit passer avant de commencer
 ```

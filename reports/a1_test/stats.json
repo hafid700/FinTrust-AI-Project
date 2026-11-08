@@ -1,0 +1,26 @@
+{
+  "full": {
+    "n_transactions": 200000,
+    "n_accounts": 161507,
+    "n_banks": 8707,
+    "date_min": "2022-09-01 00:00:00",
+    "date_max": "2022-09-04 15:48:00",
+    "n_illicit": 25,
+    "illicit_rate_pct": 0.0125,
+    "cross_bank_share_pct": 26.17,
+    "illicit_rate_cross_bank_pct": 0.0478,
+    "illicit_rate_same_bank_pct": 0.0,
+    "n_currencies": 15,
+    "payment_formats": [
+      "ACH",
+      "Bitcoin",
+      "Cash",
+      "Cheque",
+      "Credit Card",
+      "Reinvestment",
+      "Wire"
+    ],
+    "amount_paid_median": 1937.22,
+    "amount_paid_median_illicit": 12183.28
+  }
+}

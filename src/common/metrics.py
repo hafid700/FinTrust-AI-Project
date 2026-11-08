@@ -39,3 +39,28 @@ def ece(y_true, y_prob, n_bins: int = 10) -> float:
         if m.any():
             total += m.mean() * abs(y_true[m].mean() - y_prob[m].mean())
     return float(total)
+
+
+def best_f1_threshold(y_true, y_score) -> float:
+    """Seuil qui maximise le F1 (à choisir sur la VALIDATION, pas sur le test)."""
+    p, r, t = precision_recall_curve(y_true, y_score)
+    f = 2 * p[:-1] * r[:-1] / np.clip(p[:-1] + r[:-1], 1e-12, None)
+    return float(t[int(np.argmax(f))])
+
+
+def summarize(y_true, y_score, threshold: float | None = None, min_precision: float = 0.5) -> dict:
+    """Résumé standard. `lift` = PR-AUC / taux d'illicite : comparable entre splits
+    dont le taux de base diffère (0,65 % en train, 2 % en test...)."""
+    y_true = np.asarray(y_true)
+    prev = float(y_true.mean())
+    ap = pr_auc(y_true, y_score)
+    out = {
+        "n": int(len(y_true)), "n_pos": int(y_true.sum()), "prevalence": prev,
+        "pr_auc": ap, "lift": ap / prev if prev > 0 else None,
+        "best_f1_oracle": best_f1(y_true, y_score),
+        f"recall_at_precision_{min_precision}": recall_at_precision(y_true, y_score, min_precision),
+    }
+    if threshold is not None:
+        out["threshold"] = float(threshold)
+        out["f1_at_threshold"] = f1_at_threshold(y_true, y_score, threshold)
+    return out

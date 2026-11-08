@@ -1,0 +1,28 @@
+{
+  "model": "xgboost_tabular",
+  "n_features": 28,
+  "train_time_s": 2.0,
+  "best_iteration": 46,
+  "val": {
+    "n": 99988,
+    "n_pos": 1184,
+    "prevalence": 0.011841420970516462,
+    "pr_auc": 0.34151871691568225,
+    "lift": 28.841024887639556,
+    "best_f1_oracle": 0.39435545385202136,
+    "recall_at_precision_0.5": 0.30405405405405406,
+    "threshold": 0.9583926796913147,
+    "f1_at_threshold": 0.39435545385202136
+  },
+  "test": {
+    "n": 99997,
+    "n_pos": 2040,
+    "prevalence": 0.02040061201836055,
+    "pr_auc": 0.4802426883014027,
+    "lift": 23.540602010821257,
+    "best_f1_oracle": 0.489416143289137,
+    "recall_at_precision_0.5": 0.46078431372549017,
+    "threshold": 0.9583926796913147,
+    "f1_at_threshold": 0.4893122676579926
+  }
+}

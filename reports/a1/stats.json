@@ -1,0 +1,50 @@
+{
+  "full": {
+    "n_transactions": 5078345,
+    "n_accounts": 515088,
+    "n_banks": 30470,
+    "date_min": "2022-09-01 00:00:00",
+    "date_max": "2022-09-18 16:18:00",
+    "n_illicit": 5177,
+    "illicit_rate_pct": 0.1019,
+    "cross_bank_share_pct": 86.39,
+    "illicit_rate_cross_bank_pct": 0.1157,
+    "illicit_rate_same_bank_pct": 0.0149,
+    "n_currencies": 15,
+    "payment_formats": [
+      "ACH",
+      "Bitcoin",
+      "Cash",
+      "Cheque",
+      "Credit Card",
+      "Reinvestment",
+      "Wire"
+    ],
+    "amount_paid_median": 1414.54,
+    "amount_paid_median_illicit": 8667.21
+  },
+  "subsample": {
+    "n_transactions": 500000,
+    "n_accounts": 102643,
+    "n_banks": 12400,
+    "date_min": "2022-09-01 00:00:00",
+    "date_max": "2022-09-18 16:18:00",
+    "n_illicit": 5177,
+    "illicit_rate_pct": 1.0354,
+    "cross_bank_share_pct": 69.94,
+    "illicit_rate_cross_bank_pct": 1.451,
+    "illicit_rate_same_bank_pct": 0.0685,
+    "n_currencies": 15,
+    "payment_formats": [
+      "ACH",
+      "Bitcoin",
+      "Cash",
+      "Cheque",
+      "Credit Card",
+      "Reinvestment",
+      "Wire"
+    ],
+    "amount_paid_median": 1535.03,
+    "amount_paid_median_illicit": 8667.21
+  }
+}
