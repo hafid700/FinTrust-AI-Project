@@ -1,0 +1,13 @@
+seed: 42
+data:
+  dataset: IBM-AML-HI-Small
+  max_transactions: 500000   # sous-échantillon pour Colab / PC (à ajuster en A1)
+  split: temporal            # jamais aléatoire
+  train_frac: 0.6
+  val_frac: 0.2
+federated:
+  n_banks: 3
+  rounds: 20
+  local_epochs: 1
+metrics:
+  recall_at_precision: 0.5

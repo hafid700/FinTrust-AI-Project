@@ -1,0 +1,22 @@
+# Données et modèles lourds (ne jamais pousser)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+models/
+*.pt
+*.pth
+*.safetensors
+*.faiss
+# Secrets
+.env
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+# Éditeur / OS
+.vscode/
+.DS_Store

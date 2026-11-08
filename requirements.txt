@@ -1,0 +1,21 @@
+# Versions minimales. Après la première installation réussie,
+# exécutez `pip freeze > requirements.lock.txt` et committez ce fichier.
+numpy>=1.26
+pandas>=2.1
+scikit-learn>=1.4
+matplotlib>=3.8
+pyyaml>=6.0
+pytest>=8.0
+torch>=2.2
+torch-geometric>=2.5
+xgboost>=2.0
+imbalanced-learn>=0.12
+shap>=0.45
+# Partie B (audit) - à installer au moment voulu
+transformers>=4.40
+peft>=0.10
+accelerate>=0.29
+datasets>=2.18
+sentence-transformers>=2.7
+faiss-cpu>=1.8
+pypdf>=4.0
