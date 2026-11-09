@@ -1,0 +1,11731 @@
+[
+  {
+    "tx_id": 84810,
+    "score": 0.79,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "out_degree",
+        0.19
+      ],
+      [
+        "same_day_outflows",
+        0.16
+      ],
+      [
+        "currency_mismatch",
+        0.11
+      ]
+    ],
+    "neighbors": [
+      10099,
+      37517,
+      44025,
+      53227
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 15592,
+    "score": 0.73,
+    "confidence": 0.7,
+    "top_features": [
+      [
+        "amount",
+        0.37
+      ],
+      [
+        "currency_mismatch",
+        0.26
+      ]
+    ],
+    "neighbors": [
+      58199
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 4278,
+    "score": 0.96,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "in_degree",
+        0.3
+      ],
+      [
+        "payment_format",
+        0.26
+      ],
+      [
+        "same_day_inflows",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      17334,
+      40363,
+      67469,
+      87951,
+      95339
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 98196,
+    "score": 0.86,
+    "confidence": 0.76,
+    "top_features": [
+      [
+        "payment_format",
+        0.31
+      ],
+      [
+        "amount",
+        0.3
+      ],
+      [
+        "same_day_inflows",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      28549,
+      38606,
+      40829
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 37048,
+    "score": 0.73,
+    "confidence": 0.61,
+    "top_features": [
+      [
+        "out_degree",
+        0.44
+      ],
+      [
+        "amount",
+        0.31
+      ]
+    ],
+    "neighbors": [
+      27100,
+      30444,
+      41687,
+      89184
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 33098,
+    "score": 0.9,
+    "confidence": 0.98,
+    "top_features": [
+      [
+        "in_degree",
+        0.38
+      ],
+      [
+        "same_day_inflows",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      14970,
+      56724,
+      99430
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 30256,
+    "score": 0.75,
+    "confidence": 0.54,
+    "top_features": [
+      [
+        "currency_mismatch",
+        0.22
+      ],
+      [
+        "amount",
+        0.2
+      ],
+      [
+        "payment_format",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      81301
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 19289,
+    "score": 0.85,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "out_degree",
+        0.32
+      ],
+      [
+        "amount",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      36614,
+      42904,
+      45020,
+      71798
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 97530,
+    "score": 0.96,
+    "confidence": 0.8,
+    "top_features": [
+      [
+        "payment_format",
+        0.32
+      ],
+      [
+        "amount",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      50857,
+      63518,
+      76456
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 14434,
+    "score": 0.93,
+    "confidence": 0.96,
+    "top_features": [
+      [
+        "same_day_outflows",
+        0.19
+      ],
+      [
+        "out_degree",
+        0.15
+      ],
+      [
+        "currency_mismatch",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      4804,
+      45057,
+      51968,
+      64654,
+      88670,
+      90016
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 89696,
+    "score": 0.79,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "payment_format",
+        0.38
+      ],
+      [
+        "in_degree",
+        0.33
+      ]
+    ],
+    "neighbors": [
+      3540,
+      11735,
+      34065,
+      62644,
+      71702,
+      99176
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 98080,
+    "score": 0.69,
+    "confidence": 0.6,
+    "top_features": [
+      [
+        "amount",
+        0.32
+      ],
+      [
+        "currency_mismatch",
+        0.26
+      ]
+    ],
+    "neighbors": [
+      22992,
+      49351,
+      80415,
+      80593,
+      99032
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 72482,
+    "score": 0.97,
+    "confidence": 0.98,
+    "top_features": [
+      [
+        "out_degree",
+        0.27
+      ],
+      [
+        "amount",
+        0.25
+      ],
+      [
+        "currency_mismatch",
+        0.11
+      ]
+    ],
+    "neighbors": [
+      6383,
+      46508,
+      75177
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 12395,
+    "score": 0.72,
+    "confidence": 0.58,
+    "top_features": [
+      [
+        "in_degree",
+        0.44
+      ],
+      [
+        "payment_format",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      36179,
+      43245,
+      58091,
+      61931,
+      78656,
+      96817
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 78397,
+    "score": 0.91,
+    "confidence": 0.77,
+    "top_features": [
+      [
+        "same_day_outflows",
+        0.37
+      ],
+      [
+        "currency_mismatch",
+        0.34
+      ]
+    ],
+    "neighbors": [
+      2330,
+      12221,
+      26042,
+      68715,
+      73848
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 56302,
+    "score": 0.84,
+    "confidence": 0.93,
+    "top_features": [
+      [
+        "in_degree",
+        0.27
+      ],
+      [
+        "payment_format",
+        0.16
+      ],
+      [
+        "same_day_inflows",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      46056,
+      56771,
+      70588,
+      73140,
+      73544,
+      98771
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 5165,
+    "score": 0.84,
+    "confidence": 0.8,
+    "top_features": [
+      [
+        "out_degree",
+        0.34
+      ],
+      [
+        "amount",
+        0.23
+      ],
+      [
+        "same_day_outflows",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      26443,
+      30816,
+      39829
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 4905,
+    "score": 0.92,
+    "confidence": 0.76,
+    "top_features": [
+      [
+        "cross_bank",
+        0.19
+      ],
+      [
+        "cycle_length",
+        0.17
+      ],
+      [
+        "amount",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      7734,
+      34092
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 13280,
+    "score": 0.8,
+    "confidence": 0.65,
+    "top_features": [
+      [
+        "amount",
+        0.28
+      ],
+      [
+        "currency_mismatch",
+        0.28
+      ],
+      [
+        "hour_of_day",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      60049
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 29657,
+    "score": 0.69,
+    "confidence": 0.54,
+    "top_features": [
+      [
+        "amount",
+        0.31
+      ],
+      [
+        "hour_of_day",
+        0.26
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 31495,
+    "score": 0.89,
+    "confidence": 0.96,
+    "top_features": [
+      [
+        "cross_bank",
+        0.28
+      ],
+      [
+        "time_gap_hours",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      26928,
+      56723,
+      78304,
+      87662
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 67237,
+    "score": 0.76,
+    "confidence": 0.64,
+    "top_features": [
+      [
+        "cross_bank",
+        0.31
+      ],
+      [
+        "amount",
+        0.24
+      ],
+      [
+        "time_gap_hours",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      17299,
+      62433,
+      91266
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 79907,
+    "score": 0.58,
+    "confidence": 0.51,
+    "top_features": [
+      [
+        "amount",
+        0.26
+      ],
+      [
+        "same_day_outflows",
+        0.22
+      ],
+      [
+        "currency_mismatch",
+        0.11
+      ]
+    ],
+    "neighbors": [
+      6273,
+      23962,
+      62669,
+      69021,
+      76529
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 4478,
+    "score": 0.91,
+    "confidence": 0.85,
+    "top_features": [
+      [
+        "in_degree",
+        0.57
+      ],
+      [
+        "payment_format",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      5809,
+      53488,
+      60614,
+      73102,
+      87846
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 74563,
+    "score": 0.54,
+    "confidence": 0.38,
+    "top_features": [
+      [
+        "payment_format",
+        0.21
+      ],
+      [
+        "hour_of_day",
+        0.17
+      ],
+      [
+        "amount",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      82973
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 27062,
+    "score": 0.95,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "amount",
+        0.29
+      ],
+      [
+        "hour_of_day",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      13217,
+      54476
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 94850,
+    "score": 0.81,
+    "confidence": 0.68,
+    "top_features": [
+      [
+        "amount",
+        0.25
+      ],
+      [
+        "currency_mismatch",
+        0.24
+      ],
+      [
+        "payment_format",
+        0.13
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 86181,
+    "score": 0.9,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "currency_mismatch",
+        0.23
+      ],
+      [
+        "hour_of_day",
+        0.23
+      ],
+      [
+        "payment_format",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      77011,
+      87499
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 92924,
+    "score": 0.72,
+    "confidence": 0.67,
+    "top_features": [
+      [
+        "amount",
+        0.25
+      ],
+      [
+        "same_day_inflows",
+        0.25
+      ],
+      [
+        "payment_format",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      20936,
+      50968,
+      51604,
+      86461,
+      87991,
+      93435
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 72426,
+    "score": 0.82,
+    "confidence": 0.75,
+    "top_features": [
+      [
+        "same_day_inflows",
+        0.36
+      ],
+      [
+        "amount",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      35737,
+      45375,
+      53098,
+      82691,
+      86175,
+      91794
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 55987,
+    "score": 0.78,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "in_degree",
+        0.32
+      ],
+      [
+        "payment_format",
+        0.17
+      ],
+      [
+        "amount",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      14173,
+      84066,
+      93260
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 29893,
+    "score": 0.96,
+    "confidence": 0.95,
+    "top_features": [
+      [
+        "cross_bank",
+        0.23
+      ],
+      [
+        "time_gap_hours",
+        0.23
+      ]
+    ],
+    "neighbors": [
+      32566,
+      66230,
+      77435,
+      90539
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 59878,
+    "score": 0.8,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "amount",
+        0.22
+      ],
+      [
+        "hour_of_day",
+        0.21
+      ],
+      [
+        "currency_mismatch",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      60878
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 78236,
+    "score": 0.55,
+    "confidence": 0.44,
+    "top_features": [
+      [
+        "out_degree",
+        0.36
+      ],
+      [
+        "same_day_outflows",
+        0.36
+      ]
+    ],
+    "neighbors": [
+      29705,
+      31162,
+      47179,
+      80569,
+      84442
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 37463,
+    "score": 0.95,
+    "confidence": 0.97,
+    "top_features": [
+      [
+        "cycle_length",
+        0.26
+      ],
+      [
+        "cross_bank",
+        0.24
+      ],
+      [
+        "time_gap_hours",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      12813,
+      39680
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 1851,
+    "score": 0.82,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "cycle_length",
+        0.46
+      ],
+      [
+        "time_gap_hours",
+        0.37
+      ]
+    ],
+    "neighbors": [
+      10869,
+      62385
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 21926,
+    "score": 0.98,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "hour_of_day",
+        0.25
+      ],
+      [
+        "amount",
+        0.18
+      ],
+      [
+        "currency_mismatch",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      35362,
+      77619
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 92506,
+    "score": 0.87,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "out_degree",
+        0.46
+      ],
+      [
+        "same_day_outflows",
+        0.26
+      ]
+    ],
+    "neighbors": [
+      5877,
+      6943,
+      16292,
+      19320,
+      40893,
+      65569
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 56392,
+    "score": 0.9,
+    "confidence": 0.77,
+    "top_features": [
+      [
+        "currency_mismatch",
+        0.28
+      ],
+      [
+        "out_degree",
+        0.19
+      ],
+      [
+        "amount",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      5288,
+      29477,
+      49566,
+      59115,
+      91476
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 45597,
+    "score": 0.73,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "cross_bank",
+        0.29
+      ],
+      [
+        "cycle_length",
+        0.14
+      ],
+      [
+        "time_gap_hours",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      3799,
+      7629,
+      79269,
+      84819
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 37421,
+    "score": 0.93,
+    "confidence": 0.93,
+    "top_features": [
+      [
+        "amount",
+        0.41
+      ],
+      [
+        "payment_format",
+        0.15
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 21379,
+    "score": 0.96,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "cross_bank",
+        0.22
+      ],
+      [
+        "time_gap_hours",
+        0.18
+      ],
+      [
+        "cycle_length",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      15293,
+      68271,
+      78812
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 29221,
+    "score": 0.84,
+    "confidence": 0.63,
+    "top_features": [
+      [
+        "out_degree",
+        0.32
+      ],
+      [
+        "same_day_outflows",
+        0.27
+      ],
+      [
+        "currency_mismatch",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      9609,
+      17540,
+      20442,
+      37046,
+      80730
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 45118,
+    "score": 0.88,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "amount",
+        0.21
+      ],
+      [
+        "payment_format",
+        0.16
+      ],
+      [
+        "hour_of_day",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      60441
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 14396,
+    "score": 0.59,
+    "confidence": 0.44,
+    "top_features": [
+      [
+        "amount",
+        0.52
+      ],
+      [
+        "currency_mismatch",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      44207,
+      74620
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 13156,
+    "score": 0.94,
+    "confidence": 0.85,
+    "top_features": [
+      [
+        "amount",
+        0.42
+      ],
+      [
+        "time_gap_hours",
+        0.26
+      ]
+    ],
+    "neighbors": [
+      64201,
+      87079
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 50797,
+    "score": 0.95,
+    "confidence": 0.88,
+    "top_features": [
+      [
+        "amount",
+        0.28
+      ],
+      [
+        "payment_format",
+        0.23
+      ]
+    ],
+    "neighbors": [
+      47009
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 13676,
+    "score": 0.76,
+    "confidence": 0.64,
+    "top_features": [
+      [
+        "amount",
+        0.36
+      ],
+      [
+        "out_degree",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      21631,
+      41846,
+      43517,
+      49503,
+      95581
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 48052,
+    "score": 0.85,
+    "confidence": 0.72,
+    "top_features": [
+      [
+        "in_degree",
+        0.32
+      ],
+      [
+        "payment_format",
+        0.13
+      ],
+      [
+        "amount",
+        0.09
+      ]
+    ],
+    "neighbors": [
+      38125,
+      89895,
+      89930
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 46082,
+    "score": 0.94,
+    "confidence": 0.88,
+    "top_features": [
+      [
+        "amount",
+        0.18
+      ],
+      [
+        "hour_of_day",
+        0.17
+      ],
+      [
+        "payment_format",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      98912
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 80131,
+    "score": 0.91,
+    "confidence": 0.84,
+    "top_features": [
+      [
+        "amount",
+        0.29
+      ],
+      [
+        "hour_of_day",
+        0.29
+      ],
+      [
+        "payment_format",
+        0.24
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 35671,
+    "score": 0.88,
+    "confidence": 0.75,
+    "top_features": [
+      [
+        "cross_bank",
+        0.48
+      ],
+      [
+        "cycle_length",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      23037,
+      30041,
+      44655
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 6695,
+    "score": 0.83,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "same_day_inflows",
+        0.22
+      ],
+      [
+        "payment_format",
+        0.17
+      ],
+      [
+        "amount",
+        0.08
+      ]
+    ],
+    "neighbors": [
+      24218,
+      65764,
+      83306
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 96647,
+    "score": 0.96,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "in_degree",
+        0.33
+      ],
+      [
+        "amount",
+        0.25
+      ],
+      [
+        "payment_format",
+        0.23
+      ]
+    ],
+    "neighbors": [
+      5929,
+      8456,
+      49331,
+      60233,
+      61521
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 61217,
+    "score": 0.94,
+    "confidence": 0.9,
+    "top_features": [
+      [
+        "in_degree",
+        0.33
+      ],
+      [
+        "same_day_inflows",
+        0.33
+      ]
+    ],
+    "neighbors": [
+      12053,
+      46015,
+      94626
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 71284,
+    "score": 0.84,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "cross_bank",
+        0.46
+      ],
+      [
+        "time_gap_hours",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      7863,
+      44863,
+      83691,
+      85843
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 17361,
+    "score": 0.95,
+    "confidence": 0.95,
+    "top_features": [
+      [
+        "out_degree",
+        0.26
+      ],
+      [
+        "currency_mismatch",
+        0.24
+      ],
+      [
+        "amount",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      12104,
+      17901,
+      41577,
+      74259,
+      78993,
+      93908
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 50615,
+    "score": 0.9,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "amount",
+        0.42
+      ],
+      [
+        "in_degree",
+        0.23
+      ]
+    ],
+    "neighbors": [
+      26166,
+      29074,
+      45791,
+      64736
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 11328,
+    "score": 0.83,
+    "confidence": 0.7,
+    "top_features": [
+      [
+        "in_degree",
+        0.51
+      ],
+      [
+        "payment_format",
+        0.33
+      ]
+    ],
+    "neighbors": [
+      22266,
+      24703,
+      82885,
+      91812
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 73357,
+    "score": 0.95,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "same_day_outflows",
+        0.37
+      ],
+      [
+        "out_degree",
+        0.19
+      ],
+      [
+        "currency_mismatch",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      26430,
+      49213,
+      58749,
+      61513,
+      75766,
+      89907
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 39427,
+    "score": 0.67,
+    "confidence": 0.59,
+    "top_features": [
+      [
+        "amount",
+        0.42
+      ],
+      [
+        "payment_format",
+        0.4
+      ]
+    ],
+    "neighbors": [
+      59893
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 83397,
+    "score": 0.85,
+    "confidence": 0.93,
+    "top_features": [
+      [
+        "amount",
+        0.29
+      ],
+      [
+        "in_degree",
+        0.27
+      ],
+      [
+        "payment_format",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      4694,
+      13987,
+      42770,
+      94677
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 82070,
+    "score": 0.95,
+    "confidence": 0.84,
+    "top_features": [
+      [
+        "in_degree",
+        0.33
+      ],
+      [
+        "same_day_inflows",
+        0.23
+      ],
+      [
+        "payment_format",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      7258,
+      16970,
+      32147,
+      32252,
+      40472
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 48400,
+    "score": 0.89,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "out_degree",
+        0.33
+      ],
+      [
+        "same_day_outflows",
+        0.27
+      ],
+      [
+        "amount",
+        0.24
+      ]
+    ],
+    "neighbors": [
+      12221,
+      69614,
+      88080,
+      88584
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 76674,
+    "score": 0.65,
+    "confidence": 0.51,
+    "top_features": [
+      [
+        "cycle_length",
+        0.25
+      ],
+      [
+        "time_gap_hours",
+        0.15
+      ],
+      [
+        "amount",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      6811,
+      18486,
+      44583,
+      47176
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 26203,
+    "score": 0.83,
+    "confidence": 0.68,
+    "top_features": [
+      [
+        "out_degree",
+        0.28
+      ],
+      [
+        "same_day_outflows",
+        0.19
+      ],
+      [
+        "currency_mismatch",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      5799,
+      26048,
+      34202,
+      38501,
+      85790,
+      99735
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 93349,
+    "score": 0.8,
+    "confidence": 0.75,
+    "top_features": [
+      [
+        "in_degree",
+        0.29
+      ],
+      [
+        "payment_format",
+        0.24
+      ],
+      [
+        "same_day_inflows",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      11345,
+      24652,
+      39504,
+      57440,
+      72496,
+      79964
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 10116,
+    "score": 0.71,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "in_degree",
+        0.37
+      ],
+      [
+        "same_day_inflows",
+        0.27
+      ],
+      [
+        "amount",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      8518,
+      10835,
+      84560,
+      84816,
+      88973
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 7006,
+    "score": 0.73,
+    "confidence": 0.58,
+    "top_features": [
+      [
+        "cross_bank",
+        0.29
+      ],
+      [
+        "time_gap_hours",
+        0.27
+      ]
+    ],
+    "neighbors": [
+      49623,
+      49760,
+      59188,
+      59972
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 87673,
+    "score": 0.62,
+    "confidence": 0.52,
+    "top_features": [
+      [
+        "currency_mismatch",
+        0.23
+      ],
+      [
+        "amount",
+        0.18
+      ],
+      [
+        "payment_format",
+        0.09
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 30871,
+    "score": 0.67,
+    "confidence": 0.56,
+    "top_features": [
+      [
+        "cycle_length",
+        0.29
+      ],
+      [
+        "cross_bank",
+        0.25
+      ]
+    ],
+    "neighbors": [
+      21644,
+      94003,
+      94298
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 38930,
+    "score": 0.81,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "same_day_inflows",
+        0.37
+      ],
+      [
+        "payment_format",
+        0.35
+      ],
+      [
+        "amount",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      9617,
+      12300,
+      41539,
+      81209
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 11458,
+    "score": 0.87,
+    "confidence": 0.85,
+    "top_features": [
+      [
+        "out_degree",
+        0.42
+      ],
+      [
+        "currency_mismatch",
+        0.31
+      ]
+    ],
+    "neighbors": [
+      8263,
+      17912,
+      57704,
+      66911
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 31512,
+    "score": 0.96,
+    "confidence": 0.8,
+    "top_features": [
+      [
+        "in_degree",
+        0.42
+      ],
+      [
+        "same_day_inflows",
+        0.37
+      ]
+    ],
+    "neighbors": [
+      23103,
+      66873,
+      85015
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 14238,
+    "score": 0.63,
+    "confidence": 0.59,
+    "top_features": [
+      [
+        "out_degree",
+        0.3
+      ],
+      [
+        "currency_mismatch",
+        0.19
+      ],
+      [
+        "same_day_outflows",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      66278,
+      72509,
+      83203
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 50823,
+    "score": 0.75,
+    "confidence": 0.61,
+    "top_features": [
+      [
+        "amount",
+        0.22
+      ],
+      [
+        "currency_mismatch",
+        0.17
+      ],
+      [
+        "out_degree",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      41970,
+      42853,
+      95157,
+      97233
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 37434,
+    "score": 0.73,
+    "confidence": 0.71,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.39
+      ],
+      [
+        "amount",
+        0.26
+      ]
+    ],
+    "neighbors": [
+      41988,
+      76718,
+      95519
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 60429,
+    "score": 0.9,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "cross_bank",
+        0.23
+      ],
+      [
+        "time_gap_hours",
+        0.16
+      ],
+      [
+        "amount",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      7624,
+      37877
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 84320,
+    "score": 0.78,
+    "confidence": 0.71,
+    "top_features": [
+      [
+        "cross_bank",
+        0.36
+      ],
+      [
+        "cycle_length",
+        0.23
+      ]
+    ],
+    "neighbors": [
+      37663,
+      73070,
+      82689
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 48819,
+    "score": 0.88,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "amount",
+        0.29
+      ],
+      [
+        "hour_of_day",
+        0.22
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 22319,
+    "score": 0.8,
+    "confidence": 0.64,
+    "top_features": [
+      [
+        "hour_of_day",
+        0.3
+      ],
+      [
+        "payment_format",
+        0.23
+      ],
+      [
+        "amount",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      45089,
+      67494
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 49520,
+    "score": 0.98,
+    "confidence": 0.83,
+    "top_features": [
+      [
+        "out_degree",
+        0.28
+      ],
+      [
+        "same_day_outflows",
+        0.23
+      ]
+    ],
+    "neighbors": [
+      7731,
+      63973,
+      77483,
+      95555
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 47566,
+    "score": 0.71,
+    "confidence": 0.63,
+    "top_features": [
+      [
+        "out_degree",
+        0.45
+      ],
+      [
+        "same_day_outflows",
+        0.39
+      ]
+    ],
+    "neighbors": [
+      9163,
+      19098,
+      68984,
+      93507,
+      96342,
+      97447
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 28460,
+    "score": 0.77,
+    "confidence": 0.64,
+    "top_features": [
+      [
+        "in_degree",
+        0.23
+      ],
+      [
+        "payment_format",
+        0.23
+      ],
+      [
+        "same_day_inflows",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      26200,
+      33311,
+      37569,
+      64462,
+      80963
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 88841,
+    "score": 0.76,
+    "confidence": 0.65,
+    "top_features": [
+      [
+        "out_degree",
+        0.28
+      ],
+      [
+        "currency_mismatch",
+        0.26
+      ]
+    ],
+    "neighbors": [
+      6513,
+      38700,
+      39070,
+      94603
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 35993,
+    "score": 0.87,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "amount",
+        0.25
+      ],
+      [
+        "currency_mismatch",
+        0.24
+      ]
+    ],
+    "neighbors": [
+      32363,
+      77917
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 92988,
+    "score": 0.94,
+    "confidence": 0.94,
+    "top_features": [
+      [
+        "in_degree",
+        0.38
+      ],
+      [
+        "same_day_inflows",
+        0.36
+      ]
+    ],
+    "neighbors": [
+      27143,
+      38409,
+      38649,
+      43096,
+      63580,
+      86267
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 90593,
+    "score": 0.95,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "amount",
+        0.43
+      ],
+      [
+        "currency_mismatch",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      5910,
+      38941
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 85939,
+    "score": 0.85,
+    "confidence": 0.84,
+    "top_features": [
+      [
+        "amount",
+        0.19
+      ],
+      [
+        "currency_mismatch",
+        0.18
+      ],
+      [
+        "hour_of_day",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      85972
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 10358,
+    "score": 0.92,
+    "confidence": 0.9,
+    "top_features": [
+      [
+        "amount",
+        0.43
+      ],
+      [
+        "payment_format",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      13502,
+      25219
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 80840,
+    "score": 0.76,
+    "confidence": 0.67,
+    "top_features": [
+      [
+        "cross_bank",
+        0.23
+      ],
+      [
+        "time_gap_hours",
+        0.19
+      ],
+      [
+        "amount",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      16495,
+      21934,
+      41213,
+      62000
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 84227,
+    "score": 0.87,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "cross_bank",
+        0.47
+      ],
+      [
+        "time_gap_hours",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      29627,
+      71453,
+      88044
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 23431,
+    "score": 0.92,
+    "confidence": 0.77,
+    "top_features": [
+      [
+        "out_degree",
+        0.45
+      ],
+      [
+        "same_day_outflows",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      22566,
+      44007,
+      58912,
+      69202
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 71010,
+    "score": 0.84,
+    "confidence": 0.78,
+    "top_features": [
+      [
+        "currency_mismatch",
+        0.27
+      ],
+      [
+        "payment_format",
+        0.23
+      ],
+      [
+        "amount",
+        0.09
+      ]
+    ],
+    "neighbors": [
+      89181
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 96568,
+    "score": 0.95,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.25
+      ],
+      [
+        "cycle_length",
+        0.25
+      ],
+      [
+        "cross_bank",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      50081,
+      51132,
+      56097,
+      85656
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 33087,
+    "score": 0.73,
+    "confidence": 0.54,
+    "top_features": [
+      [
+        "in_degree",
+        0.36
+      ],
+      [
+        "amount",
+        0.23
+      ],
+      [
+        "same_day_inflows",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      1455,
+      3979,
+      40107,
+      61686
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 22417,
+    "score": 0.6,
+    "confidence": 0.6,
+    "top_features": [
+      [
+        "out_degree",
+        0.3
+      ],
+      [
+        "same_day_outflows",
+        0.22
+      ],
+      [
+        "amount",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      5400,
+      14224,
+      78849
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 61589,
+    "score": 0.66,
+    "confidence": 0.57,
+    "top_features": [
+      [
+        "out_degree",
+        0.42
+      ],
+      [
+        "currency_mismatch",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      8989,
+      37064,
+      40387,
+      55206
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 50735,
+    "score": 0.72,
+    "confidence": 0.65,
+    "top_features": [
+      [
+        "out_degree",
+        0.36
+      ],
+      [
+        "currency_mismatch",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      19920,
+      30536,
+      32584,
+      40418,
+      61689,
+      93743
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 36382,
+    "score": 0.93,
+    "confidence": 0.92,
+    "top_features": [
+      [
+        "cross_bank",
+        0.36
+      ],
+      [
+        "amount",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      6183,
+      10539,
+      25662,
+      78015
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 84886,
+    "score": 0.78,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "cross_bank",
+        0.31
+      ],
+      [
+        "time_gap_hours",
+        0.17
+      ],
+      [
+        "amount",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      32369,
+      43154,
+      73362
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 91198,
+    "score": 0.92,
+    "confidence": 0.76,
+    "top_features": [
+      [
+        "amount",
+        0.51
+      ],
+      [
+        "payment_format",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      55254
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 74000,
+    "score": 0.95,
+    "confidence": 0.84,
+    "top_features": [
+      [
+        "out_degree",
+        0.37
+      ],
+      [
+        "same_day_outflows",
+        0.28
+      ],
+      [
+        "currency_mismatch",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      34728,
+      65044,
+      85108,
+      95838,
+      97940
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 29785,
+    "score": 0.98,
+    "confidence": 0.9,
+    "top_features": [
+      [
+        "in_degree",
+        0.43
+      ],
+      [
+        "amount",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      1836,
+      19021,
+      55053
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 90733,
+    "score": 0.87,
+    "confidence": 0.92,
+    "top_features": [
+      [
+        "out_degree",
+        0.33
+      ],
+      [
+        "currency_mismatch",
+        0.26
+      ],
+      [
+        "amount",
+        0.24
+      ]
+    ],
+    "neighbors": [
+      3192,
+      70391,
+      95659
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 43504,
+    "score": 0.87,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "cross_bank",
+        0.45
+      ],
+      [
+        "time_gap_hours",
+        0.24
+      ],
+      [
+        "cycle_length",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      11357,
+      49896,
+      54218
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 8331,
+    "score": 0.68,
+    "confidence": 0.55,
+    "top_features": [
+      [
+        "out_degree",
+        0.3
+      ],
+      [
+        "amount",
+        0.25
+      ],
+      [
+        "same_day_outflows",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      57873,
+      66517,
+      85529
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 31021,
+    "score": 0.71,
+    "confidence": 0.57,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.4
+      ],
+      [
+        "cross_bank",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      3052,
+      28152,
+      77943
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 5207,
+    "score": 0.9,
+    "confidence": 0.88,
+    "top_features": [
+      [
+        "amount",
+        0.33
+      ],
+      [
+        "hour_of_day",
+        0.31
+      ],
+      [
+        "payment_format",
+        0.19
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 42347,
+    "score": 0.78,
+    "confidence": 0.61,
+    "top_features": [
+      [
+        "payment_format",
+        0.37
+      ],
+      [
+        "in_degree",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      25345,
+      50816,
+      57603,
+      77791,
+      87595,
+      90088
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 53581,
+    "score": 0.91,
+    "confidence": 0.93,
+    "top_features": [
+      [
+        "out_degree",
+        0.36
+      ],
+      [
+        "same_day_outflows",
+        0.17
+      ],
+      [
+        "currency_mismatch",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      12442,
+      14399,
+      18367,
+      25561,
+      36358
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 36093,
+    "score": 0.71,
+    "confidence": 0.67,
+    "top_features": [
+      [
+        "out_degree",
+        0.21
+      ],
+      [
+        "currency_mismatch",
+        0.18
+      ],
+      [
+        "same_day_outflows",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      23227,
+      69302,
+      75967,
+      90825
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 9675,
+    "score": 0.89,
+    "confidence": 0.8,
+    "top_features": [
+      [
+        "amount",
+        0.28
+      ],
+      [
+        "cycle_length",
+        0.23
+      ],
+      [
+        "time_gap_hours",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      44544,
+      52864
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 28653,
+    "score": 0.86,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "in_degree",
+        0.31
+      ],
+      [
+        "payment_format",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      39200,
+      42830,
+      65357,
+      83955,
+      92089,
+      97321
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 75341,
+    "score": 0.78,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "out_degree",
+        0.31
+      ],
+      [
+        "amount",
+        0.29
+      ],
+      [
+        "currency_mismatch",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      10064,
+      39185,
+      58469,
+      91811
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 95098,
+    "score": 0.79,
+    "confidence": 0.72,
+    "top_features": [
+      [
+        "cross_bank",
+        0.42
+      ],
+      [
+        "cycle_length",
+        0.29
+      ]
+    ],
+    "neighbors": [
+      71373,
+      78833,
+      92964
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 42245,
+    "score": 0.98,
+    "confidence": 0.84,
+    "top_features": [
+      [
+        "cross_bank",
+        0.29
+      ],
+      [
+        "time_gap_hours",
+        0.18
+      ],
+      [
+        "cycle_length",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      29971,
+      59429,
+      76397,
+      91133
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 28869,
+    "score": 0.88,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "amount",
+        0.22
+      ],
+      [
+        "payment_format",
+        0.16
+      ],
+      [
+        "hour_of_day",
+        0.08
+      ]
+    ],
+    "neighbors": [
+      28114
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 86909,
+    "score": 0.82,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "amount",
+        0.33
+      ],
+      [
+        "currency_mismatch",
+        0.24
+      ],
+      [
+        "out_degree",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      21989,
+      44383,
+      73339,
+      74380
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 66435,
+    "score": 0.9,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "payment_format",
+        0.3
+      ],
+      [
+        "hour_of_day",
+        0.25
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 52856,
+    "score": 0.8,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "hour_of_day",
+        0.3
+      ],
+      [
+        "currency_mismatch",
+        0.27
+      ]
+    ],
+    "neighbors": [
+      81918
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 85259,
+    "score": 0.88,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "cross_bank",
+        0.44
+      ],
+      [
+        "time_gap_hours",
+        0.41
+      ]
+    ],
+    "neighbors": [
+      19070,
+      51293,
+      56448,
+      76340
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 61142,
+    "score": 0.89,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "same_day_outflows",
+        0.21
+      ],
+      [
+        "amount",
+        0.14
+      ],
+      [
+        "currency_mismatch",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      18895,
+      26575,
+      64518
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 19726,
+    "score": 0.94,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "cross_bank",
+        0.32
+      ],
+      [
+        "cycle_length",
+        0.21
+      ],
+      [
+        "time_gap_hours",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      60942,
+      75140
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 35718,
+    "score": 0.95,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "out_degree",
+        0.28
+      ],
+      [
+        "currency_mismatch",
+        0.27
+      ],
+      [
+        "amount",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      5224,
+      35447,
+      40021,
+      59947
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 19301,
+    "score": 0.95,
+    "confidence": 0.78,
+    "top_features": [
+      [
+        "in_degree",
+        0.39
+      ],
+      [
+        "amount",
+        0.26
+      ],
+      [
+        "payment_format",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      46982,
+      70767,
+      75720
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 33325,
+    "score": 0.97,
+    "confidence": 0.9,
+    "top_features": [
+      [
+        "amount",
+        0.43
+      ],
+      [
+        "same_day_inflows",
+        0.27
+      ]
+    ],
+    "neighbors": [
+      17631,
+      18392,
+      33725,
+      86969,
+      92937
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 98647,
+    "score": 0.67,
+    "confidence": 0.63,
+    "top_features": [
+      [
+        "out_degree",
+        0.22
+      ],
+      [
+        "amount",
+        0.21
+      ],
+      [
+        "same_day_outflows",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      37467,
+      49374,
+      60597,
+      68582,
+      92056,
+      99278
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 74579,
+    "score": 0.86,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "cross_bank",
+        0.39
+      ],
+      [
+        "cycle_length",
+        0.32
+      ],
+      [
+        "time_gap_hours",
+        0.11
+      ]
+    ],
+    "neighbors": [
+      18117,
+      72737,
+      76750
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 71644,
+    "score": 0.85,
+    "confidence": 0.95,
+    "top_features": [
+      [
+        "amount",
+        0.38
+      ],
+      [
+        "cross_bank",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      40566,
+      86196
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 35438,
+    "score": 0.82,
+    "confidence": 0.78,
+    "top_features": [
+      [
+        "amount",
+        0.33
+      ],
+      [
+        "payment_format",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      1142,
+      13475
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 98912,
+    "score": 0.8,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "cross_bank",
+        0.53
+      ],
+      [
+        "amount",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      14425,
+      96782
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 77622,
+    "score": 0.78,
+    "confidence": 0.71,
+    "top_features": [
+      [
+        "cross_bank",
+        0.33
+      ],
+      [
+        "cycle_length",
+        0.28
+      ],
+      [
+        "time_gap_hours",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      54963,
+      81750
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 57155,
+    "score": 0.92,
+    "confidence": 0.76,
+    "top_features": [
+      [
+        "payment_format",
+        0.64
+      ],
+      [
+        "same_day_inflows",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      4515,
+      27928,
+      40537,
+      87298,
+      91502
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 77484,
+    "score": 0.67,
+    "confidence": 0.85,
+    "top_features": [
+      [
+        "in_degree",
+        0.4
+      ],
+      [
+        "amount",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      18299,
+      48895,
+      51703,
+      56163,
+      75498
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 53350,
+    "score": 0.66,
+    "confidence": 0.58,
+    "top_features": [
+      [
+        "amount",
+        0.64
+      ],
+      [
+        "hour_of_day",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      11803
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 48447,
+    "score": 0.67,
+    "confidence": 0.58,
+    "top_features": [
+      [
+        "cross_bank",
+        0.32
+      ],
+      [
+        "amount",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      8589,
+      32278,
+      96677
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 29746,
+    "score": 0.99,
+    "confidence": 0.88,
+    "top_features": [
+      [
+        "out_degree",
+        0.25
+      ],
+      [
+        "currency_mismatch",
+        0.24
+      ],
+      [
+        "amount",
+        0.07
+      ]
+    ],
+    "neighbors": [
+      22884,
+      34980,
+      68793,
+      69551,
+      95472
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 19131,
+    "score": 0.97,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "cross_bank",
+        0.61
+      ],
+      [
+        "cycle_length",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      21618,
+      22873,
+      34438,
+      49193
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 67784,
+    "score": 0.56,
+    "confidence": 0.58,
+    "top_features": [
+      [
+        "amount",
+        0.2
+      ],
+      [
+        "cycle_length",
+        0.18
+      ],
+      [
+        "cross_bank",
+        0.09
+      ]
+    ],
+    "neighbors": [
+      30427,
+      33540,
+      43179,
+      55967
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 65686,
+    "score": 0.87,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "cross_bank",
+        0.25
+      ],
+      [
+        "cycle_length",
+        0.23
+      ],
+      [
+        "amount",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      12322,
+      43899,
+      73494
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 12915,
+    "score": 0.93,
+    "confidence": 0.77,
+    "top_features": [
+      [
+        "out_degree",
+        0.42
+      ],
+      [
+        "same_day_outflows",
+        0.41
+      ]
+    ],
+    "neighbors": [
+      1835,
+      4133,
+      20735,
+      54744
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 7175,
+    "score": 0.85,
+    "confidence": 0.78,
+    "top_features": [
+      [
+        "cross_bank",
+        0.43
+      ],
+      [
+        "cycle_length",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      37677,
+      94277
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 15371,
+    "score": 0.67,
+    "confidence": 0.62,
+    "top_features": [
+      [
+        "payment_format",
+        0.3
+      ],
+      [
+        "amount",
+        0.26
+      ],
+      [
+        "same_day_inflows",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      32034,
+      35208,
+      39230,
+      42288
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 21033,
+    "score": 0.75,
+    "confidence": 0.49,
+    "top_features": [
+      [
+        "out_degree",
+        0.43
+      ],
+      [
+        "same_day_outflows",
+        0.26
+      ]
+    ],
+    "neighbors": [
+      35735,
+      41410,
+      60233,
+      61731
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 83240,
+    "score": 0.9,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "cycle_length",
+        0.27
+      ],
+      [
+        "cross_bank",
+        0.1
+      ],
+      [
+        "amount",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      5073,
+      23789,
+      35100
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 21969,
+    "score": 0.8,
+    "confidence": 0.78,
+    "top_features": [
+      [
+        "out_degree",
+        0.33
+      ],
+      [
+        "currency_mismatch",
+        0.2
+      ],
+      [
+        "amount",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      3857,
+      9450,
+      10828,
+      26919,
+      85670
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 90192,
+    "score": 0.73,
+    "confidence": 0.67,
+    "top_features": [
+      [
+        "amount",
+        0.54
+      ],
+      [
+        "hour_of_day",
+        0.15
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 56333,
+    "score": 0.76,
+    "confidence": 0.7,
+    "top_features": [
+      [
+        "cross_bank",
+        0.41
+      ],
+      [
+        "time_gap_hours",
+        0.35
+      ]
+    ],
+    "neighbors": [
+      69919,
+      85233
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 79172,
+    "score": 0.88,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "in_degree",
+        0.27
+      ],
+      [
+        "same_day_inflows",
+        0.2
+      ],
+      [
+        "amount",
+        0.08
+      ]
+    ],
+    "neighbors": [
+      4840,
+      8679,
+      29707,
+      37822,
+      79265
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 9326,
+    "score": 0.94,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "amount",
+        0.22
+      ],
+      [
+        "currency_mismatch",
+        0.15
+      ],
+      [
+        "hour_of_day",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      42681,
+      97744
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 51432,
+    "score": 0.94,
+    "confidence": 0.85,
+    "top_features": [
+      [
+        "amount",
+        0.46
+      ],
+      [
+        "payment_format",
+        0.32
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 51019,
+    "score": 0.9,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "in_degree",
+        0.42
+      ],
+      [
+        "payment_format",
+        0.4
+      ]
+    ],
+    "neighbors": [
+      10506,
+      49967,
+      52851,
+      87787,
+      93345
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 79104,
+    "score": 0.66,
+    "confidence": 0.64,
+    "top_features": [
+      [
+        "currency_mismatch",
+        0.21
+      ],
+      [
+        "out_degree",
+        0.21
+      ],
+      [
+        "same_day_outflows",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      23983,
+      30260,
+      50595,
+      78194,
+      88232
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 62348,
+    "score": 0.83,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "payment_format",
+        0.21
+      ],
+      [
+        "currency_mismatch",
+        0.19
+      ],
+      [
+        "amount",
+        0.18
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 70352,
+    "score": 0.82,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.35
+      ],
+      [
+        "cycle_length",
+        0.21
+      ],
+      [
+        "amount",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      1167,
+      7310,
+      51585,
+      58438
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 33953,
+    "score": 0.9,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "out_degree",
+        0.33
+      ],
+      [
+        "currency_mismatch",
+        0.32
+      ]
+    ],
+    "neighbors": [
+      10725,
+      14726,
+      23296,
+      45801,
+      50212
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 73512,
+    "score": 0.85,
+    "confidence": 0.8,
+    "top_features": [
+      [
+        "cross_bank",
+        0.17
+      ],
+      [
+        "cycle_length",
+        0.16
+      ],
+      [
+        "time_gap_hours",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      35768,
+      71795,
+      87585,
+      96679
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 2504,
+    "score": 0.64,
+    "confidence": 0.64,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.39
+      ],
+      [
+        "cycle_length",
+        0.23
+      ],
+      [
+        "amount",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      11739,
+      16139,
+      39248,
+      63071
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 90166,
+    "score": 0.83,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "in_degree",
+        0.46
+      ],
+      [
+        "payment_format",
+        0.29
+      ]
+    ],
+    "neighbors": [
+      9079,
+      20808,
+      74956,
+      92287,
+      99596
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 95466,
+    "score": 0.66,
+    "confidence": 0.54,
+    "top_features": [
+      [
+        "cross_bank",
+        0.46
+      ],
+      [
+        "time_gap_hours",
+        0.2
+      ],
+      [
+        "cycle_length",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      11348,
+      31886,
+      40171,
+      63424
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 16014,
+    "score": 0.84,
+    "confidence": 0.61,
+    "top_features": [
+      [
+        "amount",
+        0.32
+      ],
+      [
+        "currency_mismatch",
+        0.32
+      ],
+      [
+        "payment_format",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      20382,
+      78994
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 90353,
+    "score": 0.96,
+    "confidence": 0.73,
+    "top_features": [
+      [
+        "payment_format",
+        0.18
+      ],
+      [
+        "amount",
+        0.15
+      ],
+      [
+        "same_day_inflows",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      14237,
+      14845,
+      74752
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 71381,
+    "score": 0.84,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "cross_bank",
+        0.4
+      ],
+      [
+        "amount",
+        0.19
+      ],
+      [
+        "cycle_length",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      3651,
+      45284,
+      49816
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 99419,
+    "score": 0.74,
+    "confidence": 0.53,
+    "top_features": [
+      [
+        "out_degree",
+        0.51
+      ],
+      [
+        "same_day_outflows",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      8367,
+      50009,
+      64499,
+      68537,
+      68698,
+      98117
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 35973,
+    "score": 0.54,
+    "confidence": 0.55,
+    "top_features": [
+      [
+        "amount",
+        0.5
+      ],
+      [
+        "hour_of_day",
+        0.28
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 85012,
+    "score": 0.98,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "in_degree",
+        0.58
+      ],
+      [
+        "payment_format",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      22432,
+      34903,
+      46121,
+      46843,
+      73264,
+      77923
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 45587,
+    "score": 0.88,
+    "confidence": 0.8,
+    "top_features": [
+      [
+        "cross_bank",
+        0.47
+      ],
+      [
+        "time_gap_hours",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      2166,
+      3628,
+      63140,
+      90417
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 15621,
+    "score": 0.93,
+    "confidence": 0.93,
+    "top_features": [
+      [
+        "amount",
+        0.44
+      ],
+      [
+        "currency_mismatch",
+        0.3
+      ],
+      [
+        "hour_of_day",
+        0.1
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 39469,
+    "score": 0.91,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "hour_of_day",
+        0.21
+      ],
+      [
+        "payment_format",
+        0.16
+      ],
+      [
+        "currency_mismatch",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      9367
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 57985,
+    "score": 0.8,
+    "confidence": 0.77,
+    "top_features": [
+      [
+        "in_degree",
+        0.47
+      ],
+      [
+        "same_day_inflows",
+        0.27
+      ]
+    ],
+    "neighbors": [
+      35003,
+      39745,
+      51891,
+      54031,
+      55862,
+      97564
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 21730,
+    "score": 0.92,
+    "confidence": 0.88,
+    "top_features": [
+      [
+        "amount",
+        0.38
+      ],
+      [
+        "same_day_outflows",
+        0.21
+      ],
+      [
+        "currency_mismatch",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      13793,
+      17769,
+      39506,
+      62706
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 60470,
+    "score": 0.8,
+    "confidence": 0.68,
+    "top_features": [
+      [
+        "in_degree",
+        0.32
+      ],
+      [
+        "amount",
+        0.32
+      ],
+      [
+        "same_day_inflows",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      16704,
+      51026,
+      66598,
+      90220
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 1425,
+    "score": 0.8,
+    "confidence": 0.68,
+    "top_features": [
+      [
+        "amount",
+        0.46
+      ],
+      [
+        "hour_of_day",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      84165
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 95646,
+    "score": 0.97,
+    "confidence": 0.84,
+    "top_features": [
+      [
+        "cross_bank",
+        0.26
+      ],
+      [
+        "amount",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      1611,
+      5944,
+      51242
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 95329,
+    "score": 0.97,
+    "confidence": 0.95,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.39
+      ],
+      [
+        "amount",
+        0.29
+      ],
+      [
+        "cycle_length",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      6992,
+      9557,
+      22891
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 35522,
+    "score": 0.99,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "in_degree",
+        0.44
+      ],
+      [
+        "same_day_inflows",
+        0.27
+      ]
+    ],
+    "neighbors": [
+      23149,
+      67143,
+      78292
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 66612,
+    "score": 0.96,
+    "confidence": 0.9,
+    "top_features": [
+      [
+        "out_degree",
+        0.43
+      ],
+      [
+        "same_day_outflows",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      34126,
+      63180,
+      72733
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 24416,
+    "score": 0.92,
+    "confidence": 0.97,
+    "top_features": [
+      [
+        "out_degree",
+        0.26
+      ],
+      [
+        "amount",
+        0.23
+      ],
+      [
+        "currency_mismatch",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      14928,
+      15943,
+      38054
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 67542,
+    "score": 0.76,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.26
+      ],
+      [
+        "cross_bank",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      1358,
+      2671
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 14947,
+    "score": 0.67,
+    "confidence": 0.67,
+    "top_features": [
+      [
+        "amount",
+        0.37
+      ],
+      [
+        "currency_mismatch",
+        0.33
+      ]
+    ],
+    "neighbors": [
+      7014,
+      13451,
+      16191,
+      56836,
+      97801
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 82959,
+    "score": 0.84,
+    "confidence": 0.73,
+    "top_features": [
+      [
+        "amount",
+        0.32
+      ],
+      [
+        "hour_of_day",
+        0.28
+      ],
+      [
+        "currency_mismatch",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      36629
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 40117,
+    "score": 0.67,
+    "confidence": 0.65,
+    "top_features": [
+      [
+        "cross_bank",
+        0.3
+      ],
+      [
+        "amount",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      4777,
+      81131,
+      90714
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 84748,
+    "score": 0.71,
+    "confidence": 0.73,
+    "top_features": [
+      [
+        "cross_bank",
+        0.29
+      ],
+      [
+        "time_gap_hours",
+        0.22
+      ],
+      [
+        "cycle_length",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      30358,
+      75057,
+      88797,
+      95866
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 67540,
+    "score": 0.98,
+    "confidence": 0.84,
+    "top_features": [
+      [
+        "out_degree",
+        0.2
+      ],
+      [
+        "same_day_outflows",
+        0.15
+      ],
+      [
+        "amount",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      10812,
+      22679,
+      32574,
+      43026,
+      65441,
+      99491
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 80818,
+    "score": 0.85,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "in_degree",
+        0.42
+      ],
+      [
+        "amount",
+        0.41
+      ]
+    ],
+    "neighbors": [
+      3329,
+      14453,
+      53879,
+      55046,
+      86638,
+      98679
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 27071,
+    "score": 0.91,
+    "confidence": 0.92,
+    "top_features": [
+      [
+        "out_degree",
+        0.38
+      ],
+      [
+        "amount",
+        0.27
+      ],
+      [
+        "same_day_outflows",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      63014,
+      74420,
+      79636,
+      82232,
+      94933
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 21032,
+    "score": 0.65,
+    "confidence": 0.46,
+    "top_features": [
+      [
+        "in_degree",
+        0.41
+      ],
+      [
+        "amount",
+        0.24
+      ],
+      [
+        "payment_format",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      15019,
+      16826,
+      25581,
+      26679,
+      34330,
+      81065
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 50009,
+    "score": 0.84,
+    "confidence": 0.85,
+    "top_features": [
+      [
+        "amount",
+        0.33
+      ],
+      [
+        "same_day_outflows",
+        0.22
+      ],
+      [
+        "out_degree",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      57729,
+      73512,
+      77692
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 22174,
+    "score": 0.85,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "hour_of_day",
+        0.27
+      ],
+      [
+        "currency_mismatch",
+        0.17
+      ],
+      [
+        "amount",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      79974
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 71697,
+    "score": 0.96,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "out_degree",
+        0.28
+      ],
+      [
+        "amount",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      2673,
+      38477,
+      56363,
+      70979,
+      89374,
+      99024
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 70514,
+    "score": 0.71,
+    "confidence": 0.67,
+    "top_features": [
+      [
+        "out_degree",
+        0.3
+      ],
+      [
+        "same_day_outflows",
+        0.21
+      ],
+      [
+        "currency_mismatch",
+        0.11
+      ]
+    ],
+    "neighbors": [
+      14432,
+      30400,
+      74647,
+      81754,
+      89542,
+      97926
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 1074,
+    "score": 0.98,
+    "confidence": 0.97,
+    "top_features": [
+      [
+        "amount",
+        0.3
+      ],
+      [
+        "currency_mismatch",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      30563,
+      49200,
+      84071,
+      85886,
+      93357,
+      94001
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 79504,
+    "score": 0.75,
+    "confidence": 0.85,
+    "top_features": [
+      [
+        "amount",
+        0.36
+      ],
+      [
+        "payment_format",
+        0.26
+      ],
+      [
+        "currency_mismatch",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      1739
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 43487,
+    "score": 0.84,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "out_degree",
+        0.42
+      ],
+      [
+        "same_day_outflows",
+        0.39
+      ]
+    ],
+    "neighbors": [
+      9936,
+      25100,
+      67209,
+      69236
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 65042,
+    "score": 0.8,
+    "confidence": 0.68,
+    "top_features": [
+      [
+        "out_degree",
+        0.36
+      ],
+      [
+        "same_day_outflows",
+        0.28
+      ],
+      [
+        "amount",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      16036,
+      46351,
+      88679
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 3552,
+    "score": 0.88,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "amount",
+        0.52
+      ],
+      [
+        "currency_mismatch",
+        0.31
+      ]
+    ],
+    "neighbors": [
+      59400,
+      64806
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 15662,
+    "score": 0.96,
+    "confidence": 0.84,
+    "top_features": [
+      [
+        "cross_bank",
+        0.29
+      ],
+      [
+        "time_gap_hours",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      10452,
+      58047,
+      85746,
+      98173
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 48576,
+    "score": 0.93,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "out_degree",
+        0.35
+      ],
+      [
+        "same_day_outflows",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      3213,
+      16506,
+      42471,
+      52052,
+      71101,
+      89250
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 41306,
+    "score": 0.88,
+    "confidence": 0.9,
+    "top_features": [
+      [
+        "amount",
+        0.25
+      ],
+      [
+        "currency_mismatch",
+        0.23
+      ],
+      [
+        "payment_format",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      12338,
+      37899
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 32385,
+    "score": 0.95,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "out_degree",
+        0.27
+      ],
+      [
+        "same_day_outflows",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      2461,
+      17152,
+      19530,
+      73551,
+      73754
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 8592,
+    "score": 0.95,
+    "confidence": 0.83,
+    "top_features": [
+      [
+        "cross_bank",
+        0.22
+      ],
+      [
+        "cycle_length",
+        0.21
+      ],
+      [
+        "time_gap_hours",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      19671,
+      22096,
+      25116,
+      29939
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 32571,
+    "score": 0.94,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "in_degree",
+        0.29
+      ],
+      [
+        "amount",
+        0.24
+      ],
+      [
+        "payment_format",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      14113,
+      31740,
+      86914,
+      88988
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 75364,
+    "score": 0.9,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "cross_bank",
+        0.26
+      ],
+      [
+        "time_gap_hours",
+        0.17
+      ],
+      [
+        "amount",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      37264,
+      58163,
+      84995,
+      97969
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 11322,
+    "score": 0.59,
+    "confidence": 0.61,
+    "top_features": [
+      [
+        "out_degree",
+        0.29
+      ],
+      [
+        "same_day_outflows",
+        0.24
+      ]
+    ],
+    "neighbors": [
+      10882,
+      11022,
+      83132,
+      96345,
+      97147
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 12226,
+    "score": 0.75,
+    "confidence": 0.78,
+    "top_features": [
+      [
+        "amount",
+        0.31
+      ],
+      [
+        "cross_bank",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      48948,
+      52445
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 96932,
+    "score": 0.73,
+    "confidence": 0.73,
+    "top_features": [
+      [
+        "in_degree",
+        0.25
+      ],
+      [
+        "amount",
+        0.24
+      ],
+      [
+        "payment_format",
+        0.23
+      ]
+    ],
+    "neighbors": [
+      20162,
+      21869,
+      24480,
+      75162,
+      75233,
+      87430
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 64699,
+    "score": 0.98,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "payment_format",
+        0.32
+      ],
+      [
+        "same_day_inflows",
+        0.24
+      ],
+      [
+        "in_degree",
+        0.24
+      ]
+    ],
+    "neighbors": [
+      69337,
+      84042,
+      93240
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 10071,
+    "score": 0.88,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "cross_bank",
+        0.38
+      ],
+      [
+        "cycle_length",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      1864,
+      66776,
+      80195
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 70822,
+    "score": 0.94,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "cross_bank",
+        0.22
+      ],
+      [
+        "time_gap_hours",
+        0.16
+      ],
+      [
+        "cycle_length",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      15855,
+      64113,
+      95405
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 17483,
+    "score": 0.87,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "amount",
+        0.29
+      ],
+      [
+        "currency_mismatch",
+        0.28
+      ],
+      [
+        "same_day_outflows",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      87736,
+      95312,
+      96417
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 17828,
+    "score": 0.78,
+    "confidence": 0.72,
+    "top_features": [
+      [
+        "out_degree",
+        0.43
+      ],
+      [
+        "amount",
+        0.29
+      ]
+    ],
+    "neighbors": [
+      10023,
+      31122,
+      50572,
+      51523,
+      78410,
+      79188
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 87474,
+    "score": 0.79,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "amount",
+        0.24
+      ],
+      [
+        "payment_format",
+        0.24
+      ],
+      [
+        "hour_of_day",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      57557,
+      86096
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 63296,
+    "score": 0.96,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "out_degree",
+        0.39
+      ],
+      [
+        "amount",
+        0.19
+      ],
+      [
+        "same_day_outflows",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      11986,
+      38128,
+      72267,
+      79419
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 73063,
+    "score": 0.92,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "out_degree",
+        0.36
+      ],
+      [
+        "same_day_outflows",
+        0.31
+      ]
+    ],
+    "neighbors": [
+      37118,
+      48925,
+      53095,
+      75012,
+      81200,
+      90208
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 22643,
+    "score": 0.7,
+    "confidence": 0.8,
+    "top_features": [
+      [
+        "cross_bank",
+        0.35
+      ],
+      [
+        "time_gap_hours",
+        0.32
+      ]
+    ],
+    "neighbors": [
+      16608,
+      31116,
+      59536,
+      99017
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 35741,
+    "score": 0.97,
+    "confidence": 0.94,
+    "top_features": [
+      [
+        "amount",
+        0.57
+      ],
+      [
+        "same_day_outflows",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      38548,
+      53513,
+      69289,
+      81473,
+      87006,
+      94271
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 70163,
+    "score": 0.71,
+    "confidence": 0.67,
+    "top_features": [
+      [
+        "amount",
+        0.33
+      ],
+      [
+        "hour_of_day",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      31365,
+      81634
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 80507,
+    "score": 0.92,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "amount",
+        0.31
+      ],
+      [
+        "currency_mismatch",
+        0.28
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 56461,
+    "score": 0.9,
+    "confidence": 0.83,
+    "top_features": [
+      [
+        "amount",
+        0.3
+      ],
+      [
+        "payment_format",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      1609,
+      35223
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 28760,
+    "score": 0.82,
+    "confidence": 0.77,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.21
+      ],
+      [
+        "amount",
+        0.2
+      ],
+      [
+        "cycle_length",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      32886,
+      64390,
+      74815
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 71686,
+    "score": 0.9,
+    "confidence": 0.93,
+    "top_features": [
+      [
+        "in_degree",
+        0.31
+      ],
+      [
+        "same_day_inflows",
+        0.19
+      ],
+      [
+        "payment_format",
+        0.09
+      ]
+    ],
+    "neighbors": [
+      33539,
+      35517,
+      92857
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 99994,
+    "score": 0.69,
+    "confidence": 0.59,
+    "top_features": [
+      [
+        "amount",
+        0.48
+      ],
+      [
+        "payment_format",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      32726,
+      35787
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 96673,
+    "score": 0.69,
+    "confidence": 0.64,
+    "top_features": [
+      [
+        "cross_bank",
+        0.22
+      ],
+      [
+        "time_gap_hours",
+        0.21
+      ],
+      [
+        "amount",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      6539,
+      49653,
+      64214,
+      82352
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 91422,
+    "score": 0.83,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "cross_bank",
+        0.28
+      ],
+      [
+        "cycle_length",
+        0.2
+      ],
+      [
+        "time_gap_hours",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      16776,
+      60925
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 27365,
+    "score": 0.84,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "amount",
+        0.35
+      ],
+      [
+        "payment_format",
+        0.24
+      ]
+    ],
+    "neighbors": [
+      48962
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 94447,
+    "score": 0.67,
+    "confidence": 0.66,
+    "top_features": [
+      [
+        "in_degree",
+        0.35
+      ],
+      [
+        "amount",
+        0.31
+      ]
+    ],
+    "neighbors": [
+      2276,
+      20116,
+      20601,
+      26698,
+      62995,
+      97802
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 41857,
+    "score": 0.87,
+    "confidence": 0.73,
+    "top_features": [
+      [
+        "out_degree",
+        0.32
+      ],
+      [
+        "currency_mismatch",
+        0.25
+      ],
+      [
+        "same_day_outflows",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      8869,
+      13972,
+      22409,
+      29241,
+      34330,
+      91510
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 53296,
+    "score": 0.74,
+    "confidence": 0.58,
+    "top_features": [
+      [
+        "same_day_inflows",
+        0.34
+      ],
+      [
+        "in_degree",
+        0.25
+      ],
+      [
+        "amount",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      38304,
+      43610,
+      47544,
+      89236
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 89039,
+    "score": 0.9,
+    "confidence": 0.8,
+    "top_features": [
+      [
+        "currency_mismatch",
+        0.35
+      ],
+      [
+        "same_day_outflows",
+        0.24
+      ],
+      [
+        "amount",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      36058,
+      52833,
+      80349,
+      85494,
+      94117
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 86180,
+    "score": 0.95,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "out_degree",
+        0.21
+      ],
+      [
+        "same_day_outflows",
+        0.19
+      ],
+      [
+        "currency_mismatch",
+        0.11
+      ]
+    ],
+    "neighbors": [
+      12050,
+      21352,
+      52097,
+      82015,
+      86830
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 49944,
+    "score": 0.62,
+    "confidence": 0.53,
+    "top_features": [
+      [
+        "cross_bank",
+        0.34
+      ],
+      [
+        "amount",
+        0.34
+      ]
+    ],
+    "neighbors": [
+      18709,
+      59306,
+      71685,
+      92438
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 58422,
+    "score": 0.9,
+    "confidence": 0.88,
+    "top_features": [
+      [
+        "in_degree",
+        0.25
+      ],
+      [
+        "amount",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      2383,
+      21410,
+      35053,
+      40789,
+      55028
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 68839,
+    "score": 0.65,
+    "confidence": 0.51,
+    "top_features": [
+      [
+        "amount",
+        0.29
+      ],
+      [
+        "currency_mismatch",
+        0.19
+      ],
+      [
+        "hour_of_day",
+        0.13
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 60177,
+    "score": 0.88,
+    "confidence": 0.95,
+    "top_features": [
+      [
+        "in_degree",
+        0.3
+      ],
+      [
+        "amount",
+        0.17
+      ],
+      [
+        "same_day_inflows",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      36235,
+      38313,
+      70722,
+      85994,
+      98376
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 16860,
+    "score": 0.94,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "out_degree",
+        0.26
+      ],
+      [
+        "currency_mismatch",
+        0.18
+      ],
+      [
+        "amount",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      14405,
+      25371,
+      37977
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 33493,
+    "score": 0.9,
+    "confidence": 0.78,
+    "top_features": [
+      [
+        "in_degree",
+        0.24
+      ],
+      [
+        "payment_format",
+        0.22
+      ],
+      [
+        "same_day_inflows",
+        0.09
+      ]
+    ],
+    "neighbors": [
+      8345,
+      10356,
+      35931,
+      52435
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 30451,
+    "score": 0.98,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "out_degree",
+        0.28
+      ],
+      [
+        "currency_mismatch",
+        0.27
+      ],
+      [
+        "same_day_outflows",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      28321,
+      69306,
+      88294
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 9392,
+    "score": 0.87,
+    "confidence": 0.72,
+    "top_features": [
+      [
+        "cross_bank",
+        0.35
+      ],
+      [
+        "amount",
+        0.19
+      ],
+      [
+        "cycle_length",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      57906,
+      83956
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 45313,
+    "score": 0.87,
+    "confidence": 0.63,
+    "top_features": [
+      [
+        "out_degree",
+        0.38
+      ],
+      [
+        "amount",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      8834,
+      8871,
+      47598,
+      82937,
+      85485
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 3757,
+    "score": 0.84,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "out_degree",
+        0.5
+      ],
+      [
+        "currency_mismatch",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      25874,
+      39628,
+      65237,
+      72137,
+      74272,
+      92362
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 78110,
+    "score": 0.94,
+    "confidence": 0.92,
+    "top_features": [
+      [
+        "amount",
+        0.22
+      ],
+      [
+        "currency_mismatch",
+        0.2
+      ],
+      [
+        "hour_of_day",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      71989
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 73603,
+    "score": 0.91,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "out_degree",
+        0.41
+      ],
+      [
+        "amount",
+        0.11
+      ]
+    ],
+    "neighbors": [
+      15478,
+      43208,
+      43283,
+      54713,
+      85004
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 31161,
+    "score": 0.95,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "cross_bank",
+        0.4
+      ],
+      [
+        "cycle_length",
+        0.32
+      ],
+      [
+        "time_gap_hours",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      65213,
+      69920,
+      87235
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 78128,
+    "score": 0.87,
+    "confidence": 0.94,
+    "top_features": [
+      [
+        "amount",
+        0.37
+      ],
+      [
+        "currency_mismatch",
+        0.17
+      ],
+      [
+        "payment_format",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      8641,
+      81862
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 29864,
+    "score": 0.89,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "amount",
+        0.36
+      ],
+      [
+        "time_gap_hours",
+        0.26
+      ],
+      [
+        "cycle_length",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      24448,
+      74193,
+      82962,
+      99198
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 1942,
+    "score": 0.82,
+    "confidence": 0.93,
+    "top_features": [
+      [
+        "in_degree",
+        0.24
+      ],
+      [
+        "same_day_inflows",
+        0.2
+      ],
+      [
+        "amount",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      49722,
+      55046,
+      57438,
+      84000,
+      96140
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 10305,
+    "score": 0.71,
+    "confidence": 0.59,
+    "top_features": [
+      [
+        "in_degree",
+        0.36
+      ],
+      [
+        "payment_format",
+        0.24
+      ]
+    ],
+    "neighbors": [
+      68013,
+      73569,
+      73918,
+      75798,
+      75922
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 93778,
+    "score": 0.94,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "out_degree",
+        0.46
+      ],
+      [
+        "currency_mismatch",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      23662,
+      64246,
+      64999,
+      91386,
+      93123
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 83719,
+    "score": 0.73,
+    "confidence": 0.62,
+    "top_features": [
+      [
+        "out_degree",
+        0.44
+      ],
+      [
+        "same_day_outflows",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      6397,
+      8094,
+      40948,
+      42853,
+      69731,
+      71769
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 8716,
+    "score": 0.82,
+    "confidence": 0.75,
+    "top_features": [
+      [
+        "in_degree",
+        0.51
+      ],
+      [
+        "payment_format",
+        0.25
+      ]
+    ],
+    "neighbors": [
+      11819,
+      45062,
+      63371,
+      75899
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 31007,
+    "score": 0.73,
+    "confidence": 0.75,
+    "top_features": [
+      [
+        "cross_bank",
+        0.52
+      ],
+      [
+        "amount",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      74553,
+      81739
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 9834,
+    "score": 0.91,
+    "confidence": 0.84,
+    "top_features": [
+      [
+        "cross_bank",
+        0.23
+      ],
+      [
+        "amount",
+        0.18
+      ],
+      [
+        "cycle_length",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      23184,
+      46838,
+      81769
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 5117,
+    "score": 0.81,
+    "confidence": 0.75,
+    "top_features": [
+      [
+        "out_degree",
+        0.41
+      ],
+      [
+        "currency_mismatch",
+        0.26
+      ]
+    ],
+    "neighbors": [
+      2800,
+      38707,
+      45993,
+      91937
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 44309,
+    "score": 0.84,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "cross_bank",
+        0.45
+      ],
+      [
+        "cycle_length",
+        0.24
+      ]
+    ],
+    "neighbors": [
+      50362,
+      77415
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 10287,
+    "score": 0.9,
+    "confidence": 0.95,
+    "top_features": [
+      [
+        "cross_bank",
+        0.44
+      ],
+      [
+        "time_gap_hours",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      14055,
+      42347,
+      64525,
+      79263
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 68391,
+    "score": 0.98,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "cross_bank",
+        0.19
+      ],
+      [
+        "time_gap_hours",
+        0.17
+      ],
+      [
+        "amount",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      9127,
+      34774,
+      37159,
+      83023
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 32195,
+    "score": 0.86,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "out_degree",
+        0.45
+      ],
+      [
+        "same_day_outflows",
+        0.34
+      ]
+    ],
+    "neighbors": [
+      18271,
+      41944,
+      44160,
+      59873,
+      72071,
+      80346
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 37500,
+    "score": 0.96,
+    "confidence": 0.95,
+    "top_features": [
+      [
+        "in_degree",
+        0.41
+      ],
+      [
+        "amount",
+        0.39
+      ]
+    ],
+    "neighbors": [
+      9888,
+      42614,
+      70856,
+      74051
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 88684,
+    "score": 0.92,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "in_degree",
+        0.38
+      ],
+      [
+        "amount",
+        0.26
+      ]
+    ],
+    "neighbors": [
+      31266,
+      75323,
+      79166,
+      80377,
+      81263
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 64624,
+    "score": 0.89,
+    "confidence": 0.8,
+    "top_features": [
+      [
+        "amount",
+        0.39
+      ],
+      [
+        "same_day_inflows",
+        0.34
+      ],
+      [
+        "in_degree",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      2967,
+      5224,
+      30658,
+      54554
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 29080,
+    "score": 0.84,
+    "confidence": 0.8,
+    "top_features": [
+      [
+        "currency_mismatch",
+        0.19
+      ],
+      [
+        "hour_of_day",
+        0.14
+      ],
+      [
+        "amount",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      6482
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 71678,
+    "score": 0.73,
+    "confidence": 0.57,
+    "top_features": [
+      [
+        "amount",
+        0.3
+      ],
+      [
+        "hour_of_day",
+        0.27
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 18342,
+    "score": 0.7,
+    "confidence": 0.64,
+    "top_features": [
+      [
+        "cross_bank",
+        0.28
+      ],
+      [
+        "time_gap_hours",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      12854,
+      60204,
+      85685
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 95811,
+    "score": 0.78,
+    "confidence": 0.76,
+    "top_features": [
+      [
+        "in_degree",
+        0.35
+      ],
+      [
+        "same_day_inflows",
+        0.31
+      ]
+    ],
+    "neighbors": [
+      22495,
+      43477,
+      86010,
+      91664,
+      94253
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 75847,
+    "score": 0.92,
+    "confidence": 0.96,
+    "top_features": [
+      [
+        "in_degree",
+        0.52
+      ],
+      [
+        "payment_format",
+        0.31
+      ]
+    ],
+    "neighbors": [
+      19953,
+      20672,
+      22249,
+      75120,
+      87445
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 76525,
+    "score": 0.74,
+    "confidence": 0.73,
+    "top_features": [
+      [
+        "cross_bank",
+        0.28
+      ],
+      [
+        "amount",
+        0.21
+      ],
+      [
+        "cycle_length",
+        0.07
+      ]
+    ],
+    "neighbors": [
+      29426,
+      32179,
+      78183
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 62953,
+    "score": 0.81,
+    "confidence": 0.65,
+    "top_features": [
+      [
+        "out_degree",
+        0.34
+      ],
+      [
+        "amount",
+        0.12
+      ],
+      [
+        "same_day_outflows",
+        0.11
+      ]
+    ],
+    "neighbors": [
+      76771,
+      80073,
+      88424
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 32850,
+    "score": 0.85,
+    "confidence": 0.8,
+    "top_features": [
+      [
+        "out_degree",
+        0.28
+      ],
+      [
+        "currency_mismatch",
+        0.16
+      ],
+      [
+        "amount",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      13206,
+      40229,
+      43312
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 62993,
+    "score": 0.79,
+    "confidence": 0.67,
+    "top_features": [
+      [
+        "in_degree",
+        0.23
+      ],
+      [
+        "payment_format",
+        0.15
+      ],
+      [
+        "same_day_inflows",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      64394,
+      91263,
+      95905
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 54354,
+    "score": 0.84,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "amount",
+        0.38
+      ],
+      [
+        "same_day_outflows",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      1207,
+      4143,
+      16493,
+      61933
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 25957,
+    "score": 0.75,
+    "confidence": 0.62,
+    "top_features": [
+      [
+        "out_degree",
+        0.34
+      ],
+      [
+        "same_day_outflows",
+        0.34
+      ],
+      [
+        "amount",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      15920,
+      44684,
+      90893
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 13363,
+    "score": 0.84,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "in_degree",
+        0.34
+      ],
+      [
+        "amount",
+        0.25
+      ],
+      [
+        "same_day_inflows",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      8342,
+      40235,
+      69298,
+      75048,
+      96022,
+      98332
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 13704,
+    "score": 0.8,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "cross_bank",
+        0.29
+      ],
+      [
+        "amount",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      22753,
+      52061,
+      75839,
+      80388
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 87374,
+    "score": 0.85,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "in_degree",
+        0.27
+      ],
+      [
+        "amount",
+        0.24
+      ]
+    ],
+    "neighbors": [
+      5901,
+      27489,
+      50049
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 57498,
+    "score": 0.89,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "same_day_inflows",
+        0.25
+      ],
+      [
+        "amount",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      18395,
+      68652,
+      89698
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 47438,
+    "score": 0.97,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "amount",
+        0.34
+      ],
+      [
+        "hour_of_day",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      41957,
+      98721
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 56519,
+    "score": 0.77,
+    "confidence": 0.75,
+    "top_features": [
+      [
+        "cross_bank",
+        0.28
+      ],
+      [
+        "cycle_length",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      16002,
+      36866
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 54883,
+    "score": 0.96,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "amount",
+        0.32
+      ],
+      [
+        "currency_mismatch",
+        0.16
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 62213,
+    "score": 0.83,
+    "confidence": 0.72,
+    "top_features": [
+      [
+        "same_day_inflows",
+        0.59
+      ],
+      [
+        "payment_format",
+        0.23
+      ]
+    ],
+    "neighbors": [
+      26971,
+      41952,
+      44559,
+      47612,
+      81781,
+      94441
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 96561,
+    "score": 0.73,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "payment_format",
+        0.28
+      ],
+      [
+        "amount",
+        0.24
+      ],
+      [
+        "same_day_inflows",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      25032,
+      48638,
+      52390,
+      88186,
+      92699
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 8100,
+    "score": 0.75,
+    "confidence": 0.76,
+    "top_features": [
+      [
+        "cross_bank",
+        0.23
+      ],
+      [
+        "amount",
+        0.22
+      ],
+      [
+        "time_gap_hours",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      10296,
+      73895,
+      86124
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 89259,
+    "score": 0.78,
+    "confidence": 0.66,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.36
+      ],
+      [
+        "cross_bank",
+        0.31
+      ]
+    ],
+    "neighbors": [
+      23686,
+      31953,
+      87849,
+      88766
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 86649,
+    "score": 0.61,
+    "confidence": 0.53,
+    "top_features": [
+      [
+        "amount",
+        0.36
+      ],
+      [
+        "payment_format",
+        0.21
+      ],
+      [
+        "currency_mismatch",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      43914
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 85696,
+    "score": 0.9,
+    "confidence": 0.78,
+    "top_features": [
+      [
+        "amount",
+        0.29
+      ],
+      [
+        "currency_mismatch",
+        0.29
+      ],
+      [
+        "hour_of_day",
+        0.24
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 13899,
+    "score": 0.84,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "amount",
+        0.27
+      ],
+      [
+        "payment_format",
+        0.19
+      ],
+      [
+        "hour_of_day",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      9180
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 8944,
+    "score": 0.89,
+    "confidence": 0.85,
+    "top_features": [
+      [
+        "out_degree",
+        0.29
+      ],
+      [
+        "same_day_outflows",
+        0.24
+      ],
+      [
+        "amount",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      25671,
+      48223,
+      51409,
+      73800
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 53772,
+    "score": 0.96,
+    "confidence": 0.95,
+    "top_features": [
+      [
+        "in_degree",
+        0.17
+      ],
+      [
+        "same_day_inflows",
+        0.16
+      ],
+      [
+        "payment_format",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      24566,
+      56797,
+      60772,
+      80223,
+      82690,
+      92146
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 96448,
+    "score": 0.94,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "in_degree",
+        0.39
+      ],
+      [
+        "payment_format",
+        0.32
+      ],
+      [
+        "amount",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      64342,
+      75468,
+      93390
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 45473,
+    "score": 0.83,
+    "confidence": 0.77,
+    "top_features": [
+      [
+        "out_degree",
+        0.26
+      ],
+      [
+        "currency_mismatch",
+        0.24
+      ],
+      [
+        "amount",
+        0.24
+      ]
+    ],
+    "neighbors": [
+      71673,
+      84058,
+      90662
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 15322,
+    "score": 0.68,
+    "confidence": 0.71,
+    "top_features": [
+      [
+        "in_degree",
+        0.41
+      ],
+      [
+        "amount",
+        0.36
+      ]
+    ],
+    "neighbors": [
+      7765,
+      39240,
+      76085,
+      87025
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 33591,
+    "score": 0.92,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "cross_bank",
+        0.34
+      ],
+      [
+        "cycle_length",
+        0.17
+      ],
+      [
+        "amount",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      20809,
+      23886,
+      78564,
+      97857
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 26112,
+    "score": 0.69,
+    "confidence": 0.57,
+    "top_features": [
+      [
+        "cross_bank",
+        0.48
+      ],
+      [
+        "amount",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      22926,
+      58695,
+      84568,
+      96158
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 25931,
+    "score": 0.83,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "cross_bank",
+        0.39
+      ],
+      [
+        "cycle_length",
+        0.24
+      ],
+      [
+        "amount",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      31626,
+      50781,
+      90589,
+      93485
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 71292,
+    "score": 0.95,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "payment_format",
+        0.32
+      ],
+      [
+        "currency_mismatch",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      61438
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 59800,
+    "score": 0.96,
+    "confidence": 0.98,
+    "top_features": [
+      [
+        "in_degree",
+        0.58
+      ],
+      [
+        "amount",
+        0.23
+      ]
+    ],
+    "neighbors": [
+      26307,
+      34016,
+      38132,
+      96060
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 19373,
+    "score": 0.81,
+    "confidence": 0.77,
+    "top_features": [
+      [
+        "cross_bank",
+        0.45
+      ],
+      [
+        "amount",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      15528,
+      92180
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 56296,
+    "score": 0.83,
+    "confidence": 0.67,
+    "top_features": [
+      [
+        "amount",
+        0.25
+      ],
+      [
+        "payment_format",
+        0.23
+      ]
+    ],
+    "neighbors": [
+      22229
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 25050,
+    "score": 0.78,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "amount",
+        0.53
+      ],
+      [
+        "hour_of_day",
+        0.29
+      ]
+    ],
+    "neighbors": [
+      15212
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 37509,
+    "score": 0.67,
+    "confidence": 0.59,
+    "top_features": [
+      [
+        "out_degree",
+        0.35
+      ],
+      [
+        "currency_mismatch",
+        0.25
+      ]
+    ],
+    "neighbors": [
+      1113,
+      3459,
+      20510,
+      66234,
+      84930,
+      86572
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 61637,
+    "score": 0.88,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "cross_bank",
+        0.4
+      ],
+      [
+        "time_gap_hours",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      30602,
+      71795
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 33742,
+    "score": 0.84,
+    "confidence": 0.64,
+    "top_features": [
+      [
+        "amount",
+        0.32
+      ],
+      [
+        "hour_of_day",
+        0.16
+      ],
+      [
+        "currency_mismatch",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      12883,
+      48887
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 10880,
+    "score": 0.83,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "cycle_length",
+        0.43
+      ],
+      [
+        "amount",
+        0.27
+      ]
+    ],
+    "neighbors": [
+      5679,
+      19342,
+      25833,
+      26309
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 59082,
+    "score": 0.7,
+    "confidence": 0.7,
+    "top_features": [
+      [
+        "amount",
+        0.4
+      ],
+      [
+        "in_degree",
+        0.31
+      ]
+    ],
+    "neighbors": [
+      61079,
+      69566,
+      86701,
+      88466
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 73132,
+    "score": 0.92,
+    "confidence": 0.83,
+    "top_features": [
+      [
+        "in_degree",
+        0.51
+      ],
+      [
+        "amount",
+        0.33
+      ]
+    ],
+    "neighbors": [
+      14937,
+      15965,
+      66161
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 13833,
+    "score": 0.76,
+    "confidence": 0.72,
+    "top_features": [
+      [
+        "out_degree",
+        0.41
+      ],
+      [
+        "amount",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      6975,
+      23734,
+      44975,
+      78736
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 7630,
+    "score": 0.92,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "cross_bank",
+        0.38
+      ],
+      [
+        "cycle_length",
+        0.31
+      ]
+    ],
+    "neighbors": [
+      3048,
+      64827
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 86477,
+    "score": 0.88,
+    "confidence": 0.77,
+    "top_features": [
+      [
+        "cross_bank",
+        0.17
+      ],
+      [
+        "cycle_length",
+        0.16
+      ],
+      [
+        "time_gap_hours",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      36513,
+      84863
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 71855,
+    "score": 0.76,
+    "confidence": 0.93,
+    "top_features": [
+      [
+        "amount",
+        0.33
+      ],
+      [
+        "currency_mismatch",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      48435,
+      71742
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 2934,
+    "score": 0.88,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "out_degree",
+        0.2
+      ],
+      [
+        "currency_mismatch",
+        0.16
+      ],
+      [
+        "same_day_outflows",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      8081,
+      48735,
+      85523
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 13224,
+    "score": 0.98,
+    "confidence": 0.98,
+    "top_features": [
+      [
+        "cross_bank",
+        0.2
+      ],
+      [
+        "time_gap_hours",
+        0.2
+      ],
+      [
+        "amount",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      43725,
+      76990,
+      78687
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 99771,
+    "score": 0.94,
+    "confidence": 0.92,
+    "top_features": [
+      [
+        "in_degree",
+        0.22
+      ],
+      [
+        "payment_format",
+        0.19
+      ],
+      [
+        "amount",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      19997,
+      29333,
+      58129
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 31982,
+    "score": 0.72,
+    "confidence": 0.59,
+    "top_features": [
+      [
+        "in_degree",
+        0.59
+      ],
+      [
+        "same_day_inflows",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      21550,
+      29816,
+      39687,
+      80119,
+      84623
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 22798,
+    "score": 0.94,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "in_degree",
+        0.32
+      ],
+      [
+        "payment_format",
+        0.21
+      ],
+      [
+        "amount",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      1665,
+      20525,
+      76196,
+      78564
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 54269,
+    "score": 0.72,
+    "confidence": 0.62,
+    "top_features": [
+      [
+        "cross_bank",
+        0.49
+      ],
+      [
+        "time_gap_hours",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      32334,
+      39769,
+      85887
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 64653,
+    "score": 0.55,
+    "confidence": 0.53,
+    "top_features": [
+      [
+        "out_degree",
+        0.3
+      ],
+      [
+        "currency_mismatch",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      25241,
+      49551,
+      61856,
+      83157,
+      84021,
+      93261
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 64092,
+    "score": 0.76,
+    "confidence": 0.71,
+    "top_features": [
+      [
+        "in_degree",
+        0.41
+      ],
+      [
+        "payment_format",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      8184,
+      48708,
+      68467,
+      89428,
+      97437
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 29016,
+    "score": 0.92,
+    "confidence": 0.84,
+    "top_features": [
+      [
+        "out_degree",
+        0.25
+      ],
+      [
+        "currency_mismatch",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      28498,
+      77037,
+      93123,
+      97649,
+      99602,
+      99719
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 53565,
+    "score": 0.81,
+    "confidence": 0.83,
+    "top_features": [
+      [
+        "in_degree",
+        0.34
+      ],
+      [
+        "amount",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      9601,
+      25687,
+      61014,
+      89251,
+      91862
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 8685,
+    "score": 0.83,
+    "confidence": 0.73,
+    "top_features": [
+      [
+        "cross_bank",
+        0.3
+      ],
+      [
+        "time_gap_hours",
+        0.15
+      ],
+      [
+        "cycle_length",
+        0.09
+      ]
+    ],
+    "neighbors": [
+      18305,
+      46442,
+      63115,
+      71966
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 22579,
+    "score": 0.91,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "amount",
+        0.22
+      ],
+      [
+        "currency_mismatch",
+        0.2
+      ],
+      [
+        "payment_format",
+        0.11
+      ]
+    ],
+    "neighbors": [
+      70489,
+      72888
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 50672,
+    "score": 0.92,
+    "confidence": 0.96,
+    "top_features": [
+      [
+        "in_degree",
+        0.4
+      ],
+      [
+        "amount",
+        0.14
+      ],
+      [
+        "same_day_inflows",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      22075,
+      71165,
+      82085,
+      94298
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 1282,
+    "score": 0.71,
+    "confidence": 0.71,
+    "top_features": [
+      [
+        "amount",
+        0.32
+      ],
+      [
+        "payment_format",
+        0.21
+      ],
+      [
+        "same_day_inflows",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      4266,
+      16923,
+      22311,
+      40526,
+      70945,
+      71761
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 52173,
+    "score": 0.64,
+    "confidence": 0.59,
+    "top_features": [
+      [
+        "out_degree",
+        0.42
+      ],
+      [
+        "amount",
+        0.37
+      ]
+    ],
+    "neighbors": [
+      6253,
+      15721,
+      45392,
+      63781,
+      91327,
+      96897
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 35760,
+    "score": 0.94,
+    "confidence": 0.88,
+    "top_features": [
+      [
+        "in_degree",
+        0.41
+      ],
+      [
+        "same_day_inflows",
+        0.23
+      ],
+      [
+        "amount",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      12452,
+      26486,
+      52697,
+      68081,
+      89022,
+      89744
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 60638,
+    "score": 0.86,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "payment_format",
+        0.27
+      ],
+      [
+        "in_degree",
+        0.25
+      ],
+      [
+        "amount",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      29271,
+      59224,
+      96401
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 38388,
+    "score": 0.77,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "cross_bank",
+        0.22
+      ],
+      [
+        "time_gap_hours",
+        0.21
+      ],
+      [
+        "amount",
+        0.09
+      ]
+    ],
+    "neighbors": [
+      1867,
+      12593,
+      54668
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 56444,
+    "score": 0.69,
+    "confidence": 0.59,
+    "top_features": [
+      [
+        "amount",
+        0.43
+      ],
+      [
+        "payment_format",
+        0.27
+      ]
+    ],
+    "neighbors": [
+      30428,
+      61745,
+      65762,
+      74306,
+      97974
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 92303,
+    "score": 0.95,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "cross_bank",
+        0.3
+      ],
+      [
+        "time_gap_hours",
+        0.24
+      ],
+      [
+        "amount",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      9745,
+      65625,
+      79497
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 96748,
+    "score": 0.97,
+    "confidence": 0.9,
+    "top_features": [
+      [
+        "cross_bank",
+        0.24
+      ],
+      [
+        "time_gap_hours",
+        0.15
+      ],
+      [
+        "amount",
+        0.09
+      ]
+    ],
+    "neighbors": [
+      7932,
+      18759,
+      22405,
+      47843
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 73845,
+    "score": 0.82,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "cross_bank",
+        0.3
+      ],
+      [
+        "time_gap_hours",
+        0.22
+      ],
+      [
+        "amount",
+        0.08
+      ]
+    ],
+    "neighbors": [
+      36580,
+      40462,
+      90842,
+      92483
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 87752,
+    "score": 0.9,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "in_degree",
+        0.31
+      ],
+      [
+        "payment_format",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      11013,
+      55702,
+      61357
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 95163,
+    "score": 0.7,
+    "confidence": 0.63,
+    "top_features": [
+      [
+        "in_degree",
+        0.37
+      ],
+      [
+        "payment_format",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      15643,
+      56680,
+      91546
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 64788,
+    "score": 0.95,
+    "confidence": 0.95,
+    "top_features": [
+      [
+        "amount",
+        0.42
+      ],
+      [
+        "same_day_outflows",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      2346,
+      40537,
+      88501
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 21289,
+    "score": 0.97,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "amount",
+        0.49
+      ],
+      [
+        "cross_bank",
+        0.34
+      ]
+    ],
+    "neighbors": [
+      2832,
+      9957,
+      13989,
+      76777
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 25890,
+    "score": 0.67,
+    "confidence": 0.56,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.25
+      ],
+      [
+        "cycle_length",
+        0.24
+      ]
+    ],
+    "neighbors": [
+      15067,
+      25264,
+      58627,
+      89280
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 39890,
+    "score": 0.89,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "amount",
+        0.39
+      ],
+      [
+        "payment_format",
+        0.35
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 29534,
+    "score": 0.84,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "out_degree",
+        0.36
+      ],
+      [
+        "same_day_outflows",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      2675,
+      24500,
+      49161,
+      65441,
+      89363,
+      90015
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 8665,
+    "score": 0.97,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "same_day_inflows",
+        0.24
+      ],
+      [
+        "amount",
+        0.23
+      ],
+      [
+        "payment_format",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      17090,
+      31522,
+      37505,
+      56666,
+      66419,
+      96053
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 76914,
+    "score": 0.83,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.41
+      ],
+      [
+        "amount",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      4895,
+      14055
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 97434,
+    "score": 0.67,
+    "confidence": 0.52,
+    "top_features": [
+      [
+        "in_degree",
+        0.44
+      ],
+      [
+        "same_day_inflows",
+        0.26
+      ],
+      [
+        "amount",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      27467,
+      39477,
+      65258,
+      66260,
+      67164,
+      87781
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 72066,
+    "score": 0.8,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "same_day_inflows",
+        0.22
+      ],
+      [
+        "in_degree",
+        0.22
+      ],
+      [
+        "amount",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      18627,
+      22514,
+      57450,
+      65419,
+      93544
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 8989,
+    "score": 0.83,
+    "confidence": 0.73,
+    "top_features": [
+      [
+        "amount",
+        0.47
+      ],
+      [
+        "payment_format",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      43006
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 99038,
+    "score": 0.92,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "out_degree",
+        0.27
+      ],
+      [
+        "currency_mismatch",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      8398,
+      33011,
+      47041,
+      54992,
+      87670
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 42104,
+    "score": 0.86,
+    "confidence": 0.88,
+    "top_features": [
+      [
+        "in_degree",
+        0.34
+      ],
+      [
+        "payment_format",
+        0.26
+      ],
+      [
+        "same_day_inflows",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      3674,
+      3914,
+      35946,
+      62564,
+      78068,
+      92220
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 8492,
+    "score": 0.89,
+    "confidence": 0.76,
+    "top_features": [
+      [
+        "in_degree",
+        0.46
+      ],
+      [
+        "amount",
+        0.31
+      ]
+    ],
+    "neighbors": [
+      10872,
+      27444,
+      58146,
+      66136,
+      84288
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 7572,
+    "score": 0.92,
+    "confidence": 0.78,
+    "top_features": [
+      [
+        "out_degree",
+        0.28
+      ],
+      [
+        "currency_mismatch",
+        0.25
+      ],
+      [
+        "amount",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      11048,
+      40309,
+      40563,
+      67144,
+      86398
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 77569,
+    "score": 0.91,
+    "confidence": 0.85,
+    "top_features": [
+      [
+        "in_degree",
+        0.31
+      ],
+      [
+        "same_day_inflows",
+        0.21
+      ],
+      [
+        "amount",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      28912,
+      36118,
+      62249,
+      84614,
+      87613,
+      98282
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 63493,
+    "score": 0.92,
+    "confidence": 0.92,
+    "top_features": [
+      [
+        "in_degree",
+        0.43
+      ],
+      [
+        "amount",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      31950,
+      32258,
+      54197,
+      79804,
+      91027
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 66909,
+    "score": 0.94,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "out_degree",
+        0.23
+      ],
+      [
+        "amount",
+        0.22
+      ],
+      [
+        "currency_mismatch",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      6535,
+      24066,
+      73182,
+      85448,
+      87333
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 70615,
+    "score": 0.77,
+    "confidence": 0.57,
+    "top_features": [
+      [
+        "in_degree",
+        0.2
+      ],
+      [
+        "same_day_inflows",
+        0.18
+      ],
+      [
+        "payment_format",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      12829,
+      17027,
+      32205,
+      66070,
+      79619
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 21635,
+    "score": 0.79,
+    "confidence": 0.72,
+    "top_features": [
+      [
+        "cross_bank",
+        0.22
+      ],
+      [
+        "cycle_length",
+        0.2
+      ],
+      [
+        "amount",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      65272,
+      70922
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 8455,
+    "score": 0.78,
+    "confidence": 0.63,
+    "top_features": [
+      [
+        "out_degree",
+        0.4
+      ],
+      [
+        "currency_mismatch",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      8166,
+      87798,
+      97921
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 67562,
+    "score": 0.91,
+    "confidence": 0.73,
+    "top_features": [
+      [
+        "amount",
+        0.23
+      ],
+      [
+        "payment_format",
+        0.21
+      ],
+      [
+        "hour_of_day",
+        0.18
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 11500,
+    "score": 0.93,
+    "confidence": 0.85,
+    "top_features": [
+      [
+        "cross_bank",
+        0.23
+      ],
+      [
+        "amount",
+        0.21
+      ],
+      [
+        "time_gap_hours",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      22016,
+      92551
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 25356,
+    "score": 0.62,
+    "confidence": 0.41,
+    "top_features": [
+      [
+        "cross_bank",
+        0.37
+      ],
+      [
+        "amount",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      1403,
+      53515
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 9981,
+    "score": 0.97,
+    "confidence": 0.76,
+    "top_features": [
+      [
+        "amount",
+        0.27
+      ],
+      [
+        "out_degree",
+        0.26
+      ],
+      [
+        "currency_mismatch",
+        0.26
+      ]
+    ],
+    "neighbors": [
+      18499,
+      23738,
+      35167,
+      63700,
+      91107,
+      97360
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 78992,
+    "score": 0.86,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "out_degree",
+        0.29
+      ],
+      [
+        "currency_mismatch",
+        0.24
+      ],
+      [
+        "amount",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      7525,
+      53564,
+      57217,
+      82003
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 9907,
+    "score": 0.95,
+    "confidence": 0.95,
+    "top_features": [
+      [
+        "amount",
+        0.34
+      ],
+      [
+        "hour_of_day",
+        0.23
+      ],
+      [
+        "payment_format",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      38743
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 89501,
+    "score": 0.89,
+    "confidence": 0.98,
+    "top_features": [
+      [
+        "in_degree",
+        0.32
+      ],
+      [
+        "amount",
+        0.29
+      ]
+    ],
+    "neighbors": [
+      33547,
+      49449,
+      61052,
+      77402,
+      85834,
+      90688
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 31828,
+    "score": 0.77,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "cross_bank",
+        0.37
+      ],
+      [
+        "time_gap_hours",
+        0.24
+      ]
+    ],
+    "neighbors": [
+      47439,
+      62726
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 53923,
+    "score": 0.85,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "in_degree",
+        0.44
+      ],
+      [
+        "payment_format",
+        0.36
+      ]
+    ],
+    "neighbors": [
+      12750,
+      18290,
+      42591,
+      57744,
+      70523,
+      94094
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 16713,
+    "score": 0.93,
+    "confidence": 0.78,
+    "top_features": [
+      [
+        "amount",
+        0.27
+      ],
+      [
+        "payment_format",
+        0.23
+      ],
+      [
+        "hour_of_day",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      68760
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 75668,
+    "score": 0.94,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "amount",
+        0.28
+      ],
+      [
+        "hour_of_day",
+        0.19
+      ],
+      [
+        "payment_format",
+        0.16
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 33271,
+    "score": 0.92,
+    "confidence": 0.83,
+    "top_features": [
+      [
+        "cross_bank",
+        0.32
+      ],
+      [
+        "cycle_length",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      36755,
+      67681,
+      74825,
+      87918
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 76880,
+    "score": 0.83,
+    "confidence": 0.92,
+    "top_features": [
+      [
+        "cross_bank",
+        0.33
+      ],
+      [
+        "cycle_length",
+        0.28
+      ],
+      [
+        "amount",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      14902,
+      49963,
+      78376
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 78924,
+    "score": 0.54,
+    "confidence": 0.43,
+    "top_features": [
+      [
+        "out_degree",
+        0.28
+      ],
+      [
+        "same_day_outflows",
+        0.28
+      ],
+      [
+        "currency_mismatch",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      7380,
+      28704,
+      38087,
+      85363
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 6209,
+    "score": 0.65,
+    "confidence": 0.72,
+    "top_features": [
+      [
+        "amount",
+        0.33
+      ],
+      [
+        "payment_format",
+        0.24
+      ],
+      [
+        "in_degree",
+        0.23
+      ]
+    ],
+    "neighbors": [
+      16807,
+      40131,
+      57670,
+      65336
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 82183,
+    "score": 0.73,
+    "confidence": 0.62,
+    "top_features": [
+      [
+        "in_degree",
+        0.45
+      ],
+      [
+        "same_day_inflows",
+        0.26
+      ]
+    ],
+    "neighbors": [
+      6300,
+      13182,
+      45793,
+      61755,
+      68284,
+      89662
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 11745,
+    "score": 0.77,
+    "confidence": 0.66,
+    "top_features": [
+      [
+        "in_degree",
+        0.48
+      ],
+      [
+        "payment_format",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      6910,
+      11031,
+      73219
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 55948,
+    "score": 0.77,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "cross_bank",
+        0.38
+      ],
+      [
+        "time_gap_hours",
+        0.25
+      ]
+    ],
+    "neighbors": [
+      6932,
+      52505
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 87163,
+    "score": 0.94,
+    "confidence": 0.85,
+    "top_features": [
+      [
+        "out_degree",
+        0.45
+      ],
+      [
+        "amount",
+        0.27
+      ]
+    ],
+    "neighbors": [
+      3348,
+      14936,
+      57858,
+      71041,
+      89265
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 77503,
+    "score": 0.76,
+    "confidence": 0.65,
+    "top_features": [
+      [
+        "amount",
+        0.28
+      ],
+      [
+        "payment_format",
+        0.25
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 75085,
+    "score": 0.91,
+    "confidence": 0.9,
+    "top_features": [
+      [
+        "cross_bank",
+        0.55
+      ],
+      [
+        "cycle_length",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      12284,
+      26023,
+      40441,
+      61742
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 69522,
+    "score": 0.85,
+    "confidence": 0.75,
+    "top_features": [
+      [
+        "same_day_inflows",
+        0.33
+      ],
+      [
+        "payment_format",
+        0.28
+      ],
+      [
+        "amount",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      2032,
+      7674,
+      14456,
+      44758,
+      83629,
+      94466
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 42467,
+    "score": 0.99,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "amount",
+        0.28
+      ],
+      [
+        "hour_of_day",
+        0.28
+      ],
+      [
+        "currency_mismatch",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      9324,
+      36107
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 35179,
+    "score": 0.78,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "amount",
+        0.2
+      ],
+      [
+        "same_day_inflows",
+        0.19
+      ],
+      [
+        "in_degree",
+        0.11
+      ]
+    ],
+    "neighbors": [
+      18191,
+      39455,
+      52166,
+      55638,
+      94242,
+      95764
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 27772,
+    "score": 0.88,
+    "confidence": 0.76,
+    "top_features": [
+      [
+        "amount",
+        0.46
+      ],
+      [
+        "cycle_length",
+        0.32
+      ]
+    ],
+    "neighbors": [
+      28450,
+      31765,
+      73984
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 88782,
+    "score": 0.94,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "amount",
+        0.35
+      ],
+      [
+        "currency_mismatch",
+        0.22
+      ],
+      [
+        "payment_format",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      7117
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 94872,
+    "score": 0.6,
+    "confidence": 0.62,
+    "top_features": [
+      [
+        "amount",
+        0.38
+      ],
+      [
+        "cross_bank",
+        0.37
+      ]
+    ],
+    "neighbors": [
+      6501,
+      14816,
+      22895,
+      67493
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 42180,
+    "score": 0.94,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "in_degree",
+        0.32
+      ],
+      [
+        "amount",
+        0.2
+      ],
+      [
+        "payment_format",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      33154,
+      45737,
+      63084
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 32285,
+    "score": 0.95,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.27
+      ],
+      [
+        "cross_bank",
+        0.22
+      ],
+      [
+        "amount",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      54648,
+      61129,
+      68653
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 35814,
+    "score": 0.92,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "in_degree",
+        0.35
+      ],
+      [
+        "same_day_inflows",
+        0.22
+      ],
+      [
+        "payment_format",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      83786,
+      87554,
+      94502
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 52876,
+    "score": 0.88,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "amount",
+        0.3
+      ],
+      [
+        "currency_mismatch",
+        0.27
+      ],
+      [
+        "hour_of_day",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      82027,
+      82836
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 18154,
+    "score": 0.87,
+    "confidence": 0.84,
+    "top_features": [
+      [
+        "payment_format",
+        0.4
+      ],
+      [
+        "in_degree",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      4069,
+      21975,
+      45657,
+      69332,
+      84320
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 85607,
+    "score": 0.94,
+    "confidence": 0.98,
+    "top_features": [
+      [
+        "in_degree",
+        0.35
+      ],
+      [
+        "same_day_inflows",
+        0.3
+      ],
+      [
+        "amount",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      7256,
+      17351,
+      86322
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 40321,
+    "score": 0.89,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "out_degree",
+        0.33
+      ],
+      [
+        "same_day_outflows",
+        0.26
+      ]
+    ],
+    "neighbors": [
+      50501,
+      69113,
+      94631,
+      97667
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 60929,
+    "score": 0.89,
+    "confidence": 0.72,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.27
+      ],
+      [
+        "amount",
+        0.26
+      ],
+      [
+        "cycle_length",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      53789,
+      69019,
+      74265,
+      78101
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 42441,
+    "score": 0.74,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "in_degree",
+        0.22
+      ],
+      [
+        "amount",
+        0.2
+      ],
+      [
+        "payment_format",
+        0.07
+      ]
+    ],
+    "neighbors": [
+      28871,
+      60694,
+      92025
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 99548,
+    "score": 0.93,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "same_day_inflows",
+        0.38
+      ],
+      [
+        "in_degree",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      4667,
+      19726,
+      39532,
+      40748,
+      64691
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 10508,
+    "score": 0.97,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.51
+      ],
+      [
+        "cycle_length",
+        0.23
+      ]
+    ],
+    "neighbors": [
+      50454,
+      63289,
+      95376
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 2220,
+    "score": 0.89,
+    "confidence": 0.92,
+    "top_features": [
+      [
+        "cross_bank",
+        0.25
+      ],
+      [
+        "cycle_length",
+        0.23
+      ],
+      [
+        "time_gap_hours",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      7005,
+      71909,
+      88876
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 61068,
+    "score": 0.8,
+    "confidence": 0.85,
+    "top_features": [
+      [
+        "cross_bank",
+        0.46
+      ],
+      [
+        "time_gap_hours",
+        0.31
+      ]
+    ],
+    "neighbors": [
+      63368,
+      99377
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 82416,
+    "score": 0.89,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "cross_bank",
+        0.31
+      ],
+      [
+        "amount",
+        0.18
+      ],
+      [
+        "time_gap_hours",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      6896,
+      42999,
+      53664,
+      78187
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 74792,
+    "score": 0.96,
+    "confidence": 0.96,
+    "top_features": [
+      [
+        "cross_bank",
+        0.56
+      ],
+      [
+        "amount",
+        0.25
+      ]
+    ],
+    "neighbors": [
+      13942,
+      42948,
+      52110
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 14104,
+    "score": 0.87,
+    "confidence": 0.94,
+    "top_features": [
+      [
+        "cross_bank",
+        0.31
+      ],
+      [
+        "amount",
+        0.28
+      ],
+      [
+        "cycle_length",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      8947,
+      16083,
+      36296,
+      51469
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 10602,
+    "score": 0.8,
+    "confidence": 0.72,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.45
+      ],
+      [
+        "amount",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      49929,
+      71836
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 71468,
+    "score": 0.99,
+    "confidence": 0.9,
+    "top_features": [
+      [
+        "currency_mismatch",
+        0.32
+      ],
+      [
+        "payment_format",
+        0.3
+      ],
+      [
+        "amount",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      36822
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 28938,
+    "score": 0.76,
+    "confidence": 0.61,
+    "top_features": [
+      [
+        "out_degree",
+        0.18
+      ],
+      [
+        "same_day_outflows",
+        0.15
+      ],
+      [
+        "currency_mismatch",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      35257,
+      45909,
+      84252,
+      90404,
+      99657
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 67307,
+    "score": 0.75,
+    "confidence": 0.75,
+    "top_features": [
+      [
+        "same_day_outflows",
+        0.45
+      ],
+      [
+        "currency_mismatch",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      11161,
+      11636,
+      52483,
+      71533,
+      86078,
+      86362
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 18361,
+    "score": 0.66,
+    "confidence": 0.66,
+    "top_features": [
+      [
+        "currency_mismatch",
+        0.4
+      ],
+      [
+        "out_degree",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      2227,
+      30035,
+      59271,
+      98405
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 46745,
+    "score": 0.82,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "same_day_outflows",
+        0.36
+      ],
+      [
+        "out_degree",
+        0.32
+      ]
+    ],
+    "neighbors": [
+      1935,
+      26701,
+      52915,
+      84681
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 10016,
+    "score": 0.92,
+    "confidence": 0.88,
+    "top_features": [
+      [
+        "out_degree",
+        0.17
+      ],
+      [
+        "currency_mismatch",
+        0.17
+      ],
+      [
+        "amount",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      4030,
+      26146,
+      89832,
+      89864,
+      91831
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 33018,
+    "score": 0.89,
+    "confidence": 0.94,
+    "top_features": [
+      [
+        "amount",
+        0.29
+      ],
+      [
+        "payment_format",
+        0.2
+      ],
+      [
+        "currency_mismatch",
+        0.08
+      ]
+    ],
+    "neighbors": [
+      65955
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 49434,
+    "score": 0.65,
+    "confidence": 0.62,
+    "top_features": [
+      [
+        "in_degree",
+        0.41
+      ],
+      [
+        "same_day_inflows",
+        0.18
+      ],
+      [
+        "amount",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      22558,
+      26805,
+      33765
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 38353,
+    "score": 0.67,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "currency_mismatch",
+        0.21
+      ],
+      [
+        "hour_of_day",
+        0.19
+      ],
+      [
+        "amount",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      10556,
+      32030
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 21676,
+    "score": 0.76,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "amount",
+        0.18
+      ],
+      [
+        "currency_mismatch",
+        0.17
+      ],
+      [
+        "hour_of_day",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      7842,
+      39655
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 58433,
+    "score": 0.86,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "in_degree",
+        0.54
+      ],
+      [
+        "amount",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      44017,
+      60516,
+      68792
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 72200,
+    "score": 0.92,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "cross_bank",
+        0.47
+      ],
+      [
+        "time_gap_hours",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      6776,
+      19045
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 93214,
+    "score": 0.97,
+    "confidence": 0.84,
+    "top_features": [
+      [
+        "in_degree",
+        0.27
+      ],
+      [
+        "same_day_inflows",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      2059,
+      39150,
+      49343,
+      68853,
+      77865
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 40651,
+    "score": 0.88,
+    "confidence": 0.8,
+    "top_features": [
+      [
+        "in_degree",
+        0.31
+      ],
+      [
+        "amount",
+        0.3
+      ],
+      [
+        "payment_format",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      40273,
+      44995,
+      75199,
+      76813,
+      81753
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 81173,
+    "score": 0.94,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "out_degree",
+        0.29
+      ],
+      [
+        "amount",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      25149,
+      27911,
+      50271,
+      53469,
+      98003
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 86717,
+    "score": 0.9,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "in_degree",
+        0.27
+      ],
+      [
+        "amount",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      23843,
+      35340,
+      45540,
+      95219
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 70329,
+    "score": 0.85,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "currency_mismatch",
+        0.45
+      ],
+      [
+        "hour_of_day",
+        0.37
+      ]
+    ],
+    "neighbors": [
+      49804
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 2025,
+    "score": 0.8,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "currency_mismatch",
+        0.31
+      ],
+      [
+        "out_degree",
+        0.2
+      ],
+      [
+        "same_day_outflows",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      25785,
+      77981,
+      81744
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 88538,
+    "score": 0.7,
+    "confidence": 0.64,
+    "top_features": [
+      [
+        "out_degree",
+        0.32
+      ],
+      [
+        "currency_mismatch",
+        0.22
+      ],
+      [
+        "amount",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      22945,
+      51871,
+      67665
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 73692,
+    "score": 0.97,
+    "confidence": 0.96,
+    "top_features": [
+      [
+        "in_degree",
+        0.23
+      ],
+      [
+        "amount",
+        0.18
+      ],
+      [
+        "same_day_inflows",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      21605,
+      29651,
+      41107,
+      50425,
+      56708,
+      75890
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 40240,
+    "score": 0.85,
+    "confidence": 0.95,
+    "top_features": [
+      [
+        "cross_bank",
+        0.32
+      ],
+      [
+        "amount",
+        0.15
+      ],
+      [
+        "cycle_length",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      36785,
+      42552,
+      66213
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 87951,
+    "score": 0.91,
+    "confidence": 0.92,
+    "top_features": [
+      [
+        "in_degree",
+        0.39
+      ],
+      [
+        "same_day_inflows",
+        0.21
+      ],
+      [
+        "payment_format",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      26774,
+      44154,
+      44746,
+      89487
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 14577,
+    "score": 0.89,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "amount",
+        0.36
+      ],
+      [
+        "out_degree",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      2558,
+      62866,
+      68193,
+      77015,
+      86733,
+      86892
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 18601,
+    "score": 0.96,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "out_degree",
+        0.41
+      ],
+      [
+        "amount",
+        0.24
+      ]
+    ],
+    "neighbors": [
+      4945,
+      28470,
+      50112,
+      58498,
+      59978,
+      74196
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 35664,
+    "score": 0.83,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "out_degree",
+        0.46
+      ],
+      [
+        "currency_mismatch",
+        0.36
+      ]
+    ],
+    "neighbors": [
+      4046,
+      5221,
+      43739,
+      75393,
+      77933
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 16129,
+    "score": 0.85,
+    "confidence": 0.7,
+    "top_features": [
+      [
+        "out_degree",
+        0.39
+      ],
+      [
+        "same_day_outflows",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      13221,
+      14672,
+      23468,
+      73470,
+      89458
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 15029,
+    "score": 0.88,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "amount",
+        0.25
+      ],
+      [
+        "payment_format",
+        0.15
+      ],
+      [
+        "hour_of_day",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      8530
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 98310,
+    "score": 0.95,
+    "confidence": 0.78,
+    "top_features": [
+      [
+        "in_degree",
+        0.22
+      ],
+      [
+        "amount",
+        0.18
+      ],
+      [
+        "same_day_inflows",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      21811,
+      27604,
+      41673,
+      76378,
+      78003,
+      80129
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 21374,
+    "score": 0.86,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "payment_format",
+        0.27
+      ],
+      [
+        "amount",
+        0.21
+      ],
+      [
+        "in_degree",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      38737,
+      60809,
+      85711
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 36697,
+    "score": 0.97,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "in_degree",
+        0.31
+      ],
+      [
+        "same_day_inflows",
+        0.31
+      ]
+    ],
+    "neighbors": [
+      36884,
+      39258,
+      71482,
+      83324
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 37930,
+    "score": 0.61,
+    "confidence": 0.61,
+    "top_features": [
+      [
+        "out_degree",
+        0.32
+      ],
+      [
+        "amount",
+        0.31
+      ]
+    ],
+    "neighbors": [
+      22605,
+      28180,
+      34130,
+      54752,
+      60105
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 80276,
+    "score": 0.97,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "same_day_inflows",
+        0.29
+      ],
+      [
+        "in_degree",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      9943,
+      11819,
+      61470,
+      64538,
+      72883,
+      87117
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 28607,
+    "score": 0.96,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "amount",
+        0.41
+      ],
+      [
+        "payment_format",
+        0.19
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 95058,
+    "score": 0.76,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "cross_bank",
+        0.25
+      ],
+      [
+        "amount",
+        0.19
+      ],
+      [
+        "cycle_length",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      14473,
+      87512,
+      87840,
+      94901
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 45942,
+    "score": 0.6,
+    "confidence": 0.42,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.33
+      ],
+      [
+        "cycle_length",
+        0.27
+      ]
+    ],
+    "neighbors": [
+      25844,
+      74669,
+      83154
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 27685,
+    "score": 0.85,
+    "confidence": 0.93,
+    "top_features": [
+      [
+        "cross_bank",
+        0.45
+      ],
+      [
+        "time_gap_hours",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      6759,
+      9825,
+      49362,
+      82777
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 91111,
+    "score": 0.84,
+    "confidence": 0.85,
+    "top_features": [
+      [
+        "same_day_outflows",
+        0.35
+      ],
+      [
+        "out_degree",
+        0.22
+      ],
+      [
+        "amount",
+        0.09
+      ]
+    ],
+    "neighbors": [
+      18423,
+      23980,
+      44522,
+      84277,
+      89853,
+      91927
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 84130,
+    "score": 0.92,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "out_degree",
+        0.54
+      ],
+      [
+        "same_day_outflows",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      27478,
+      39877,
+      50089,
+      66369
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 35600,
+    "score": 0.93,
+    "confidence": 0.92,
+    "top_features": [
+      [
+        "amount",
+        0.25
+      ],
+      [
+        "hour_of_day",
+        0.16
+      ],
+      [
+        "payment_format",
+        0.13
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 67244,
+    "score": 0.83,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "cross_bank",
+        0.4
+      ],
+      [
+        "amount",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      25057,
+      43157,
+      58981,
+      83546
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 65032,
+    "score": 0.71,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "cross_bank",
+        0.34
+      ],
+      [
+        "amount",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      31973,
+      67509
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 33914,
+    "score": 0.79,
+    "confidence": 0.72,
+    "top_features": [
+      [
+        "cross_bank",
+        0.28
+      ],
+      [
+        "amount",
+        0.28
+      ],
+      [
+        "time_gap_hours",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      48131,
+      53198
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 7658,
+    "score": 0.77,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "out_degree",
+        0.39
+      ],
+      [
+        "currency_mismatch",
+        0.24
+      ],
+      [
+        "amount",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      38122,
+      41088,
+      50866,
+      60454,
+      61771
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 13097,
+    "score": 0.94,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "cross_bank",
+        0.62
+      ],
+      [
+        "cycle_length",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      41345,
+      49908,
+      51336,
+      65166
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 84136,
+    "score": 0.78,
+    "confidence": 0.77,
+    "top_features": [
+      [
+        "cross_bank",
+        0.2
+      ],
+      [
+        "time_gap_hours",
+        0.17
+      ],
+      [
+        "amount",
+        0.09
+      ]
+    ],
+    "neighbors": [
+      65044,
+      67795,
+      93946
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 56518,
+    "score": 0.78,
+    "confidence": 0.72,
+    "top_features": [
+      [
+        "amount",
+        0.6
+      ],
+      [
+        "currency_mismatch",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      20315,
+      34330
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 37265,
+    "score": 0.84,
+    "confidence": 0.88,
+    "top_features": [
+      [
+        "out_degree",
+        0.18
+      ],
+      [
+        "same_day_outflows",
+        0.17
+      ],
+      [
+        "currency_mismatch",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      22734,
+      34144,
+      40612,
+      56950,
+      66620,
+      91680
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 6778,
+    "score": 0.94,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "out_degree",
+        0.28
+      ],
+      [
+        "same_day_outflows",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      1206,
+      23072,
+      65451
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 1464,
+    "score": 0.9,
+    "confidence": 0.73,
+    "top_features": [
+      [
+        "in_degree",
+        0.38
+      ],
+      [
+        "same_day_inflows",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      28862,
+      60069,
+      75329
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 44719,
+    "score": 0.76,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "amount",
+        0.21
+      ],
+      [
+        "payment_format",
+        0.17
+      ],
+      [
+        "currency_mismatch",
+        0.09
+      ]
+    ],
+    "neighbors": [
+      17342
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 18146,
+    "score": 0.57,
+    "confidence": 0.58,
+    "top_features": [
+      [
+        "out_degree",
+        0.22
+      ],
+      [
+        "currency_mismatch",
+        0.2
+      ],
+      [
+        "same_day_outflows",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      45175,
+      57289,
+      63027,
+      64691,
+      80216
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 84507,
+    "score": 0.95,
+    "confidence": 0.85,
+    "top_features": [
+      [
+        "amount",
+        0.41
+      ],
+      [
+        "time_gap_hours",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      4365,
+      79893
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 35335,
+    "score": 0.91,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "out_degree",
+        0.32
+      ],
+      [
+        "currency_mismatch",
+        0.31
+      ],
+      [
+        "same_day_outflows",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      43667,
+      89857,
+      97444
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 22178,
+    "score": 0.87,
+    "confidence": 0.78,
+    "top_features": [
+      [
+        "amount",
+        0.41
+      ],
+      [
+        "payment_format",
+        0.26
+      ]
+    ],
+    "neighbors": [
+      67143,
+      94934
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 98154,
+    "score": 0.91,
+    "confidence": 0.7,
+    "top_features": [
+      [
+        "amount",
+        0.6
+      ],
+      [
+        "currency_mismatch",
+        0.24
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 58912,
+    "score": 0.71,
+    "confidence": 0.77,
+    "top_features": [
+      [
+        "cross_bank",
+        0.25
+      ],
+      [
+        "time_gap_hours",
+        0.23
+      ],
+      [
+        "amount",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      18793,
+      71063,
+      84040,
+      96081
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 73309,
+    "score": 0.7,
+    "confidence": 0.61,
+    "top_features": [
+      [
+        "out_degree",
+        0.53
+      ],
+      [
+        "same_day_outflows",
+        0.29
+      ]
+    ],
+    "neighbors": [
+      12492,
+      16163,
+      30301,
+      31587,
+      34959,
+      39138
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 93493,
+    "score": 0.77,
+    "confidence": 0.68,
+    "top_features": [
+      [
+        "out_degree",
+        0.31
+      ],
+      [
+        "same_day_outflows",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      42896,
+      48844,
+      51875,
+      56535
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 57057,
+    "score": 0.87,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "amount",
+        0.23
+      ],
+      [
+        "currency_mismatch",
+        0.16
+      ],
+      [
+        "payment_format",
+        0.11
+      ]
+    ],
+    "neighbors": [
+      20323,
+      60740
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 74519,
+    "score": 0.8,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "amount",
+        0.3
+      ],
+      [
+        "payment_format",
+        0.27
+      ]
+    ],
+    "neighbors": [
+      28605,
+      97030
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 2267,
+    "score": 0.64,
+    "confidence": 0.58,
+    "top_features": [
+      [
+        "amount",
+        0.29
+      ],
+      [
+        "currency_mismatch",
+        0.24
+      ],
+      [
+        "hour_of_day",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      52296
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 15663,
+    "score": 0.72,
+    "confidence": 0.59,
+    "top_features": [
+      [
+        "cross_bank",
+        0.39
+      ],
+      [
+        "amount",
+        0.33
+      ]
+    ],
+    "neighbors": [
+      28494,
+      29591
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 10862,
+    "score": 0.76,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "amount",
+        0.49
+      ],
+      [
+        "hour_of_day",
+        0.36
+      ]
+    ],
+    "neighbors": [],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 91573,
+    "score": 0.8,
+    "confidence": 0.81,
+    "top_features": [
+      [
+        "out_degree",
+        0.22
+      ],
+      [
+        "currency_mismatch",
+        0.15
+      ],
+      [
+        "same_day_outflows",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      23608,
+      40674,
+      79139,
+      86563,
+      91175,
+      98674
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 20536,
+    "score": 0.83,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "cycle_length",
+        0.34
+      ],
+      [
+        "amount",
+        0.28
+      ]
+    ],
+    "neighbors": [
+      36877,
+      63848,
+      76055,
+      91928
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 72511,
+    "score": 0.85,
+    "confidence": 0.9,
+    "top_features": [
+      [
+        "amount",
+        0.49
+      ],
+      [
+        "same_day_outflows",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      9379,
+      69013,
+      71645,
+      77640,
+      86419,
+      94552
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 5722,
+    "score": 0.93,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "cross_bank",
+        0.61
+      ],
+      [
+        "amount",
+        0.23
+      ]
+    ],
+    "neighbors": [
+      5588,
+      12090,
+      34654,
+      99706
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 49393,
+    "score": 0.85,
+    "confidence": 0.86,
+    "top_features": [
+      [
+        "out_degree",
+        0.35
+      ],
+      [
+        "same_day_outflows",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      47152,
+      67924,
+      69506,
+      71544,
+      80452
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 77350,
+    "score": 0.88,
+    "confidence": 0.9,
+    "top_features": [
+      [
+        "cross_bank",
+        0.22
+      ],
+      [
+        "amount",
+        0.13
+      ],
+      [
+        "time_gap_hours",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      17841,
+      37358,
+      96565
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 73420,
+    "score": 0.8,
+    "confidence": 0.72,
+    "top_features": [
+      [
+        "cross_bank",
+        0.38
+      ],
+      [
+        "cycle_length",
+        0.22
+      ]
+    ],
+    "neighbors": [
+      26248,
+      49777,
+      85616,
+      94643
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 20410,
+    "score": 0.75,
+    "confidence": 0.44,
+    "top_features": [
+      [
+        "amount",
+        0.23
+      ],
+      [
+        "hour_of_day",
+        0.23
+      ],
+      [
+        "currency_mismatch",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      9645
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 57333,
+    "score": 0.78,
+    "confidence": 0.72,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.23
+      ],
+      [
+        "cross_bank",
+        0.23
+      ],
+      [
+        "cycle_length",
+        0.21
+      ]
+    ],
+    "neighbors": [
+      7286,
+      23380
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 17704,
+    "score": 0.89,
+    "confidence": 0.91,
+    "top_features": [
+      [
+        "amount",
+        0.55
+      ],
+      [
+        "currency_mismatch",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      21380,
+      87188
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 6482,
+    "score": 0.84,
+    "confidence": 0.88,
+    "top_features": [
+      [
+        "amount",
+        0.25
+      ],
+      [
+        "hour_of_day",
+        0.24
+      ],
+      [
+        "payment_format",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      66828
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 41404,
+    "score": 0.61,
+    "confidence": 0.77,
+    "top_features": [
+      [
+        "in_degree",
+        0.34
+      ],
+      [
+        "payment_format",
+        0.21
+      ],
+      [
+        "amount",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      8525,
+      12086,
+      76407,
+      98440
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 48795,
+    "score": 0.87,
+    "confidence": 0.93,
+    "top_features": [
+      [
+        "in_degree",
+        0.36
+      ],
+      [
+        "amount",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      33011,
+      46227,
+      71035,
+      93090,
+      97859,
+      99260
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 6229,
+    "score": 0.68,
+    "confidence": 0.56,
+    "top_features": [
+      [
+        "amount",
+        0.19
+      ],
+      [
+        "time_gap_hours",
+        0.19
+      ],
+      [
+        "cross_bank",
+        0.19
+      ]
+    ],
+    "neighbors": [
+      23345,
+      50688,
+      65947
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 47898,
+    "score": 0.87,
+    "confidence": 0.88,
+    "top_features": [
+      [
+        "in_degree",
+        0.41
+      ],
+      [
+        "amount",
+        0.24
+      ],
+      [
+        "same_day_inflows",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      2161,
+      14282,
+      47469,
+      53699
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 28535,
+    "score": 0.87,
+    "confidence": 0.87,
+    "top_features": [
+      [
+        "cross_bank",
+        0.23
+      ],
+      [
+        "amount",
+        0.2
+      ],
+      [
+        "time_gap_hours",
+        0.06
+      ]
+    ],
+    "neighbors": [
+      15246,
+      36321,
+      58484,
+      87019
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 90399,
+    "score": 0.65,
+    "confidence": 0.82,
+    "top_features": [
+      [
+        "cycle_length",
+        0.23
+      ],
+      [
+        "amount",
+        0.22
+      ],
+      [
+        "time_gap_hours",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      56193,
+      65103
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 33706,
+    "score": 0.66,
+    "confidence": 0.55,
+    "top_features": [
+      [
+        "cross_bank",
+        0.25
+      ],
+      [
+        "cycle_length",
+        0.17
+      ],
+      [
+        "amount",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      2052,
+      57928,
+      63939,
+      97656
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 88416,
+    "score": 0.96,
+    "confidence": 0.95,
+    "top_features": [
+      [
+        "out_degree",
+        0.34
+      ],
+      [
+        "same_day_outflows",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      66841,
+      92900,
+      96742
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 14473,
+    "score": 0.89,
+    "confidence": 0.96,
+    "top_features": [
+      [
+        "in_degree",
+        0.31
+      ],
+      [
+        "payment_format",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      31333,
+      41166,
+      54385,
+      69809,
+      84009,
+      92771
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 47357,
+    "score": 0.71,
+    "confidence": 0.7,
+    "top_features": [
+      [
+        "cross_bank",
+        0.48
+      ],
+      [
+        "amount",
+        0.19
+      ],
+      [
+        "time_gap_hours",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      7832,
+      87563
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 74385,
+    "score": 0.98,
+    "confidence": 0.9,
+    "top_features": [
+      [
+        "in_degree",
+        0.37
+      ],
+      [
+        "payment_format",
+        0.17
+      ],
+      [
+        "amount",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      44412,
+      48260,
+      48367,
+      98162
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 54264,
+    "score": 0.79,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "out_degree",
+        0.47
+      ],
+      [
+        "amount",
+        0.33
+      ]
+    ],
+    "neighbors": [
+      27476,
+      40515,
+      63154,
+      70934,
+      96073
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 82351,
+    "score": 0.94,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "out_degree",
+        0.31
+      ],
+      [
+        "same_day_outflows",
+        0.14
+      ],
+      [
+        "amount",
+        0.11
+      ]
+    ],
+    "neighbors": [
+      9874,
+      58163,
+      64284
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 99235,
+    "score": 0.82,
+    "confidence": 0.67,
+    "top_features": [
+      [
+        "currency_mismatch",
+        0.21
+      ],
+      [
+        "hour_of_day",
+        0.17
+      ],
+      [
+        "payment_format",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      10828,
+      22694
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 21257,
+    "score": 0.79,
+    "confidence": 0.75,
+    "top_features": [
+      [
+        "cross_bank",
+        0.22
+      ],
+      [
+        "cycle_length",
+        0.14
+      ],
+      [
+        "time_gap_hours",
+        0.14
+      ]
+    ],
+    "neighbors": [
+      29879,
+      39844,
+      93832
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 32029,
+    "score": 0.95,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "amount",
+        0.22
+      ],
+      [
+        "currency_mismatch",
+        0.2
+      ],
+      [
+        "hour_of_day",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      83927
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 22299,
+    "score": 0.95,
+    "confidence": 0.9,
+    "top_features": [
+      [
+        "time_gap_hours",
+        0.43
+      ],
+      [
+        "amount",
+        0.26
+      ]
+    ],
+    "neighbors": [
+      3049,
+      34552
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 24206,
+    "score": 0.92,
+    "confidence": 0.92,
+    "top_features": [
+      [
+        "cross_bank",
+        0.22
+      ],
+      [
+        "amount",
+        0.16
+      ],
+      [
+        "cycle_length",
+        0.15
+      ]
+    ],
+    "neighbors": [
+      31372,
+      96195,
+      96657
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 55040,
+    "score": 0.7,
+    "confidence": 0.58,
+    "top_features": [
+      [
+        "out_degree",
+        0.22
+      ],
+      [
+        "same_day_outflows",
+        0.2
+      ],
+      [
+        "amount",
+        0.18
+      ]
+    ],
+    "neighbors": [
+      10443,
+      33145,
+      56888,
+      60640
+    ],
+    "pattern": "fan-out"
+  },
+  {
+    "tx_id": 4248,
+    "score": 0.97,
+    "confidence": 0.99,
+    "top_features": [
+      [
+        "cross_bank",
+        0.19
+      ],
+      [
+        "cycle_length",
+        0.17
+      ],
+      [
+        "time_gap_hours",
+        0.16
+      ]
+    ],
+    "neighbors": [
+      72089,
+      97486
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 24509,
+    "score": 0.65,
+    "confidence": 0.62,
+    "top_features": [
+      [
+        "in_degree",
+        0.24
+      ],
+      [
+        "payment_format",
+        0.23
+      ],
+      [
+        "amount",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      3779,
+      6836,
+      14476
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 97542,
+    "score": 0.7,
+    "confidence": 0.61,
+    "top_features": [
+      [
+        "in_degree",
+        0.31
+      ],
+      [
+        "amount",
+        0.17
+      ]
+    ],
+    "neighbors": [
+      14334,
+      15435,
+      23224,
+      30428,
+      37937,
+      47833
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 44540,
+    "score": 0.8,
+    "confidence": 0.58,
+    "top_features": [
+      [
+        "cross_bank",
+        0.28
+      ],
+      [
+        "amount",
+        0.19
+      ],
+      [
+        "time_gap_hours",
+        0.13
+      ]
+    ],
+    "neighbors": [
+      20689,
+      88460,
+      91067
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 54964,
+    "score": 0.83,
+    "confidence": 0.92,
+    "top_features": [
+      [
+        "cross_bank",
+        0.24
+      ],
+      [
+        "amount",
+        0.17
+      ],
+      [
+        "cycle_length",
+        0.1
+      ]
+    ],
+    "neighbors": [
+      20369,
+      42976
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 88806,
+    "score": 0.78,
+    "confidence": 0.71,
+    "top_features": [
+      [
+        "in_degree",
+        0.34
+      ],
+      [
+        "same_day_inflows",
+        0.32
+      ]
+    ],
+    "neighbors": [
+      19116,
+      44707,
+      55256,
+      79871,
+      84440,
+      91888
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 97345,
+    "score": 0.83,
+    "confidence": 0.74,
+    "top_features": [
+      [
+        "amount",
+        0.18
+      ],
+      [
+        "payment_format",
+        0.17
+      ],
+      [
+        "hour_of_day",
+        0.12
+      ]
+    ],
+    "neighbors": [
+      12436,
+      31827
+    ],
+    "pattern": "none"
+  },
+  {
+    "tx_id": 33527,
+    "score": 0.97,
+    "confidence": 0.79,
+    "top_features": [
+      [
+        "amount",
+        0.32
+      ],
+      [
+        "payment_format",
+        0.3
+      ]
+    ],
+    "neighbors": [
+      8322,
+      19061,
+      28621,
+      30437,
+      32784,
+      98910
+    ],
+    "pattern": "fan-in"
+  },
+  {
+    "tx_id": 35970,
+    "score": 0.71,
+    "confidence": 0.69,
+    "top_features": [
+      [
+        "cross_bank",
+        0.39
+      ],
+      [
+        "amount",
+        0.36
+      ]
+    ],
+    "neighbors": [
+      11353,
+      33118
+    ],
+    "pattern": "cycle"
+  },
+  {
+    "tx_id": 21866,
+    "score": 0.9,
+    "confidence": 0.89,
+    "top_features": [
+      [
+        "out_degree",
+        0.26
+      ],
+      [
+        "same_day_outflows",
+        0.2
+      ]
+    ],
+    "neighbors": [
+      15583,
+      21432,
+      38587
+    ],
+    "pattern": "fan-out"
+  }
+]
