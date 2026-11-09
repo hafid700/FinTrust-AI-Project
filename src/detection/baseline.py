@@ -15,14 +15,19 @@ import pandas as pd
 from src.common.metrics import best_f1_threshold, summarize
 from src.common.seed import set_seed
 from src.data.graph import build_edge_features, temporal_split
+from src.data.graph_features import build_graph_features
 
 
-def run(df: pd.DataFrame, seed: int = 42, n_estimators: int = 500) -> tuple[dict, dict]:
+def run(df: pd.DataFrame, seed: int = 42, n_estimators: int = 500,
+        graph_features: bool = False) -> tuple[dict, dict]:
     import xgboost as xgb
 
     set_seed(seed)
     split = temporal_split(df)
     X, names = build_edge_features(df, split)
+    if graph_features:
+        G, gnames = build_graph_features(df)
+        X, names = np.hstack([X, G]), names + gnames
     y = df["is_laundering"].to_numpy()
     tr, va, te = split == 0, split == 1, split == 2
 
@@ -39,7 +44,7 @@ def run(df: pd.DataFrame, seed: int = 42, n_estimators: int = 500) -> tuple[dict
     p_va, p_te = model.predict_proba(X[va])[:, 1], model.predict_proba(X[te])[:, 1]
     thr = best_f1_threshold(y[va], p_va)       # seuil choisi sur la val uniquement
     res = {
-        "model": "xgboost_tabular", "n_features": len(names), "train_time_s": round(train_time, 1),
+        "model": "xgboost_graph_features" if graph_features else "xgboost_tabular", "n_features": len(names), "train_time_s": round(train_time, 1),
         "best_iteration": int(getattr(model, "best_iteration", -1)),
         "val": summarize(y[va], p_va, thr), "test": summarize(y[te], p_te, thr),
     }
@@ -56,12 +61,15 @@ def main() -> None:
     ap.add_argument("--parquet", default="data/processed/hi_small_sub.parquet")
     ap.add_argument("--out", default="reports/a3")
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--graph-features", action="store_true", help="ajoute les features de graphe causales")
+    ap.add_argument("--name", default=None, help="nom des fichiers de sortie")
     a = ap.parse_args()
+    name = a.name or ("xgb_graph" if a.graph_features else "baseline_xgb")
 
-    res, scores = run(pd.read_parquet(a.parquet), seed=a.seed)
+    res, scores = run(pd.read_parquet(a.parquet), seed=a.seed, graph_features=a.graph_features)
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
-    (out / "baseline_xgb.json").write_text(json.dumps(res, indent=2), encoding="utf-8")
-    np.savez(out / "baseline_xgb_scores.npz", **scores)
+    (out / f"{name}.json").write_text(json.dumps(res, indent=2), encoding="utf-8")
+    np.savez(out / f"{name}_scores.npz", **scores)
     print(json.dumps(res, indent=2))
 
 
