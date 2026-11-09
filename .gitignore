@@ -20,3 +20,5 @@ venv/
 # Éditeur / OS
 .vscode/
 .DS_Store
+audit/corpus/
+audit/rag_index/
