@@ -57,12 +57,25 @@ def build_edge_features(df: pd.DataFrame, split: np.ndarray) -> tuple[np.ndarray
     return np.hstack(cols).astype(np.float32), names
 
 
-def build_pyg_data(df: pd.DataFrame, train_frac: float = 0.6, val_frac: float = 0.2):
+def standardize_with_train(X: np.ndarray, split: np.ndarray) -> np.ndarray:
+    """Centre/réduit chaque colonne avec la moyenne et l'écart-type du TRAIN uniquement."""
+    mu = X[split == 0].mean(axis=0)
+    sd = X[split == 0].std(axis=0) + 1e-6
+    return ((X - mu) / sd).astype(np.float32)
+
+
+def build_pyg_data(df: pd.DataFrame, train_frac: float = 0.6, val_frac: float = 0.2,
+                   graph_features: bool = False):
     import torch
     from torch_geometric.data import Data
 
     split = temporal_split(df, train_frac, val_frac)
     X, names = build_edge_features(df, split)
+    if graph_features:
+        from .graph_features import build_graph_features
+        G, gnames = build_graph_features(df)
+        X = np.hstack([X, standardize_with_train(G, split)])
+        names = names + gnames
     n_nodes = int(max(df["src"].max(), df["dst"].max())) + 1
     data = Data(
         x=torch.ones(n_nodes, 1),   # pas de features de noeud pour l'instant (voir A3)
@@ -114,14 +127,19 @@ def split_summary(df: pd.DataFrame, split: np.ndarray) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--parquet", default="data/processed/hi_small_sub.parquet")
-    ap.add_argument("--out", default="data/processed/graph.pt")
-    ap.add_argument("--report", default="reports/a2/split_summary.json")
+    ap.add_argument("--out", default=None)
+    ap.add_argument("--report", default=None)
+    ap.add_argument("--graph-features", action="store_true",
+                    help="ajoute les features de graphe causales aux features d'arête")
     a = ap.parse_args()
+    suffix = "_gf" if a.graph_features else ""
+    a.out = a.out or f"data/processed/graph{suffix}.pt"
+    a.report = a.report or f"reports/a2/split_summary{suffix}.json"
 
     import torch
 
     df = pd.read_parquet(a.parquet)
-    data = build_pyg_data(df)
+    data = build_pyg_data(df, graph_features=a.graph_features)
     summary = split_summary(df, data.edge_split.numpy())
     summary["n_nodes"] = int(data.num_nodes)
     summary["n_edges"] = int(data.edge_index.shape[1])
