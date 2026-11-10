@@ -7,7 +7,7 @@ Pipeline : PDF/TXT -> texte par page -> chunks (mots, avec chevauchement)
 Usage :
     python audit/build_rag_index.py
     python audit/build_rag_index.py --corpus audit/corpus --out audit/rag_index \
-        --chunk-words 400 --overlap 80
+        --chunk-words 250 --overlap 50
 
 Le dossier --corpus contient les documents publics (PDF ou .txt) : GAFI/FATF,
 RGPD, textes marocains LAB/FT. Ce sont des documents CONSULTÉS par l'agent
@@ -19,9 +19,10 @@ import re
 import unicodedata
 from pathlib import Path
 
-# Modèle multilingue : le corpus mélange anglais (GAFI/FATF) et français
-# (RGPD, textes marocains). 384 dimensions, tourne sur CPU.
-DEFAULT_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+# Modèle multilingue entraîné pour la recherche : le corpus mélange anglais
+# (GAFI/FATF) et français (RGPD, textes marocains). 384 dimensions, tourne sur
+# CPU. Retenu après comparaison avec paraphrase-multilingual-MiniLM-L12-v2.
+DEFAULT_MODEL = "intfloat/multilingual-e5-small"
 
 
 # Certains PDF (ex. le guide LBC/FT marocain) encodent les ligatures « fi »,
@@ -93,8 +94,8 @@ def main() -> None:
     here = Path(__file__).parent
     parser.add_argument("--corpus", type=Path, default=here / "corpus")
     parser.add_argument("--out", type=Path, default=here / "rag_index")
-    parser.add_argument("--chunk-words", type=int, default=400)
-    parser.add_argument("--overlap", type=int, default=80)
+    parser.add_argument("--chunk-words", type=int, default=250)
+    parser.add_argument("--overlap", type=int, default=50)
     parser.add_argument("--model", default=DEFAULT_MODEL)
     args = parser.parse_args()
 
