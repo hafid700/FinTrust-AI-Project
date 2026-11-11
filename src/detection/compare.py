@@ -4,11 +4,12 @@ import sys
 from pathlib import Path
 
 
-def main(folder: str = "reports/a3") -> None:
+def main(*folders: str) -> None:
     rows = []
-    for p in sorted(Path(folder).glob("*.json")):
+    files = [p for f in (folders or ("reports/a3",)) for p in sorted(Path(f).glob("*.json"))]
+    for p in files:
         r = json.loads(p.read_text(encoding="utf-8"))
-        if "test" not in r:
+        if "test" not in r or "model" not in r:
             continue
         t = r["test"]
         rows.append((r["model"], t["pr_auc"], t["lift"], t["best_f1_oracle"],

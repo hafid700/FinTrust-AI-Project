@@ -1,0 +1,54 @@
+{
+  "model": "fed3_balanced_local",
+  "scenario": "local",
+  "partition": "balanced",
+  "n_clients": 3,
+  "layers": 2,
+  "hidden": 64,
+  "n_params": 49729,
+  "train_time_s": 593.8,
+  "rounds": 40,
+  "local_epochs": 5,
+  "val": {
+    "n": 99988,
+    "n_pos": 1184,
+    "prevalence": 0.011841420970516462,
+    "pr_auc": 0.6000099149599875,
+    "lift": 50.67043190626624,
+    "best_f1_oracle": 0.6180405697022011,
+    "recall_at_precision_0.5": 0.7305743243243243,
+    "threshold": 0.7401451468467712,
+    "f1_at_threshold": 0.6180405697022011
+  },
+  "test": {
+    "n": 99997,
+    "n_pos": 2040,
+    "prevalence": 0.02040061201836055,
+    "pr_auc": 0.7015792698659676,
+    "lift": 34.3901089454839,
+    "best_f1_oracle": 0.6795923440218742,
+    "recall_at_precision_0.5": 0.8112745098039216,
+    "threshold": 0.7401451468467712,
+    "f1_at_threshold": 0.6725536992840095
+  },
+  "per_client_test": [
+    {
+      "client": 0,
+      "n_test": 43784,
+      "n_pos_test": 629,
+      "pr_auc": 0.5387393245344778
+    },
+    {
+      "client": 1,
+      "n_test": 28335,
+      "n_pos_test": 729,
+      "pr_auc": 0.7961599760825027
+    },
+    {
+      "client": 2,
+      "n_test": 27878,
+      "n_pos_test": 682,
+      "pr_auc": 0.8015921388305396
+    }
+  ]
+}

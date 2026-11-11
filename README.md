@@ -10,14 +10,15 @@ le score est calibré et expliqué (SHAP), puis un agent (LLM + LoRA + RAG) réd
 ## Équipe et rôles
 | Personne | Rôle | Dossiers |
 |---|---|---|
-| A - [nom] | Détection : GNN, fédéré, VAE | `src/data`, `src/detection` |
-| B - [nom] | Confiance et audit : calibration/XAI, LoRA, RAG, agent | `src/audit` |
+| A - Rmiki Abdelhafid| Détection : GNN, fédéré, VAE | `src/data`, `src/detection` |
+| B - Soufiane Tadlaoui | Confiance et audit : calibration/XAI, LoRA, RAG, agent | `src/audit` |
 | Commun | Contrat d'alerte, métriques, seeds | `src/common` |
 
 ## Installation
 ```bash
 python -m venv .venv
-source .venv/bin/activate        # Windows : .venv\Scripts\activate
+.\.venv\Scripts\Activate.ps1
+
 pip install -r requirements.txt
 pytest                           # doit passer avant de commencer
 ```
@@ -34,6 +35,10 @@ pytest                           # doit passer avant de commencer
 - [ ] A1 : exploration IBM AML (`python -m src.data.explore ...`)
 - [ ] A2 : graphe PyG + split temporel (`python -m src.data.graph`)
 - [ ] A3 : XGBoost tabulaire vs XGBoost + features de graphe vs GNN
-- [ ] A4-A6 : détection
+- [ ] A3b : GNN avec features de graphe (`python -m src.data.graph --graph-features`)
+- [ ] A4 : apprentissage fédéré (`python -m src.detection.federated`)
+- [ ] A5 : VAE + ablation du rééquilibrage (`python -m src.detection.vae_ablation`)
+- [ ] A6 : export des alertes vers B
 - [ ] B1-B6 : confiance et audit
 - [ ] Intégration et analyse
+
