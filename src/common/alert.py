@@ -21,6 +21,7 @@ class Alert:
     top_features: List[Tuple[str, float]] = field(default_factory=list)  # (nom, contribution SHAP)
     neighbors: List[int] = field(default_factory=list)                   # comptes ou transactions voisins
     pattern: str = "none"              # cycle | fan_in | fan_out | none
+    context: dict = field(default_factory=dict)   # (optionnel) montants, banques, dates... JAMAIS le label
 
     def __post_init__(self) -> None:
         for name in ("score", "confidence"):

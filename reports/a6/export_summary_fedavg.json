@@ -1,0 +1,22 @@
+{
+  "model": "fedavg",
+  "threshold_chosen_on_val": 0.9171621203422546,
+  "n_alerts": 2065,
+  "precision": 0.7360774818401937,
+  "recall": 0.7450980392156863,
+  "n_true_positive": 1520,
+  "n_test_positive": 2040,
+  "pattern_counts": {
+    "none": 1333,
+    "fan_out": 374,
+    "fan_in": 259,
+    "cycle": 99
+  },
+  "share_true_positive_by_pattern": {
+    "cycle": 0.616,
+    "fan_in": 0.853,
+    "fan_out": 0.984,
+    "none": 0.653
+  },
+  "n_neighbor_transactions": 9675
+}

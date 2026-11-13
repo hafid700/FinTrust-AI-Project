@@ -38,7 +38,10 @@ pytest                           # doit passer avant de commencer
 - [ ] A3b : GNN avec features de graphe (`python -m src.data.graph --graph-features`)
 - [ ] A4 : apprentissage fédéré (`python -m src.detection.federated`)
 - [ ] A5 : VAE + ablation du rééquilibrage (`python -m src.detection.vae_ablation`)
-- [ ] A6 : export des alertes vers B
+- [ ] A6 : export des alertes vers B (`python -m src.detection.export_alerts`)
 - [ ] B1-B6 : confiance et audit
 - [ ] Intégration et analyse
+
+## Journal du contrat d'alerte
+- A6 : ajout du champ optionnel `context` (dict : banques, comptes, montants, devises, dates). Jamais le label.
 
