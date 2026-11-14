@@ -14,8 +14,12 @@ Usage :
 Règles vérifiées :
   1. le tx_id, le score, la confiance, le pattern, chaque feature (nom + poids)
      et chaque voisin de l'alerte apparaissent dans le rapport ;
-  2. aucun nombre décimal (0,xx ou 0.xx) absent de l'alerte n'apparaît ;
-  3. aucun identifiant de 4-5 chiffres absent de l'alerte n'apparaît ;
+  2. aucun nombre décimal compris entre 0 et 1 (0,xx ou 0.xx) absent de
+     l'alerte n'apparaît (les autres nombres, ex. « 4,1 » dans une citation
+     d'article, ne sont pas des scores et sont tolérés) ;
+  3. aucun identifiant de 4-5 chiffres absent de l'alerte n'apparaît ; les
+     années 1900-2099 sont tolérées (« règlement 2016/679 », « GAFI 2012 »),
+     sinon citer un texte réglementaire serait compté comme une invention ;
   4. aucun AUTRE pattern (cycle, fan-in, fan-out) n'est cité.
 Les nombres sont comparés par VALEUR : 0,8 / 0,80 / 0.8 sont équivalents
 (un modèle qui recopie « 0.8 » depuis l'alerte n'est donc pas pénalisé).
@@ -69,12 +73,13 @@ def check_report(alert: dict, report: str) -> tuple:
     allowed = [alert["score"], alert["confidence"]]
     allowed += [w for _, w in alert["top_features"]]
     for f in found:
-        if not _present(f, allowed):
+        if f <= 1.0 and not _present(f, allowed):
             problems.append(f"valeur inventée : {fr(f)}")
 
     allowed_ids = {str(alert["tx_id"])} | {str(n) for n in alert["neighbors"]}
     for i in re.findall(r"(?<!\d)\d{4,5}(?!\d)", report):
-        if i not in allowed_ids:
+        is_year = len(i) == 4 and 1900 <= int(i) <= 2099
+        if i not in allowed_ids and not is_year:
             problems.append(f"identifiant inventé : {i}")
 
     for code in PATTERN_CODES:
