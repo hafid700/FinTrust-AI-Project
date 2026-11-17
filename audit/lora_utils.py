@@ -41,6 +41,15 @@ SECTIONS = [
     "5. Recommandations",
 ]
 
+# Morceaux du prompt qu'un vrai rapport ne contient jamais. Un petit modèle non
+# entraîné recopie souvent son prompt : il « reprend » alors tous les faits de
+# l'alerte (elle est dans le prompt) sans avoir rédigé quoi que ce soit.
+PROMPT_MARKERS = [
+    "Règles :", "Structure attendue", "Alerte :", '{"tx_id"',
+    "Extraits de textes réglementaires", "Tu es un analyste",
+    "n'invente aucune valeur",
+]
+
 # Baseline « prompt seul » : on donne au modèle de base TOUT ce qu'un bon prompt
 # peut apporter (structure, règles). Sans cela, la comparaison avec le LoRA
 # serait un homme de paille : on mesure ce que le fine-tuning apporte EN PLUS
@@ -50,8 +59,8 @@ PROMPT_ONLY_INSTRUCTION = (
     + "\n\nStructure attendue (respecte exactement ces intitulés) :\n"
     + "RAPPORT D'AUDIT — Transaction <tx_id>\n"
     + "\n".join(SECTIONS)
-    + "\n\nRègles : écris les nombres avec une virgule décimale (0,84) ; recopie "
-    "le tx_id, le score, la confiance, le schéma, chaque facteur avec son poids "
+    + "\n\nRègles : écris les nombres décimaux avec une virgule et non un point ; "
+    "recopie le tx_id, le score, la confiance, le schéma, chaque facteur avec son poids "
     "et chaque transaction voisine ; cite les textes réglementaires pertinents "
     "(GAFI, droit marocain) ; n'invente aucune valeur."
 )
@@ -338,8 +347,11 @@ def train_lora(base_model, tokenizer, train_data: list, val_data: list, rank: in
 
 def generate_reports(model, tokenizer, prompts: list, *, max_new_tokens: int = 1000,
                      batch_size: int = 8, device: str = "cuda",
-                     use_amp: bool = True) -> list:
+                     use_amp: bool = True, return_finished: bool = False):
     """Génère un rapport par prompt, par lots, de façon déterministe (greedy).
+
+    return_finished=True renvoie aussi, pour chaque rapport, un booléen « le
+    modèle a émis son jeton de fin » (False = coupé par max_new_tokens).
 
     repetition_penalty = 1.0 est FORCÉ : la configuration par défaut de Qwen
     applique 1,05, ce qui pénalise la recopie répétée d'un même identifiant ou
@@ -352,6 +364,7 @@ def generate_reports(model, tokenizer, prompts: list, *, max_new_tokens: int = 1
     tokenizer.padding_side = "left"  # indispensable pour générer par lots
     order = sorted(range(len(prompts)), key=lambda i: len(prompts[i]))
     outputs = [None] * len(prompts)
+    finished = [False] * len(prompts)
     for s in range(0, len(order), batch_size):
         idx = order[s:s + batch_size]
         enc = tokenizer([prompts[i] for i in idx], return_tensors="pt",
@@ -369,11 +382,12 @@ def generate_reports(model, tokenizer, prompts: list, *, max_new_tokens: int = 1
                 use_cache=True,
             )
         new_tokens = gen[:, enc["input_ids"].shape[1]:]
-        for i, text in zip(idx, tokenizer.batch_decode(new_tokens,
-                                                       skip_special_tokens=True)):
+        texts = tokenizer.batch_decode(new_tokens, skip_special_tokens=True)
+        for row, (i, text) in enumerate(zip(idx, texts)):
             outputs[i] = text.strip()
+            finished[i] = bool((new_tokens[row] == tokenizer.eos_token_id).any())
     tokenizer.padding_side = old_side
-    return outputs
+    return (outputs, finished) if return_finished else outputs
 
 
 # --- 5. RAG ------------------------------------------------------------------
@@ -438,7 +452,7 @@ _REF_ANY = re.compile(r"\b(GAFI|FATF|RGPD|loi)\b|Recommandation\s+\d+|droit maro
 _REF_R20 = re.compile(r"Recommandation\s*(n°\s*)?20\b|\bR\.?\s?20\b", re.IGNORECASE)
 
 
-def score_report(alert: dict, report: str) -> dict:
+def score_report(alert: dict, report: str, finished: bool = True) -> dict:
     """Mesures automatiques d'un rapport.
 
     facts_ok     : tous les faits de l'alerte repris, rien d'inventé (report_checks)
@@ -446,18 +460,28 @@ def score_report(alert: dict, report: str) -> dict:
     sections_ok  : les 5 sections présentes, dans l'ordre (proxy de CLARTÉ de structure)
     cite_any     : cite au moins un texte réglementaire (GAFI, loi, RGPD...)
     cite_R20     : cite la recommandation 20 (déclaration des opérations suspectes)
+    echo         : le rapport recopie des morceaux du prompt (règles, alerte, extraits)
+    finished     : le modèle a terminé sa phrase (pas coupé par la limite de longueur)
+    usable       : faits exacts ET 5 sections ET pas de recopie ET terminé
+    Attention : facts_ok seul se laisse tromper par la recopie (l'alerte est dans
+    le prompt) ; c'est `usable` qu'il faut regarder en premier.
     La lisibilité réelle et la justesse des citations se jugent à la main sur
     un échantillon (relecture manuelle exigée par le cahier).
     """
     ok, problems = check_report(alert, report)
     positions = [report.find(s) for s in SECTIONS]
+    sections_ok = all(p >= 0 for p in positions) and positions == sorted(positions)
+    echo = any(m in report for m in PROMPT_MARKERS)
     return {
         "facts_ok": ok,
         "n_problems": len(problems),
         "problems": problems,
-        "sections_ok": all(p >= 0 for p in positions) and positions == sorted(positions),
+        "sections_ok": sections_ok,
         "cite_any": bool(_REF_ANY.search(report)),
         "cite_R20": bool(_REF_R20.search(report)),
+        "echo": echo,
+        "finished": bool(finished),
+        "usable": ok and sections_ok and not echo and bool(finished),
         "n_words": len(report.split()),
     }
 
@@ -475,6 +499,9 @@ def summarize(scores: list) -> dict:
         "sections_ok_%": pct("sections_ok"),
         "cite_any_%": pct("cite_any"),
         "cite_R20_%": pct("cite_R20"),
+        "echo_%": pct("echo"),
+        "finished_%": pct("finished"),
+        "usable_%": pct("usable"),
         "avg_words": round(sum(s["n_words"] for s in scores) / n),
     }
 
@@ -496,13 +523,14 @@ def evaluate_model(model, tokenizer, records: list, *, instruction: str = None,
     ]
     _sync()
     t0 = time.time()
-    reports = generate_reports(model, tokenizer, prompts,
-                               max_new_tokens=max_new_tokens,
-                               batch_size=batch_size, device=device,
-                               use_amp=use_amp)
+    reports, finished = generate_reports(
+        model, tokenizer, prompts, max_new_tokens=max_new_tokens,
+        batch_size=batch_size, device=device, use_amp=use_amp,
+        return_finished=True)
     _sync()
     gen_seconds = time.time() - t0
-    scores = [score_report(a, rep) for a, rep in zip(alerts, reports)]
+    scores = [score_report(a, rep, fin)
+              for a, rep, fin in zip(alerts, reports, finished)]
     return {"reports": reports, "scores": scores, "summary": summarize(scores),
             "gen_seconds": gen_seconds}
 
@@ -517,7 +545,9 @@ def write_samples_markdown(path, results_by_config: dict, records: list,
             lines += [
                 f"### Exemple {i + 1} — {records[i]['id']}",
                 "Entrée : `" + records[i]["input"] + "`",
-                f"Contrôle automatique : {res['scores'][i]['problems'] or 'aucun écart'}",
+                f"Contrôle automatique : {res['scores'][i]['problems'] or 'aucun écart'}"
+                f" | recopie du prompt : {res['scores'][i]['echo']}"
+                f" | terminé : {res['scores'][i]['finished']}",
                 "", "```", res["reports"][i], "```", "",
                 "Grille : clarté __/5 | citations justes __/5 | remarques :", "",
             ]
