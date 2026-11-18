@@ -23,10 +23,10 @@ from pathlib import Path
 
 try:
     from report_checks import check_report
-    from build_instruction_dataset import INSTRUCTION
+    from build_instruction_dataset import INSTRUCTION, risk_level, confidence_label
 except ImportError:  # import depuis la racine du dépôt (Colab)
     from audit.report_checks import check_report
-    from audit.build_instruction_dataset import INSTRUCTION
+    from audit.build_instruction_dataset import INSTRUCTION, risk_level, confidence_label
 
 SYSTEM_PROMPT = (
     "Tu es un assistant spécialisé en conformité bancaire "
@@ -212,6 +212,15 @@ def apply_lora(base_model, rank: int, alpha: int = None, dropout: float = 0.05,
     for p in model.parameters():
         if p.requires_grad:
             p.data = p.data.float()
+    return model
+
+
+def load_lora(base_model, adapter_dir, device: str = "cuda"):
+    """Recharge un adaptateur LoRA sauvegardé (save_pretrained) sur un modèle de base."""
+    from peft import PeftModel
+
+    model = PeftModel.from_pretrained(base_model, str(adapter_dir)).to(device)
+    model.eval()
     return model
 
 
@@ -451,6 +460,58 @@ _REF_ANY = re.compile(r"\b(GAFI|FATF|RGPD|loi)\b|Recommandation\s+\d+|droit maro
                       re.IGNORECASE)
 _REF_R20 = re.compile(r"Recommandation\s*(n°\s*)?20\b|\bR\.?\s?20\b", re.IGNORECASE)
 
+# --- Règles déterministes du jeu de données ----------------------------------
+# Dans le dataset, le niveau de risque, le libellé de fiabilité, la note de
+# prudence, l'action propre au schéma et les recommandations GAFI citées
+# DÉCOULENT des valeurs de l'alerte. Un modèle peut recopier tous les chiffres
+# et se tromper sur ces déductions : facts_ok ne le voit pas, logic_ok oui.
+_LEVEL = re.compile(
+    r"niveau(?: de risque)?\s+(modéré à élevé|critique|élevé|modéré)", re.IGNORECASE)
+_RELIAB = re.compile(r"fiabilité\s+(élevée|moyenne|limitée)", re.IGNORECASE)
+LOW_CONF_MARKERS = ("nettement inférieure", "invite à la prudence")
+PATTERN_ACTION_KEY = {
+    "cycle": "circuit complet des fonds",
+    "fan-in": "comptes émetteurs",
+    "fan-out": "bénéficiaires des dispersions",
+    "none": "Examiner l'historique du client",
+}
+_REC_CITED = re.compile(r"Recommandation\s+(\d+)\s+du\s+GAFI\s*(?:\(([^)]*)\))?",
+                        re.IGNORECASE)
+# mot-clé que doit contenir l'intitulé entre parenthèses de chaque recommandation
+REC_KEYWORDS = {"10": "vigilance", "16": "virements", "20": "déclaration",
+                "21": "divulgation"}
+
+
+def check_derived(alert: dict, report: str) -> dict:
+    """Vérifie les déductions que le rapport tire des valeurs de l'alerte."""
+    m = _LEVEL.search(report)
+    level_ok = bool(m) and m.group(1).lower() == risk_level(alert["score"])
+    m = _RELIAB.search(report)
+    reliab_ok = bool(m) and m.group(1).lower() == confidence_label(alert["confidence"])
+    # même expression que le générateur : la note n'existe que si l'écart > 0,10
+    expects_note = alert["confidence"] < alert["score"] - 0.10
+    note_ok = any(k in report for k in LOW_CONF_MARKERS) == expects_note
+
+    p = alert["pattern"]
+    action_ok = PATTERN_ACTION_KEY[p] in report and not any(
+        k in report for q, k in PATTERN_ACTION_KEY.items() if q != p)
+
+    cited = _REC_CITED.findall(report)
+    known = {n for n, _ in cited if n in REC_KEYWORDS}
+    expected = {"16" if p == "fan-out" else "10", "20"}
+    if alert["score"] >= 0.85:
+        expected.add("21")
+    refs_ok = known == expected
+    # un intitulé présent doit correspondre au numéro (ex. « 10 » = vigilance)
+    cite_labels_ok = all(REC_KEYWORDS[n] in title.lower()
+                         for n, title in cited if n in REC_KEYWORDS and title)
+    return {
+        "level_ok": level_ok, "reliab_ok": reliab_ok, "note_ok": note_ok,
+        "action_ok": action_ok, "refs_ok": refs_ok,
+        "logic_ok": level_ok and reliab_ok and note_ok and action_ok and refs_ok,
+        "cite_labels_ok": cite_labels_ok,
+    }
+
 
 def score_report(alert: dict, report: str, finished: bool = True) -> dict:
     """Mesures automatiques d'un rapport.
@@ -463,6 +524,11 @@ def score_report(alert: dict, report: str, finished: bool = True) -> dict:
     echo         : le rapport recopie des morceaux du prompt (règles, alerte, extraits)
     finished     : le modèle a terminé sa phrase (pas coupé par la limite de longueur)
     usable       : faits exacts ET 5 sections ET pas de recopie ET terminé
+    logic_ok     : les déductions suivent les règles du dataset (niveau de risque,
+                   fiabilité, note de prudence, action du schéma, recommandations GAFI)
+    cite_labels_ok : chaque « Recommandation N du GAFI (intitulé) » a le bon intitulé
+    strict_ok    : usable ET logic_ok ET cite_labels_ok (tout ce que l'on sait
+                   vérifier automatiquement)
     Attention : facts_ok seul se laisse tromper par la recopie (l'alerte est dans
     le prompt) ; c'est `usable` qu'il faut regarder en premier.
     La lisibilité réelle et la justesse des citations se jugent à la main sur
@@ -472,6 +538,8 @@ def score_report(alert: dict, report: str, finished: bool = True) -> dict:
     positions = [report.find(s) for s in SECTIONS]
     sections_ok = all(p >= 0 for p in positions) and positions == sorted(positions)
     echo = any(m in report for m in PROMPT_MARKERS)
+    usable = ok and sections_ok and not echo and bool(finished)
+    derived = check_derived(alert, report)
     return {
         "facts_ok": ok,
         "n_problems": len(problems),
@@ -481,7 +549,9 @@ def score_report(alert: dict, report: str, finished: bool = True) -> dict:
         "cite_R20": bool(_REF_R20.search(report)),
         "echo": echo,
         "finished": bool(finished),
-        "usable": ok and sections_ok and not echo and bool(finished),
+        "usable": usable,
+        **derived,
+        "strict_ok": usable and derived["logic_ok"] and derived["cite_labels_ok"],
         "n_words": len(report.split()),
     }
 
@@ -502,6 +572,9 @@ def summarize(scores: list) -> dict:
         "echo_%": pct("echo"),
         "finished_%": pct("finished"),
         "usable_%": pct("usable"),
+        "logic_ok_%": pct("logic_ok"),
+        "cite_labels_ok_%": pct("cite_labels_ok"),
+        "strict_%": pct("strict_ok"),
         "avg_words": round(sum(s["n_words"] for s in scores) / n),
     }
 
@@ -533,6 +606,16 @@ def evaluate_model(model, tokenizer, records: list, *, instruction: str = None,
               for a, rep, fin in zip(alerts, reports, finished)]
     return {"reports": reports, "scores": scores, "summary": summarize(scores),
             "gen_seconds": gen_seconds}
+
+
+def save_reports(path, records: list, res: dict) -> None:
+    """Sauvegarde TOUS les rapports générés (+ leurs mesures) : permet de
+    recalculer de nouvelles métriques hors GPU, sans régénérer."""
+    with open(path, "w", encoding="utf-8") as f:
+        for r, report, score in zip(records, res["reports"], res["scores"]):
+            f.write(json.dumps({"id": r["id"], "input": r["input"],
+                                "report": report, "scores": score},
+                               ensure_ascii=False) + "\n")
 
 
 def write_samples_markdown(path, results_by_config: dict, records: list,
