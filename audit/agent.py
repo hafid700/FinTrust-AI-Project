@@ -31,7 +31,9 @@ Trois modes pour la comparaison avec / sans RAG :
 import random
 from collections import Counter
 
-from build_instruction_dataset import build_report
+import re
+
+from build_instruction_dataset import CLOSINGS, REFS, build_report
 from lora_utils import SECTIONS, check_derived, score_report
 from report_checks import check_report
 
@@ -80,10 +82,41 @@ def _assemble(head: str, blocks: dict) -> str:
     return head + "\n\n" + "\n\n".join(blocks[s] for s in SECTIONS)
 
 
+# Caractères hors alphabet latin (ex. « 庶 » glissé par le modèle) : jamais légitimes ici.
+_FOREIGN = re.compile(r"[^\u0000-\u024F\u2000-\u206F]")
+
+
+def _lines(block: str, drop_closing: bool = True) -> list:
+    out = [l.strip() for l in block.split("\n") if l.strip()]
+    return [l for l in out if not (drop_closing and l in CLOSINGS)]
+
+
+def _deviates_from_template(block: str, ref_block: str, section: str) -> bool:
+    """Sections 2 à 5 : pures fonctions de l'alerte dans le jeu de données (schéma,
+    voisinage, facteurs, références, recommandations). Toute ligne différente du
+    gabarit (faute, ligne en trop, mauvais niveau d'action, mauvais intitulé) est
+    donc une déviation. Seule exception : le paragraphe « droit marocain », optionnel."""
+    a, b = _lines(block), _lines(ref_block)
+    if section == SECTIONS[3]:
+        ma = f"- {REFS['MA']}"
+        a, b = [l for l in a if l != ma], [l for l in b if l != ma]
+    return a != b
+
+
 def _failing_sections(alert: dict, report: str, finished: bool) -> set:
     """Sections à remplacer d'après les contrôles qui échouent."""
     d = check_derived(alert, report)
     bad = set()
+    parsed = parse_sections(report)
+    if parsed is not None:
+        _, blocks = parsed
+        _, ref_blocks = parse_sections(reference_report(alert))
+        for s in SECTIONS:
+            if _FOREIGN.search(blocks[s]):
+                bad.add(s)
+        for s in SECTIONS[1:]:
+            if _deviates_from_template(blocks[s], ref_blocks[s], s):
+                bad.add(s)
     if not (d["level_ok"] and d["reliab_ok"] and d["note_ok"]):
         bad.add(SECTIONS[0])
     if not (d["refs_ok"] and d["cite_labels_ok"]):
