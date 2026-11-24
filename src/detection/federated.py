@@ -88,7 +88,7 @@ def fedavg_aggregate(states, weights):
 
 def run_experiment(df, scenarios=("local", "fedavg", "central_local"), partition="balanced", n_clients=3,
                    rounds=40, local_epochs=5, hidden=64, layers=2, lr=3e-3, patience=10,
-                   pos_weight_power=0.5, seed=42, out_dir="reports/a4", device=None):
+                   pos_weight_power=0.5, seed=42, out_dir="reports/a4", device=None, ckpt_dir=None):
     set_seed(seed)
     device = torch.device(device or ("cuda" if torch.cuda.is_available() else "cpu"))
     views, info = build_client_views(df, n_clients, partition, seed)
@@ -174,6 +174,13 @@ def run_experiment(df, scenarios=("local", "fedavg", "central_local"), partition
                 if bad >= patience:
                     print(f"[{tag}] early stopping (round {r})"); break
         gmodel.load_state_dict(best_state)
+        if ckpt_dir:                                              # petit fichier (~200 Ko) : peut être commité
+            Path(ckpt_dir).mkdir(parents=True, exist_ok=True)
+            torch.save({"state_dict": {k: v.detach().cpu() for k, v in best_state.items()},
+                        "edge_dim": edge_dim, "hidden": hidden, "layers": layers,
+                        "feature_names": info["feature_names"], "partition": partition,
+                        "n_clients": n_clients, "seed": seed, "pos_weight": float(pw), "n_params": n_params},
+                       Path(ckpt_dir) / f"{tag}_fedavg_seed{seed}.pt")
         comm_mb = 2 * len(clients) * n_params * 4 * rounds_run / 1e6      # envoi + réception, float32
         finalize("fedavg", pool(gmodel, 1), pool(gmodel, 2), t0,
                  {"rounds": rounds_run, "local_epochs": local_epochs, "comm_total_MB": round(comm_mb, 1),
@@ -223,9 +230,11 @@ def main() -> None:
     ap.add_argument("--lr", type=float, default=3e-3)
     ap.add_argument("--patience", type=int, default=10)
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--ckpt-dir", default="checkpoints")
     a = ap.parse_args()
     run_experiment(pd.read_parquet(a.parquet), tuple(a.scenarios), a.partition, a.clients, a.rounds,
-                   a.local_epochs, a.hidden, a.layers, a.lr, a.patience, seed=a.seed, out_dir=a.out)
+                   a.local_epochs, a.hidden, a.layers, a.lr, a.patience, seed=a.seed, out_dir=a.out,
+                   ckpt_dir=a.ckpt_dir)
 
 
 if __name__ == "__main__":

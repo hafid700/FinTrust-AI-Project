@@ -1,22 +1,22 @@
 {
   "model": "fedavg",
-  "threshold_chosen_on_val": 0.9171621203422546,
-  "n_alerts": 2065,
-  "precision": 0.7360774818401937,
-  "recall": 0.7450980392156863,
-  "n_true_positive": 1520,
+  "threshold_chosen_on_val": 0.8173497915267944,
+  "n_alerts": 2246,
+  "precision": 0.7092609082813891,
+  "recall": 0.7808823529411765,
+  "n_true_positive": 1593,
   "n_test_positive": 2040,
   "pattern_counts": {
-    "none": 1333,
-    "fan_out": 374,
-    "fan_in": 259,
-    "cycle": 99
+    "none": 1476,
+    "fan_out": 380,
+    "fan_in": 266,
+    "cycle": 124
   },
   "share_true_positive_by_pattern": {
-    "cycle": 0.616,
-    "fan_in": 0.853,
-    "fan_out": 0.984,
-    "none": 0.653
+    "cycle": 0.556,
+    "fan_in": 0.846,
+    "fan_out": 0.982,
+    "none": 0.627
   },
-  "n_neighbor_transactions": 9675
+  "n_neighbor_transactions": 10545
 }

@@ -1,0 +1,39 @@
+{
+  "partition": "skewed",
+  "n_clients": 3,
+  "n_edge_features": 50,
+  "cross_client_share_pct": 38.74,
+  "illicit_cross_client_share_pct": 54.45,
+  "clients": [
+    {
+      "client": 0,
+      "n_banks": 4199,
+      "n_local_edges": 371155,
+      "n_owner_edges": 326359,
+      "owner_share_pct": 65.27,
+      "illicit_owner_train": 1125,
+      "illicit_owner_val": 668,
+      "illicit_owner_test": 1100
+    },
+    {
+      "client": 1,
+      "n_banks": 4155,
+      "n_local_edges": 212305,
+      "n_owner_edges": 119990,
+      "owner_share_pct": 24.0,
+      "illicit_owner_train": 541,
+      "illicit_owner_val": 324,
+      "illicit_owner_test": 641
+    },
+    {
+      "client": 2,
+      "n_banks": 4046,
+      "n_local_edges": 110243,
+      "n_owner_edges": 53651,
+      "owner_share_pct": 10.73,
+      "illicit_owner_train": 287,
+      "illicit_owner_val": 192,
+      "illicit_owner_test": 299
+    }
+  ]
+}

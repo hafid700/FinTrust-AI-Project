@@ -53,6 +53,16 @@ class EdgeGNN(nn.Module):
         self.cls = nn.Sequential(nn.Linear(2 * hidden + edge_dim, hidden), nn.ReLU(),
                                  nn.Dropout(dropout), nn.Linear(hidden, 1))
 
+    def embed(self, num_nodes: int, edge_index, edge_attr):
+        """Embeddings de noeuds (contexte réseau) après message passing."""
+        src, dst = edge_index
+        deg = torch.stack([torch.bincount(dst, minlength=num_nodes),
+                           torch.bincount(src, minlength=num_nodes)], dim=1).to(edge_attr.dtype)
+        h = F.relu(self.node_in(torch.log1p(deg)))
+        for layer in self.layers:
+            h = layer(h, edge_index, edge_attr)
+        return h
+
     def forward(self, num_nodes: int, edge_index, edge_attr, sel):
         src, dst = edge_index
         deg = torch.stack([torch.bincount(dst, minlength=num_nodes),

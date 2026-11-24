@@ -44,4 +44,4 @@ pytest                           # doit passer avant de commencer
 
 ## Journal du contrat d'alerte
 - A6 : ajout du champ optionnel `context` (dict : banques, comptes, montants, devises, dates). Jamais le label.
-
+- A6b : `checkpoints/` (poids FedAvg, commités) + `reports/a6/explain_bundle_fedavg.npz` pour SHAP/IG (voir `docs/EXPLICATION_FEDAVG.md`).

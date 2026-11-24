@@ -69,7 +69,7 @@ def build_client_views(df: pd.DataFrame, n_clients: int = 3, strategy: str = "ba
     sc = df["from_bank"].map(bank_client).to_numpy().astype(np.int64)
     dc = df["to_bank"].map(bank_client).to_numpy().astype(np.int64)
     split = temporal_split(df)
-    X_base, _ = build_edge_features(df, split)
+    X_base, base_names = build_edge_features(df, split)
     y_all = df["is_laundering"].to_numpy()
     tx_all = df["tx_id"].to_numpy()
 
@@ -99,6 +99,7 @@ def build_client_views(df: pd.DataFrame, n_clients: int = 3, strategy: str = "ba
     info = {
         "partition": strategy, "n_clients": n_clients,
         "n_edge_features": int(views[0].edge_attr.shape[1]),
+        "feature_names": base_names + gnames,
         "cross_client_share_pct": round(100 * float(cross.mean()), 2),
         "illicit_cross_client_share_pct": round(100 * float(cross[y_all == 1].mean()), 2),
         "clients": [{

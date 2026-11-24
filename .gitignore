@@ -5,6 +5,7 @@ data/processed/*
 !data/processed/.gitkeep
 models/
 *.pt
+!checkpoints/*.pt
 *.pth
 *.safetensors
 *.faiss
