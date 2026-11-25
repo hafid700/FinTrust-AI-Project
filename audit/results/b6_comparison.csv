@@ -1,4 +1,4 @@
 mode_rag,n,draft_usable_%,draft_strict_%,final_strict_%,full_replacement_%,sections_kept_from_llm_%,avg_sources,replaced_Résumé_%,replaced_Schéma détecté_%,replaced_Facteurs explicatifs_%,replaced_Références réglementaires_%,replaced_Recommandations_%,temps_s
-off,20,100.0,15.0,100.0,0.0,65.0,0.0,55.0,0.0,0.0,45.0,75.0,145
-prompt,20,85.0,0.0,100.0,10.0,32.0,0.0,80.0,20.0,40.0,100.0,100.0,195
-annex,20,100.0,15.0,100.0,0.0,65.0,2.0,55.0,0.0,0.0,45.0,75.0,146
+off,20,100.0,100.0,100.0,0.0,100.0,0.0,0.0,0.0,0.0,0.0,0.0,190
+prompt,20,100.0,20.0,100.0,0.0,63.0,0.0,0.0,5.0,0.0,100.0,80.0,197
+annex,20,100.0,100.0,100.0,0.0,100.0,2.0,0.0,0.0,0.0,0.0,0.0,190

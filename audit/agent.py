@@ -197,7 +197,8 @@ def build_annex(evidence: dict, trace: list, replaced: list, simulated: bool,
             lines.append("Statistiques du voisinage (calculées sur les transactions voisines, "
                          "pas sur l'historique complet) :")
             lines.append(f"- {s['n_neighbors']} transactions voisines ({s['n_incoming']} entrante(s), "
-                         f"{s['n_outgoing']} sortante(s)) ; montant total {_fr_num(s['total_amount'])} ; "
+                         f"{s['n_outgoing']} sortante(s)) ; {s['n_same_currency']} dans la devise de l'alerte ({s['currency']}) : "
+                         f"montant total {_fr_num(s['total_amount'])}, "
                          f"montant moyen {_fr_num(s['mean_amount'])} ; "
                          f"{s['distinct_counterparties']} contrepartie(s) distincte(s)")
     rg = evidence.get("regulation")

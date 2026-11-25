@@ -113,11 +113,14 @@ class RealBackend:
     def account_stats(self, alert: dict) -> dict:
         rows = self.neighbors(alert)
         mine = self._accounts(alert)
-        amounts = [r["amount"] for r in rows]
+        cur = (alert.get("context") or {}).get("payment_currency")
+        # Les devises ne s'additionnent pas : montants agrégés dans la devise de l'alerte seulement
+        amounts = [r["amount"] for r in rows if r["currency"] == cur]
         cps = {r["to_account"] if r["from_account"] in mine else r["from_account"] for r in rows}
         cps -= mine
         return {"n_neighbors": len(rows), "n_incoming": sum(r["direction"] == "entrante" for r in rows),
                 "n_outgoing": sum(r["direction"] == "sortante" for r in rows),
+                "currency": cur, "n_same_currency": len(amounts),
                 "total_amount": round(sum(amounts), 2),
                 "mean_amount": round(sum(amounts) / len(amounts), 2) if amounts else 0.0,
                 "distinct_counterparties": len(cps)}
