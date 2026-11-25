@@ -1,18 +1,31 @@
 #!/usr/bin/env python3
-"""B3 - Dataset d'instruction (alerte -> rapport d'audit) pour le LoRA.
+"""B3 (v2) - Dataset d'instruction (alerte -> rapport d'audit) pour le LoRA.
 
-Entrée  : audit/mock_alerts.json (B2) ; plus tard, les vraies alertes de A.
-Sortie  : audit/instruction_data/{train,val,test}.jsonl (80/10/10, seed fixée).
+Entrée  : les VRAIES alertes du modèle FedAvg de A, calibrées et expliquées par B5
+          (audit/results/b5/alerts_explained.jsonl : 2 246 alertes). La v1 utilisait
+          les alertes factices de B2 (audit/mock_alerts.json, encore lisibles avec --alerts).
+Sortie  : audit/instruction_data/{train,val,test}.jsonl (80/10/10 stratifié par schéma, seed fixée).
 
-DATASET SYNTHÉTIQUE : les rapports sont produits par des modèles de texte avec
-variations (pas par un LLM), à partir d'alertes factices. À signaler dans le
-README. Un rapport n'utilise QUE les informations de l'alerte (pas de montant,
-de nom ou de date inventés) : cette règle est vérifiée automatiquement par
-audit/report_checks.py.
+Les ALERTES sont réelles ; les RAPPORTS restent produits par des modèles de texte avec
+variations (pas par un LLM) : ce sont des cibles d'entraînement synthétiques à signaler dans
+le README. Un rapport n'utilise QUE les informations de l'alerte (pas de montant, de nom ou
+de date inventés) : règle vérifiée par audit/report_checks.py. Le champ `input` de chaque
+exemple est la « vue compacte » de l'alerte (prompt_view) : valeurs arrondies à 3 décimales
+et sans les champs techniques (valeurs de l'explication, labels). Les labels vrai/faux
+de A ne sont jamais utilisés.
+
+Règles de déduction (v2), toutes déterministes :
+  * niveau de risque : d'après la CONFIANCE CALIBRÉE (B5) : critique >= 0,90 ; élevé >= 0,70 ;
+    modéré à élevé >= 0,50 ; sinon modéré (le score brut est trop gonflé pour servir de seuil) ;
+  * fiabilité du schéma : élevée pour fan_in et fan_out, limitée pour cycle et none
+    (précision des alertes par schéma mesurée par A sur son test : 0,56 à 0,98) ;
+    une note de prudence accompagne une fiabilité limitée ;
+  * recommandations GAFI : R10 (R16 pour fan_out), R20 toujours, R21 si confiance >= 0,70 ;
+  * chaque facteur est dit « aggravant » ou « atténuant » d'après le signe de son attribution.
 
 Usage :
     python audit/build_instruction_dataset.py
-    python audit/build_instruction_dataset.py --alerts audit/mock_alerts.json --seed 42
+    python audit/build_instruction_dataset.py --alerts audit/results/b5/alerts_explained.jsonl --seed 42
 """
 import argparse
 import json
@@ -21,11 +34,15 @@ from collections import Counter
 from pathlib import Path
 
 try:
-    from report_checks import check_report, fr
+    from report_checks import check_report, fr, fmt_amount, fmt_date
 except ImportError:  # import depuis la racine du dépôt (notebooks Colab)
-    from audit.report_checks import check_report, fr
+    from audit.report_checks import check_report, fr, fmt_amount, fmt_date
 
 HERE = Path(__file__).parent
+GENERATOR = "templates-v2"
+RISK_THRESHOLDS = (0.90, 0.70, 0.50)   # critique, élevé, modéré à élevé (sur la confiance calibrée)
+R21_THRESHOLD = 0.70
+RELIABLE_PATTERNS = ("fan_in", "fan_out")
 
 INSTRUCTION = (
     "Tu es un analyste conformité LAB/FT. Rédige un rapport d'audit en français "
@@ -35,32 +52,54 @@ INSTRUCTION = (
 
 # --- Vocabulaire ------------------------------------------------------------
 
+# Les 30 groupes de features de l'explication de B5 (noms de A, graph.py et graph_features.py).
+# Les features « de graphe » sont des log(1 + nombre) ou log(1 + somme) des transactions
+# STRICTEMENT ANTÉRIEURES (24 h glissantes, ou tout l'historique pour `_all`).
 FEATURE_LABELS = {
-    "amount": "le montant de la transaction",
+    "log_amount_paid": "le montant payé",
+    "log_amount_received": "le montant reçu",
+    "same_currency": "l'identité des devises payée et reçue",
     "cross_bank": "le caractère inter-bancaire de la transaction",
-    "cycle_length": "la longueur du circuit de fonds",
-    "time_gap_hours": "le délai entre les mouvements successifs",
-    "in_degree": "le nombre de comptes qui versent vers ce compte",
-    "out_degree": "le nombre de comptes vers lesquels ce compte verse",
+    "hour_sin": "l'heure de la transaction (composante sinus)",
+    "hour_cos": "l'heure de la transaction (composante cosinus)",
     "payment_format": "le format de paiement utilisé",
-    "same_day_inflows": "le nombre de virements entrants le même jour",
-    "same_day_outflows": "le nombre de virements sortants le même jour",
-    "currency_mismatch": "l'écart entre la devise payée et la devise reçue",
-    "hour_of_day": "l'heure de la transaction",
+    "payment_currency": "la devise de paiement",
+    "src_out_cnt_24h": "le nombre de transactions sortantes du compte émetteur sur 24 h",
+    "src_out_amt_24h": "le volume sortant du compte émetteur sur 24 h",
+    "src_in_cnt_24h": "le nombre de transactions entrantes du compte émetteur sur 24 h",
+    "src_in_amt_24h": "le volume entrant du compte émetteur sur 24 h",
+    "src_passthrough_24h": "le déséquilibre sorties/entrées du compte émetteur sur 24 h (profil de compte relais)",
+    "dst_out_cnt_24h": "le nombre de transactions sortantes du compte destinataire sur 24 h",
+    "dst_out_amt_24h": "le volume sortant du compte destinataire sur 24 h",
+    "dst_in_cnt_24h": "le nombre de transactions entrantes du compte destinataire sur 24 h",
+    "dst_in_amt_24h": "le volume entrant du compte destinataire sur 24 h",
+    "dst_passthrough_24h": "le déséquilibre sorties/entrées du compte destinataire sur 24 h (profil de compte relais)",
+    "src_out_cnt_all": "le nombre de transactions sortantes passées du compte émetteur",
+    "src_out_amt_all": "le volume sortant passé du compte émetteur",
+    "src_in_cnt_all": "le nombre de transactions entrantes passées du compte émetteur",
+    "src_in_amt_all": "le volume entrant passé du compte émetteur",
+    "src_passthrough_all": "le déséquilibre sorties/entrées passé du compte émetteur (profil de compte relais)",
+    "dst_out_cnt_all": "le nombre de transactions sortantes passées du compte destinataire",
+    "dst_out_amt_all": "le volume sortant passé du compte destinataire",
+    "dst_in_cnt_all": "le nombre de transactions entrantes passées du compte destinataire",
+    "dst_in_amt_all": "le volume entrant passé du compte destinataire",
+    "dst_passthrough_all": "le déséquilibre sorties/entrées passé du compte destinataire (profil de compte relais)",
+    "pair_prev": "le nombre de transactions antérieures entre ces deux mêmes comptes",
+    "rev_pair_prev": "le nombre de transactions antérieures en sens inverse entre ces deux comptes",
 }
 
-# NB : seul le pattern annoncé doit contenir son code (cycle, fan-in, fan-out) ;
+# NB : seul le pattern annoncé doit contenir son code (cycle, fan_in, fan_out) ;
 # les autres textes n'emploient pas ces mots (contrôlé par report_checks).
 PATTERN_DESC = {
     "cycle": (
         "circuit fermé de fonds : l'argent revient vers son point de départ "
         "après plusieurs transferts, schéma typique de l'empilement (layering)"
     ),
-    "fan-in": (
+    "fan_in": (
         "concentration de fonds : de nombreux comptes versent vers un même "
         "compte, schéma compatible avec un compte « mule » collecteur"
     ),
-    "fan-out": (
+    "fan_out": (
         "dispersion de fonds : un compte redistribue rapidement des fonds vers "
         "de nombreux comptes, schéma compatible avec un fractionnement des montants"
     ),
@@ -72,21 +111,27 @@ PATTERN_DESC = {
 }
 
 INTROS = [
-    "La transaction {tx} a été signalée par le détecteur avec un score de risque "
-    "de {score} (niveau {risk}) et un indice de confiance de {conf} "
-    "(fiabilité {clabel}).",
+    "La transaction {tx} a été signalée par le détecteur avec un score brut de "
+    "{score} et une confiance calibrée de {conf} (niveau de risque {risk}, "
+    "fiabilité du schéma {rel}).",
     "Le modèle de détection a levé une alerte sur la transaction {tx} : score "
-    "de risque {score}, niveau {risk}, confiance {conf} (fiabilité {clabel}).",
-    "Alerte sur la transaction {tx} : score {score}, niveau de risque {risk}, "
-    "confiance {conf}, fiabilité {clabel}.",
+    "brut {score}, confiance calibrée {conf}, niveau {risk}, fiabilité du "
+    "schéma {rel}.",
+    "Alerte sur la transaction {tx} : score brut {score}, confiance calibrée "
+    "{conf}, niveau de risque {risk}, fiabilité du schéma {rel}.",
 ]
 
-LOW_CONF_NOTES = [
-    "La confiance est nettement inférieure au score : l'alerte doit être "
-    "confirmée par un analyste avant toute décision.",
-    "L'écart entre le score et la confiance invite à la prudence : une "
-    "validation humaine est nécessaire.",
+CAUTION_NOTES = [
+    "Ce type de schéma est associé à davantage de fausses alertes : l'alerte "
+    "doit être confirmée par un analyste avant toute décision.",
+    "Le schéma détecté est moins discriminant : une validation humaine est "
+    "nécessaire.",
 ]
+
+FEATURE_CAVEAT = (
+    "Ces facteurs décrivent les caractéristiques de la transaction ; le contexte "
+    "réseau des comptes (comptes voisins) n'est pas détaillé."
+)
 
 # Références : formulations fidèles au corpus consulté en B1 (GAFI 2012, loi
 # marocaine LAB/FT). Ce sont des synthèses : à faire relire (cf. B3 du cahier).
@@ -149,8 +194,8 @@ ACTIONS_BY_RISK = {
 
 PATTERN_ACTION = {
     "cycle": "Reconstituer le circuit complet des fonds et identifier les comptes impliqués.",
-    "fan-in": "Identifier les comptes émetteurs et vérifier si le compte collecteur est un compte mule.",
-    "fan-out": "Identifier les bénéficiaires des dispersions et vérifier leur justification économique.",
+    "fan_in": "Identifier les comptes émetteurs et vérifier si le compte collecteur est un compte mule.",
+    "fan_out": "Identifier les bénéficiaires des dispersions et vérifier leur justification économique.",
     "none": "Examiner l'historique du client pour confirmer ou écarter le caractère inhabituel.",
 }
 
@@ -168,44 +213,56 @@ CLOSINGS = [
 
 # --- Niveaux ---------------------------------------------------------------
 
-def risk_level(score: float) -> str:
-    if score >= 0.90:
+def risk_level(confidence: float) -> str:
+    """Niveau de risque d'après la CONFIANCE CALIBRÉE (B5), pas le score brut."""
+    if confidence >= RISK_THRESHOLDS[0]:
         return "critique"
-    if score >= 0.80:
+    if confidence >= RISK_THRESHOLDS[1]:
         return "élevé"
-    if score >= 0.65:
+    if confidence >= RISK_THRESHOLDS[2]:
         return "modéré à élevé"
     return "modéré"
 
 
-def confidence_label(conf: float) -> str:
-    if conf >= 0.80:
-        return "élevée"
-    if conf >= 0.65:
-        return "moyenne"
-    return "limitée"
+def reliability_label(pattern: str) -> str:
+    return "élevée" if pattern in RELIABLE_PATTERNS else "limitée"
 
 
 def pick_references(alert: dict, rng: random.Random) -> list:
-    keys = ["R16" if alert["pattern"] == "fan-out" else "R10", "R20"]
-    if alert["score"] >= 0.85:
+    keys = ["R16" if alert["pattern"] == "fan_out" else "R10", "R20"]
+    if alert["confidence"] >= R21_THRESHOLD:
         keys.append("R21")
     if rng.random() < 0.7:
         keys.append("MA")
     return sorted(keys, key=REF_ORDER.index)
 
 
+def transaction_sentence(ctx: dict) -> str:
+    """Phrase descriptive de la transaction : uniquement des valeurs de l'alerte."""
+    paid = f"{fmt_amount(ctx['amount_paid'])} {ctx['payment_currency']}"
+    if ctx["amount_received"] == ctx["amount_paid"] and ctx["receiving_currency"] == ctx["payment_currency"]:
+        amount = f"d'un montant de {paid}"
+    else:
+        recv = f"{fmt_amount(ctx['amount_received'])} {ctx['receiving_currency']}"
+        amount = f"d'un montant payé de {paid} (montant reçu : {recv})"
+    date, hour = fmt_date(ctx["timestamp"])
+    return (f"Transaction du {date} à {hour}, {amount}, du compte {ctx['from_account']} "
+            f"(banque {ctx['from_bank']}) vers le compte {ctx['to_account']} "
+            f"(banque {ctx['to_bank']}), format de paiement {ctx['payment_format']}.")
+
+
 # --- Rapport ---------------------------------------------------------------
 
 def build_report(alert: dict, rng: random.Random) -> str:
     score, conf, pattern = alert["score"], alert["confidence"], alert["pattern"]
-    risk, clabel = risk_level(score), confidence_label(conf)
+    risk, rel = risk_level(conf), reliability_label(pattern)
 
     intro = rng.choice(INTROS).format(
-        tx=alert["tx_id"], score=fr(score), risk=risk, conf=fr(conf), clabel=clabel
+        tx=alert["tx_id"], score=fr(score), risk=risk, conf=fr(conf), rel=rel
     )
-    if conf < score - 0.10:
-        intro += " " + rng.choice(LOW_CONF_NOTES)
+    if rel == "limitée":
+        intro += " " + rng.choice(CAUTION_NOTES)
+    intro += "\n" + transaction_sentence(alert["context"])
 
     k = len(alert["neighbors"])
     if k == 0:
@@ -216,11 +273,13 @@ def build_report(alert: dict, rng: random.Random) -> str:
         voisinage = f"{k} transaction{s} voisine{s} dans le graphe ({ids})."
 
     feature_lines = []
-    for rank, (name, weight) in enumerate(alert["top_features"]):
+    for rank, ((name, weight), sign) in enumerate(zip(alert["top_features"], alert["signs"])):
         label = FEATURE_LABELS.get(name, name.replace("_", " "))
         label = label[0].upper() + label[1:]
-        suffix = " — facteur principal" if rank == 0 else ""
-        feature_lines.append(f"- {label} ({name}) : poids {fr(weight)}{suffix}")
+        role = "aggravant" if sign > 0 else "atténuant"
+        suffix = f"facteur principal, {role}" if rank == 0 else role
+        feature_lines.append(f"- {label} ({name}) : poids {fr(weight)} — {suffix}")
+    feature_lines.append(FEATURE_CAVEAT)
 
     refs = pick_references(alert, rng)
     ref_lines = [f"- {REFS[key]}" for key in refs]
@@ -253,14 +312,64 @@ def build_report(alert: dict, rng: random.Random) -> str:
     ])
 
 
+# --- Alertes -> exemples ------------------------------------------------------
+
+CONTEXT_KEYS = ("timestamp", "from_bank", "from_account", "to_bank", "to_account",
+                "amount_paid", "payment_currency", "amount_received", "receiving_currency",
+                "payment_format")
+
+
+def prompt_view(alert: dict) -> dict:
+    """Vue compacte de l'alerte donnée au modèle : valeurs arrondies à 3 décimales, sans
+    champs techniques. Les poids et signes viennent de l'explication de B5."""
+    signs = alert.get("signs") or alert.get("explanation", {}).get("signs")
+    if signs is None or len(signs) != len(alert["top_features"]):
+        raise ValueError(f"alerte {alert['tx_id']} : signes d'attribution manquants (lancer explain.py)")
+    return {
+        "tx_id": alert["tx_id"],
+        "score": round(alert["score"], 3),
+        "confidence": round(alert["confidence"], 3),
+        "top_features": [[n, round(w, 3)] for n, w in alert["top_features"]],
+        "signs": [int(x) for x in signs],
+        "neighbors": list(alert["neighbors"]),
+        "pattern": alert["pattern"],
+        "context": {k: alert["context"][k] for k in CONTEXT_KEYS},
+    }
+
+
+def load_alerts(path: Path) -> list:
+    text = Path(path).read_text(encoding="utf-8")
+    if str(path).endswith(".jsonl"):
+        return [json.loads(l) for l in text.splitlines() if l.strip()]
+    return json.loads(text)
+
+
+def stratified_split(alerts: list, seed: int) -> dict:
+    """80/10/10 en gardant la proportion de chaque schéma dans chaque partie."""
+    by_pat = {}
+    for i, a in enumerate(alerts):
+        by_pat.setdefault(a["pattern"], []).append(i)
+    out = {"train": [], "val": [], "test": []}
+    for pat in sorted(by_pat):
+        idx = by_pat[pat]
+        random.Random(f"{seed}-{pat}").shuffle(idx)
+        n_tr, n_va = int(0.8 * len(idx)), int(0.1 * len(idx))
+        out["train"] += idx[:n_tr]
+        out["val"] += idx[n_tr:n_tr + n_va]
+        out["test"] += idx[n_tr + n_va:]
+    for k in out:
+        random.Random(f"{seed}-{k}").shuffle(out[k])
+    return out
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    parser.add_argument("--alerts", type=Path, default=HERE / "mock_alerts.json")
+    parser.add_argument("--alerts", type=Path, default=HERE / "results" / "b5" / "alerts_explained.jsonl")
     parser.add_argument("--out-dir", type=Path, default=HERE / "instruction_data")
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
 
-    alerts = json.loads(args.alerts.read_text(encoding="utf-8"))
+    alerts = [prompt_view(a) for a in load_alerts(args.alerts)]
 
     # Rapport reproductible : le hasard dépend de la seed ET du tx_id.
     records = []
@@ -274,19 +383,10 @@ def main() -> None:
             "instruction": INSTRUCTION,
             "input": json.dumps(alert, ensure_ascii=False),
             "output": report,
-            "meta": {"synthetic": True, "generator": "templates-v1"},
+            "meta": {"synthetic_targets": True, "real_alerts": True, "generator": GENERATOR},
         })
 
-    # Découpage 80/10/10, mélangé avec la seed (chaque alerte est unique).
-    order = list(range(len(records)))
-    random.Random(args.seed).shuffle(order)
-    n_train, n_val = int(0.8 * len(order)), int(0.1 * len(order))
-    splits = {
-        "train": order[:n_train],
-        "val": order[n_train:n_train + n_val],
-        "test": order[n_train + n_val:],
-    }
-
+    splits = stratified_split(alerts, args.seed)
     args.out_dir.mkdir(parents=True, exist_ok=True)
     for name, idxs in splits.items():
         with open(args.out_dir / f"{name}.jsonl", "w", encoding="utf-8") as f:
@@ -297,8 +397,9 @@ def main() -> None:
     words = [len(r["output"].split()) for r in records]
     print(f"{len(records)} exemples, tous cohérents avec leur alerte")
     for name, idxs in splits.items():
-        pats = Counter(json.loads(records[i]["input"])["pattern"] for i in idxs)
-        print(f"  {name}: {len(idxs)} | patterns {dict(pats)}")
+        pats = Counter(alerts[i]["pattern"] for i in idxs)
+        lv = Counter(risk_level(alerts[i]["confidence"]) for i in idxs)
+        print(f"  {name}: {len(idxs)} | schémas {dict(pats)} | niveaux {dict(lv)}")
     print(f"longueur des rapports : moyenne {sum(words) / len(words):.0f} mots, "
           f"max {max(words)} mots")
     print(f"fichiers écrits dans {args.out_dir}")

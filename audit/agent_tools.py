@@ -68,6 +68,65 @@ class MockBackend:
         return [(n, w) for n, w in alert["top_features"]]
 
 
+class RealBackend:
+    """Backend branché sur les données réelles d'A et de B5 (aucune valeur simulée).
+
+    neighbors     : transactions voisines lues dans neighbor_transactions.csv (A)
+    account_stats : agrégats calculés sur ces mêmes voisines, pour les comptes de
+                    l'alerte (ce n'est PAS l'historique complet du compte : le fichier
+                    d'A ne contient que le voisinage des alertes)
+    explain       : top_features et signes de alerts_explained.jsonl (B5)
+    """
+
+    name = "données réelles (alertes d'A, explications B5)"
+    simulated = False
+
+    def __init__(self, neighbor_csv: str, explained_alerts: list = None):
+        import csv
+        with open(neighbor_csv, newline="", encoding="utf-8") as f:
+            self.tx = {int(r["tx_id"]): r for r in csv.DictReader(f)}
+        self.expl = {a["tx_id"]: a for a in (explained_alerts or [])}
+
+    @staticmethod
+    def _accounts(alert):
+        c = alert.get("context") or {}
+        return {c.get("from_account"), c.get("to_account")} - {None}
+
+    def neighbors(self, alert: dict) -> list:
+        mine, out = self._accounts(alert), []
+        for n in alert["neighbors"]:
+            r = self.tx.get(int(n))
+            if r is None:
+                continue
+            if r["to_account"] in mine:
+                direction = "entrante"
+            elif r["from_account"] in mine:
+                direction = "sortante"
+            else:
+                direction = "autre"
+            out.append({"tx_id": int(n), "date": r["timestamp"],
+                        "amount": float(r["amount_paid"]), "currency": r["payment_currency"],
+                        "direction": direction, "format": r["payment_format"],
+                        "from_account": r["from_account"], "to_account": r["to_account"]})
+        return out
+
+    def account_stats(self, alert: dict) -> dict:
+        rows = self.neighbors(alert)
+        mine = self._accounts(alert)
+        amounts = [r["amount"] for r in rows]
+        cps = {r["to_account"] if r["from_account"] in mine else r["from_account"] for r in rows}
+        cps -= mine
+        return {"n_neighbors": len(rows), "n_incoming": sum(r["direction"] == "entrante" for r in rows),
+                "n_outgoing": sum(r["direction"] == "sortante" for r in rows),
+                "total_amount": round(sum(amounts), 2),
+                "mean_amount": round(sum(amounts) / len(amounts), 2) if amounts else 0.0,
+                "distinct_counterparties": len(cps)}
+
+    def explain(self, alert: dict) -> list:
+        a = self.expl.get(alert["tx_id"], alert)
+        return [(n, w) for n, w in a["top_features"]]
+
+
 # --- Outils ------------------------------------------------------------------
 
 def _result(tool, ok, source, data, summary):
@@ -81,9 +140,11 @@ def neighbors_tool(alert: dict, backend) -> dict:
         if not rows:
             return _result(name, True, backend.name, [],
                            "aucune transaction voisine")
-        same = sum(1 for r in rows if r["same_pattern"])
-        return _result(name, True, backend.name, rows,
-                       f"{len(rows)} voisines, dont {same} dans le même schéma")
+        if all("same_pattern" in r for r in rows):
+            same = sum(1 for r in rows if r["same_pattern"])
+            return _result(name, True, backend.name, rows,
+                           f"{len(rows)} voisines, dont {same} dans le même schéma")
+        return _result(name, True, backend.name, rows, f"{len(rows)} transactions voisines")
     except Exception as e:  # un outil en panne ne doit pas bloquer le rapport
         return _result(name, False, backend.name, None, f"échec : {e}")
 
@@ -102,11 +163,12 @@ def explain_tool(alert: dict, backend) -> dict:
 
 
 def stats_tool(alert: dict, backend) -> dict:
-    name = "statistiques du compte"
+    name = "statistiques du voisinage" if not getattr(backend, "simulated", False) else "statistiques du compte"
     try:
         s = backend.account_stats(alert)
         return _result(name, True, backend.name, s,
-                       f"{s['tx_count_30d']} transactions sur 30 jours")
+                       (f"{s['tx_count_30d']} transactions sur 30 jours" if "tx_count_30d" in s
+                        else f"{s['n_neighbors']} transactions voisines analysées"))
     except Exception as e:
         return _result(name, False, backend.name, None, f"échec : {e}")
 

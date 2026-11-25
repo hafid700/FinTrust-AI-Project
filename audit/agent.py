@@ -8,7 +8,7 @@ le LLM-LoRA ») :
     2. OUTILS    voisinage, explication, statistiques, recherche réglementaire
     3. RÉDIGER   le LLM-LoRA écrit le rapport en 5 sections
     4. CONTRÔLER chaque déduction du rapport (niveau de risque, fiabilité, note de
-                 prudence, action du schéma, recommandations GAFI) est comparée
+                 prudence, action du schéma, recommandations GAFI, aggravant/atténuant) est comparée
                  aux règles déterministes ; une section fausse est REMPLACÉE par
                  la version calculée, et la correction est tracée
     5. ANNEXER   les éléments recueillis par les outils (section 6) + la traçabilité
@@ -123,6 +123,8 @@ def _failing_sections(alert: dict, report: str, finished: bool) -> set:
         bad.add(SECTIONS[3])
     if not d["action_ok"]:
         bad.add(SECTIONS[4])
+    if not d["signs_ok"]:
+        bad.add(SECTIONS[2])
     ok, _ = check_report(alert, report)
     if not ok:
         bad.update({SECTIONS[1], SECTIONS[2]})
@@ -174,17 +176,30 @@ def build_annex(evidence: dict, trace: list, replaced: list, simulated: bool,
     if nb and nb["ok"] and nb["data"]:
         lines.append(f"Voisinage{tag} :")
         for r in nb["data"]:
-            same = "oui" if r["same_pattern"] else "non"
-            lines.append(f"- Transaction {r['tx_id']} : montant {_fr_num(r['amount'])}, "
-                         f"sens {r['direction']}, même schéma que l'alerte : {same}")
+            if "same_pattern" in r:
+                same = "oui" if r["same_pattern"] else "non"
+                lines.append(f"- Transaction {r['tx_id']} : montant {_fr_num(r['amount'])}, "
+                             f"sens {r['direction']}, même schéma que l'alerte : {same}")
+            else:
+                lines.append(f"- Transaction {r['tx_id']} du {r['date']} : montant "
+                             f"{_fr_num(r['amount'])} {r['currency']}, sens {r['direction']}, "
+                             f"format {r['format']}")
     st = evidence.get("stats")
     if st and st["ok"]:
         s = st["data"]
-        lines.append(f"Statistiques du compte{tag} :")
-        lines.append(f"- Ancienneté {s['account_age_days']} jours ; "
-                     f"{s['tx_count_30d']} transactions sur 30 jours ; "
-                     f"volume {_fr_num(s['volume_30d'])} ; montant moyen {_fr_num(s['mean_amount'])} ; "
-                     f"{s['distinct_counterparties_30d']} contreparties distinctes")
+        if "tx_count_30d" in s:
+            lines.append(f"Statistiques du compte{tag} :")
+            lines.append(f"- Ancienneté {s['account_age_days']} jours ; "
+                         f"{s['tx_count_30d']} transactions sur 30 jours ; "
+                         f"volume {_fr_num(s['volume_30d'])} ; montant moyen {_fr_num(s['mean_amount'])} ; "
+                         f"{s['distinct_counterparties_30d']} contreparties distinctes")
+        else:
+            lines.append("Statistiques du voisinage (calculées sur les transactions voisines, "
+                         "pas sur l'historique complet) :")
+            lines.append(f"- {s['n_neighbors']} transactions voisines ({s['n_incoming']} entrante(s), "
+                         f"{s['n_outgoing']} sortante(s)) ; montant total {_fr_num(s['total_amount'])} ; "
+                         f"montant moyen {_fr_num(s['mean_amount'])} ; "
+                         f"{s['distinct_counterparties']} contrepartie(s) distincte(s)")
     rg = evidence.get("regulation")
     if rg and rg["ok"] and rg["data"]:
         lines.append("Extraits réglementaires consultés (texte copié de l'index, non reformulé) :")

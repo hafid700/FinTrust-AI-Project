@@ -23,10 +23,12 @@ from pathlib import Path
 
 try:
     from report_checks import check_report
-    from build_instruction_dataset import INSTRUCTION, risk_level, confidence_label
+    from build_instruction_dataset import (INSTRUCTION, R21_THRESHOLD, RELIABLE_PATTERNS,
+                                           risk_level, reliability_label)
 except ImportError:  # import depuis la racine du dépôt (Colab)
     from audit.report_checks import check_report
-    from audit.build_instruction_dataset import INSTRUCTION, risk_level, confidence_label
+    from audit.build_instruction_dataset import (INSTRUCTION, R21_THRESHOLD, RELIABLE_PATTERNS,
+                                                 risk_level, reliability_label)
 
 SYSTEM_PROMPT = (
     "Tu es un assistant spécialisé en conformité bancaire "
@@ -410,9 +412,9 @@ STR_QUERY = ("Quand une institution financière doit-elle déclarer une opérati
 RAG_QUERIES = {
     "cycle": ("Obligations de vigilance et de déclaration de soupçon face à des "
               "transactions circulaires de blanchiment (empilement, layering)"),
-    "fan-in": ("Obligations de vigilance et de déclaration de soupçon pour un "
+    "fan_in": ("Obligations de vigilance et de déclaration de soupçon pour un "
                "compte qui reçoit des fonds de nombreux comptes (compte mule)"),
-    "fan-out": ("Obligations de vigilance et informations sur les virements "
+    "fan_out": ("Obligations de vigilance et informations sur les virements "
                 "électroniques pour un compte qui disperse des fonds vers de "
                 "nombreux comptes"),
     "none": ("Obligations de vigilance à l'égard de la clientèle et examen des "
@@ -467,12 +469,12 @@ _REF_R20 = re.compile(r"Recommandation\s*(n°\s*)?20\b|\bR\.?\s?20\b", re.IGNORE
 # et se tromper sur ces déductions : facts_ok ne le voit pas, logic_ok oui.
 _LEVEL = re.compile(
     r"niveau(?: de risque)?\s+(modéré à élevé|critique|élevé|modéré)", re.IGNORECASE)
-_RELIAB = re.compile(r"fiabilité\s+(élevée|moyenne|limitée)", re.IGNORECASE)
-LOW_CONF_MARKERS = ("nettement inférieure", "invite à la prudence")
+_RELIAB = re.compile(r"fiabilité du schéma\s+(élevée|limitée)", re.IGNORECASE)
+LOW_CONF_MARKERS = ("davantage de fausses alertes", "moins discriminant")
 PATTERN_ACTION_KEY = {
     "cycle": "circuit complet des fonds",
-    "fan-in": "comptes émetteurs",
-    "fan-out": "bénéficiaires des dispersions",
+    "fan_in": "comptes émetteurs",
+    "fan_out": "bénéficiaires des dispersions",
     "none": "Examiner l'historique du client",
 }
 _REC_CITED = re.compile(r"Recommandation\s+(\d+)\s+du\s+GAFI\s*(?:\(([^)]*)\))?",
@@ -482,33 +484,41 @@ REC_KEYWORDS = {"10": "vigilance", "16": "virements", "20": "déclaration",
                 "21": "divulgation"}
 
 
+_FEATURE_LINE = re.compile(r"\(([a-z_0-9]+)\)\s*:\s*poids\s+[\d,]+\s+—\s+(?:facteur principal,\s+)?(aggravant|atténuant)")
+
+
 def check_derived(alert: dict, report: str) -> dict:
-    """Vérifie les déductions que le rapport tire des valeurs de l'alerte."""
+    """Vérifie les déductions que le rapport tire des valeurs de l'alerte (règles v2 de B3)."""
+    conf, p = alert["confidence"], alert["pattern"]
     m = _LEVEL.search(report)
-    level_ok = bool(m) and m.group(1).lower() == risk_level(alert["score"])
+    level_ok = bool(m) and m.group(1).lower() == risk_level(conf)
     m = _RELIAB.search(report)
-    reliab_ok = bool(m) and m.group(1).lower() == confidence_label(alert["confidence"])
-    # même expression que le générateur : la note n'existe que si l'écart > 0,10
-    expects_note = alert["confidence"] < alert["score"] - 0.10
+    reliab_ok = bool(m) and m.group(1).lower() == reliability_label(p)
+    # la note de prudence n'existe que si la fiabilité du schéma est limitée
+    expects_note = reliability_label(p) == "limitée"
     note_ok = any(k in report for k in LOW_CONF_MARKERS) == expects_note
 
-    p = alert["pattern"]
     action_ok = PATTERN_ACTION_KEY[p] in report and not any(
         k in report for q, k in PATTERN_ACTION_KEY.items() if q != p)
 
     cited = _REC_CITED.findall(report)
     known = {n for n, _ in cited if n in REC_KEYWORDS}
-    expected = {"16" if p == "fan-out" else "10", "20"}
-    if alert["score"] >= 0.85:
+    expected = {"16" if p == "fan_out" else "10", "20"}
+    if conf >= R21_THRESHOLD:
         expected.add("21")
     refs_ok = known == expected
     # un intitulé présent doit correspondre au numéro (ex. « 10 » = vigilance)
     cite_labels_ok = all(REC_KEYWORDS[n] in title.lower()
                          for n, title in cited if n in REC_KEYWORDS and title)
+
+    # chaque facteur est dit aggravant / atténuant d'après le signe de son attribution
+    said = dict(_FEATURE_LINE.findall(report))
+    signs_ok = all(said.get(name) == ("aggravant" if sg > 0 else "atténuant")
+                   for (name, _), sg in zip(alert["top_features"], alert["signs"]))
     return {
         "level_ok": level_ok, "reliab_ok": reliab_ok, "note_ok": note_ok,
-        "action_ok": action_ok, "refs_ok": refs_ok,
-        "logic_ok": level_ok and reliab_ok and note_ok and action_ok and refs_ok,
+        "action_ok": action_ok, "refs_ok": refs_ok, "signs_ok": signs_ok,
+        "logic_ok": level_ok and reliab_ok and note_ok and action_ok and refs_ok and signs_ok,
         "cite_labels_ok": cite_labels_ok,
     }
 
