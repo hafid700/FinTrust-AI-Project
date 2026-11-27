@@ -150,6 +150,8 @@ def verify_and_repair(alert: dict, draft: str, finished: bool = True):
         return ref, list(SECTIONS), True  # brouillon inexploitable : tout recalculer
 
     head, blocks = parsed
+    if head.strip() != ref_head.strip():  # en-tête (numéro de transaction) : fonction de l'alerte
+        head = ref_head
     replaced = []
     for _ in range(2):  # remplace, revérifie, remplace encore si besoin
         bad = _failing_sections(alert, _assemble(head, blocks), True) - set(replaced)

@@ -1,0 +1,61 @@
+{
+  "n_alerts": 2246,
+  "n_features": 50,
+  "n_groups": 30,
+  "background": {
+    "n": 100,
+    "mean_p_illicit": 0.02695676125586033
+  },
+  "method": "Integrated Gradients moyennés sur le fond (contexte réseau fixé)",
+  "head_fidelity_max_abs_error": 1.430511474609375e-06,
+  "ig_seconds": 5.5,
+  "completeness": {
+    "max_abs_error": 0.004967234708601609,
+    "mean_abs_error": 0.0007054930977332081,
+    "mean_logit_minus_base": 3.0071382315089026
+  },
+  "vs_kernelshap": {
+    "n_alerts_checked": 300,
+    "shap_samples": 1000,
+    "spearman_per_alert_mean": 0.5287178346310716,
+    "top3_overlap_mean": 0.9388888888888888,
+    "top1_same_rate": 0.9933333333333333,
+    "mean_abs_diff_logit_units": 0.06405265522519893,
+    "kernelshap_seconds": 30.4
+  },
+  "deletion_test_mean_logit_drop": {
+    "1": {
+      "drop_top": 1.9773088693618774,
+      "drop_random": 0.09913408011198044
+    },
+    "3": {
+      "drop_top": 3.9034175872802734,
+      "drop_random": 0.2260580211877823
+    },
+    "5": {
+      "drop_top": 4.3978776931762695,
+      "drop_random": 0.4814555048942566
+    }
+  },
+  "context_share": {
+    "n_alerts": 200,
+    "transaction_features": 0.4538276791572571,
+    "context_source_account": 0.25571900606155396,
+    "context_destination_account": 0.29045355319976807,
+    "note": "part de la somme des |attributions| (références jointes embeddings + features)"
+  },
+  "top_feature_frequency_%": {
+    "payment_format": 99.6,
+    "pair_prev": 98.5,
+    "dst_in_cnt_all": 79.1,
+    "rev_pair_prev": 11.2,
+    "dst_out_cnt_all": 5.8,
+    "src_in_cnt_all": 4.2,
+    "src_out_amt_all": 1.1,
+    "src_passthrough_24h": 0.2,
+    "log_amount_paid": 0.2,
+    "dst_out_amt_24h": 0.2,
+    "log_amount_received": 0.0
+  },
+  "alerts_without_attribution": 0
+}

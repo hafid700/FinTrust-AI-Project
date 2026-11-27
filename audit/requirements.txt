@@ -1,0 +1,35 @@
+# Partie B (audit) : calibration, explication, RAG, LoRA, agent.
+# Installation :  pip install -r audit/requirements.txt
+#
+# Versions testées (CPU, Python 3.13, session de développement) :
+#   torch 2.15, transformers 5.23, peft 0.21, accelerate 1.15, pandas 3.0, numpy 2.5,
+#   scikit-learn 1.9, shap 0.54, matplotlib 3.11, pypdf 6.17
+# Sur Colab (T4), le notebook affiche les versions installées dans sa cellule 1 :
+# elles font foi pour les résultats de B4/B6 (voir "Reproductibilité" dans audit/README.md).
+#
+# Les bornes basses ci-dessous sont celles dont dépend le code (API `dtype=` de transformers,
+# PEFT récent). Les versions exactes du run Colab sont à figer dans requirements-colab.lock.txt.
+
+numpy>=1.26
+pandas>=2.1
+scikit-learn>=1.4
+matplotlib>=3.8
+requests>=2.31
+
+# B5 : calibration et explication (le checkpoint de A est relu avec torch seul)
+torch>=2.2
+shap>=0.45
+
+# B1 : RAG (index FAISS sur le corpus réglementaire)
+sentence-transformers>=2.7
+faiss-cpu>=1.8
+pypdf>=4.0
+
+# B4 / B6 : LoRA et agent (GPU recommandé pour l'entraînement et la génération)
+transformers>=4.45
+peft>=0.12
+accelerate>=0.34
+
+# Tests et notebooks
+pytest>=8.0
+nbformat>=5.9
